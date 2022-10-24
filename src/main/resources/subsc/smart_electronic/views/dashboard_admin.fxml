@@ -319,7 +319,7 @@
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="992.0" layoutY="227.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="992.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>

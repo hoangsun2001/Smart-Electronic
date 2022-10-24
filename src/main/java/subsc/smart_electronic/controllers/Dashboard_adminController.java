@@ -406,6 +406,46 @@ public class Dashboard_adminController implements Initializable {
 
     }
 
+    public void employeeDelete() {
+        String employeeDelete = "delete from employee where employee_Id='"
+                + text_employeeId.getText() + "'";
+        conn = database.ConnectDB();
+        try {
+            if (text_employee_password.getText().isEmpty()
+                    || text_employeeFirstName.getText().isEmpty()
+                    || text_employee_lastName.getText().isEmpty()
+                    || text_datePicker.getEditor().getText().isEmpty()
+                    || combochoose_gender.getSelectionModel().getSelectedItem() == null
+                    || text_employee_salary.getText().isEmpty()
+                    || text_employee_phone.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+
+            } else {
+                String check = "select *from employee where gender='" + combochoose_gender.getSelectionModel().getSelectedItem() + "'";
+                statement = conn.createStatement();
+                resultSet = statement.executeQuery(check);
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure that you want to delete the employee_Id " + text_employeeId.getText() + "?");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    statement = conn.createStatement();
+                    statement.executeUpdate(employeeDelete);
+
+                    InforBox("Deleted Successfully", null, "Information");
+                    employeeDatashow();
+                    employeeReset();
+
+                } else {
+                    InforError("Thess", null, "ss");
+                }
+            }
+        } catch (Exception e) {
+        }
+    }
+
     public void employeeUpdate() {
         String upadateEmployee = "update employee set password='" + text_employee_password.getText()
                 + "',firstname='" + text_employeeFirstName.getText()
