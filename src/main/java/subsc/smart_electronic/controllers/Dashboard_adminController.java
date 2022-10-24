@@ -173,7 +173,7 @@ public class Dashboard_adminController implements Initializable {
     private TextField text_employeeId;
 
     @FXML
-    private TextField text_employeeDateOfBirth;
+    private DatePicker text_datePicker;
 
     @FXML
     private Button btn_addEmployee;
@@ -238,28 +238,6 @@ public class Dashboard_adminController implements Initializable {
     private ResultSet resultSet;
     private PreparedStatement preparedStatement;
     private Statement statement;
-
-    private String[] statusListEmployee = {"Male", "Female", "Other"};
-
-    public void employeeListStatusList() {
-        List<String> listE = new ArrayList<>();
-        for (String data : statusListEmployee) {
-            listE.add(data);
-        }
-        ObservableList statusData = FXCollections.observableArrayList(listE);
-        combochoose_gender.setItems(statusData);
-    }
-
-    public void employeeReset() {
-        text_employeeId.setText("");
-        text_employee_password.setText("");
-        text_employeeFirstName.setText("");
-        text_employee_lastName.setText("");
-        text_employeeDateOfBirth.setText("");
-        combochoose_gender.getSelectionModel().clearSelection();
-        text_employee_salary.setText("");
-        text_employee_phone.setText("");
-    }
 
     public void addProduct() {
         String insertInto = "insert into product"
@@ -428,6 +406,99 @@ public class Dashboard_adminController implements Initializable {
 
     }
 
+    public void employeeUpdate() {
+        String upadateEmployee = "update employee set password='" + text_employee_password.getText()
+                + "',firstname='" + text_employeeFirstName.getText()
+                + "',lastname='" + text_employee_lastName.getText()
+                + "',dateofbirth='" + text_datePicker.getEditor().getText()
+                + "',gender='" + combochoose_gender.getSelectionModel().getSelectedItem()
+                + "',salary='" + text_employee_salary.getText()
+                + "',phoneNumber='" + text_employee_phone.getText()
+                + "'where employee_Id='" + text_employeeId.getText() + "'";
+        conn = database.ConnectDB();
+        try {
+            if (text_employee_password.getText().isEmpty()
+                    || text_employeeFirstName.getText().isEmpty()
+                    || text_employee_lastName.getText().isEmpty()
+                    || text_datePicker.getEditor().getText().isEmpty()
+                    || combochoose_gender.getSelectionModel().getSelectedItem() == null
+                    || text_employee_salary.getText().isEmpty()
+                    || text_employee_phone.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure that you want to update the employee_Id " + text_employeeId.getText() + "?");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    statement = conn.createStatement();
+                    statement.executeUpdate(upadateEmployee);
+
+                    InforBox("Updated Successfully", null, "Information");
+                    employeeDatashow();
+                    employeeReset();
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void employeeSave() {
+        Date date = new Date();
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+
+        String insertEmployee = "insert into employee(employee_Id,password,firstname,lastname,dateofbirth,gender,startdate,salary,phoneNumber)"
+                + "values(?,?,?,?,?,?,?,?,?)";
+        conn = database.ConnectDB();
+        try {
+            if (text_employeeId.getText().isEmpty()
+                    || text_employee_password.getText().isEmpty()
+                    || text_employeeFirstName.getText().isEmpty()
+                    || text_employee_lastName.getText().isEmpty()
+                    || combochoose_gender.getSelectionModel().getSelectedItem() == null
+                    || text_employee_salary.getText().isEmpty()
+                    || text_employee_phone.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+
+            } else {
+
+                String check = "select *from employee where employee_Id='" + text_employeeId.getText() + "'";
+                statement = conn.createStatement();
+                resultSet = statement.executeQuery(check);
+
+                if (resultSet.next()) {
+                    InforError("The employee_Id " + text_employeeId.getText() + "already exist!", null, "Error message");
+
+                } else {
+                    preparedStatement = conn.prepareStatement(insertEmployee);
+
+                    preparedStatement.setString(1, text_employeeId.getText());
+                    preparedStatement.setString(2, text_employee_password.getText());
+                    preparedStatement.setString(3, text_employeeFirstName.getText());
+                    preparedStatement.setString(4, text_employee_lastName.getText());
+                    preparedStatement.setString(5, text_datePicker.getEditor().getText());
+                    preparedStatement.setString(6, String.valueOf(combochoose_gender.getSelectionModel().getSelectedItem()));
+                    preparedStatement.setString(7, String.valueOf(sqlDate));
+                    preparedStatement.setString(8, text_employee_salary.getText());
+                    preparedStatement.setString(9, text_employee_phone.getText());
+
+                    preparedStatement.executeUpdate();
+                    InforBox("Saved successfully", null, "Information");
+                    employeeListData();
+                    employeeDatashow();
+                    employeeReset();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public ObservableList<employeeData> employeeListData() {
         ObservableList<employeeData> employeeData = FXCollections.observableArrayList();
         String sql = "select*from employee";
@@ -437,7 +508,7 @@ public class Dashboard_adminController implements Initializable {
             preparedStatement = conn.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                employeeD = new employeeData(resultSet.getString("employee_id"),
+                employeeD = new employeeData(resultSet.getString("employee_Id"),
                         resultSet.getString("password"),
                         resultSet.getString("firstName"),
                         resultSet.getString("lastName"),
@@ -454,6 +525,68 @@ public class Dashboard_adminController implements Initializable {
         return employeeData;
 
     }
+
+    public void employeeSearch() {
+        FilteredList<employeeData> filter = new FilteredList<>(employeeList, e -> true);
+        text_employeeSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+
+            filter.setPredicate(predicateEmployeeData -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String searchKey = newValue.toLowerCase();
+                if (predicateEmployeeData.getEmployeeId().toLowerCase().contains(searchKey)) {
+                    return true;
+
+                } else if (predicateEmployeeData.getPassword().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getFirstName().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getLastName().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getDateofBirth().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getGender().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getStartDate().toString().contains(searchKey)) {
+                    return true;
+
+                } else if (predicateEmployeeData.getSalary().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getPhoneNumber().contains(searchKey)) {
+
+                }
+                return false;
+            });
+            SortedList<employeeData> sortedList = new SortedList<>(filter);
+            sortedList.comparatorProperty().bind(employee_tableview.comparatorProperty());
+            employee_tableview.setItems(sortedList);
+        });
+
+    }
+
+    private String[] statusListEmployee = {"Male", "Female", "Other"};
+
+    public void employeeListStatusList() {
+        List<String> listE = new ArrayList<>();
+        for (String data : statusListEmployee) {
+            listE.add(data);
+        }
+        ObservableList statusData = FXCollections.observableArrayList(listE);
+        combochoose_gender.setItems(statusData);
+    }
+
+    public void employeeReset() {
+        text_employeeId.setText("");
+        text_employee_password.setText("");
+        text_employeeFirstName.setText("");
+        text_employee_lastName.setText("");
+        text_datePicker.getEditor().setText("");
+        combochoose_gender.getSelectionModel().clearSelection();
+        text_employee_salary.setText("");
+        text_employee_phone.setText("");
+    }
+
     private ObservableList<employeeData> employeeList;
 
     public void employeeDatashow() {
@@ -472,7 +605,7 @@ public class Dashboard_adminController implements Initializable {
 
     public void employeeSelect() {
         employeeData employeeD = employee_tableview.getSelectionModel().getSelectedItem();
-        int num = employee_tableview.getSelectionModel().getFocusedIndex();
+        int num = employee_tableview.getSelectionModel().getSelectedIndex();
         if ((num - 1) < -1) {
             return;
         }
@@ -480,8 +613,8 @@ public class Dashboard_adminController implements Initializable {
         text_employee_password.setText(employeeD.getPassword());
         text_employeeFirstName.setText(employeeD.getFirstName());
         text_employee_lastName.setText(employeeD.getLastName());
-        text_employeeDateOfBirth.setText(String.valueOf(employeeD.getDateofBirth()));
-
+        text_datePicker.getEditor().setText(String.valueOf(employeeD.getDateofBirth()));
+//        combochoose_gender.getSelectionModel().select((int) (Object) String.valueOf(employeeD.getGender()));
         text_employee_salary.setText(String.valueOf(employeeD.getSalary()));
         text_employee_phone.setText(employeeD.getPhoneNumber());
     }
@@ -601,6 +734,7 @@ public class Dashboard_adminController implements Initializable {
             employee_form.setVisible(true);
             employeeDatashow();
             employeeListStatusList();
+            employeeSearch();
         }
     }
 
@@ -647,6 +781,7 @@ public class Dashboard_adminController implements Initializable {
         displayUsername();
         productSearch();
         employeeDatashow();
+        employeeSearch();
         employeeListStatusList();
     }
 
