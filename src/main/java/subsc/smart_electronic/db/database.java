@@ -12,10 +12,18 @@ import java.sql.*;
  */
 public class database {
 
+    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=SmartElectric;encrypt=true;trustServerCertificate=true;";
+//    Connection conn;
+    private static String UserName = "omega";
+    private static String password = "omega123";
+
+    public database() {
+    }
+
     public static Connection ConnectDB() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/supermarket?zeroDateTimeBehavior=CONVERT_TO_NULL", "root", "");
+            Connection conn = DriverManager.getConnection(urlConnection, UserName, password);
             return conn;
         } catch (Exception e) {
             e.printStackTrace();

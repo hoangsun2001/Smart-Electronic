@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="main_form" prefHeight="726.0" prefWidth="1332.0" styleClass="mainFxmlClass" stylesheets="@../css/dashboard_admin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subsc.smart_electronic.controllers.Dashboard_adminController">
+   <children>
+      <BorderPane layoutX="91.0" layoutY="106.0" prefHeight="707.0" prefWidth="1332.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="57.0" prefWidth="1332.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="67.0" prefWidth="1332.0" styleClass="top_form" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="63.0" fitWidth="68.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/screenshot_1665740495-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="87.0" layoutY="26.0" text="Smart Electronic Mall System Manangerment" textFill="#fff9f9">
+                           <font>
+                              <Font name="Californian FB Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="1291.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@../images/cancel%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1250.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="6.0">
+                           <image>
+                              <Image url="@../images/minimize.png" />
+                           </image>
+                        </ImageView>
+                        <Hyperlink layoutX="548.0" layoutY="21.0" stylesheets="@../css/dashboard_admin.css" text="View all Icome statistics" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria Math" size="14.0" />
+                           </font>
+                        </Hyperlink>
+                        <Button fx:id="btn_minimize" layoutX="1247.0" layoutY="6.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" />
+                        <Button fx:id="btn_close" layoutX="1299.0" layoutY="6.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="651.0" prefWidth="258.0" styleClass="top_form" stylesheets="@../css/dashboard_admin.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btn_dashboard" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Dashboard" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Californian FB Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="77.0" layoutY="151.0" text="Welcome Admin" textFill="WHITE">
+                     <font>
+                        <Font name="Californian FB Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="display_username" alignment="CENTER" layoutX="41.0" layoutY="180.0" prefHeight="22.0" prefWidth="176.0" text="Hoang Ngoc Son" textFill="WHITE">
+                     <font>
+                        <Font name="Californian FB Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" layoutX="129.0" layoutY="215.0" startX="-100.0" stroke="#c3b5ff" />
+                  <ImageView fitHeight="94.0" fitWidth="74.0" layoutX="92.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/screenshot_1665806738-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_product" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Product" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Californian FB Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_employee" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Employees" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Californian FB Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_customer" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Customer" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Californian FB Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="14.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/sou-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_reciept" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Receipt" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Californian FB Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_InventoryManangerment" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="499.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Inventory management" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Californian FB Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_signout" layoutX="15.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="104.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="          Sign out" textFill="WHITE">
+                     <font>
+                        <Font name="Californian FB" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="550.0" prefWidth="769.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="dashboar_form" layoutX="130.0" layoutY="229.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="156.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="7.0" layoutY="8.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data" stylesheets="@../css/dashboard_admin.css">
+                                 <children>
+                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="141.0" text="Employees Active" textFill="WHITE">
+                                       <font>
+                                          <Font name="Californian FB Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/skill%20(2).png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="display_employeeActive" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="193.0" text="0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
+                                       <font>
+                                          <Font name="Cambria Math" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="403.0" layoutY="8.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data1" stylesheets="@../css/dashboard_admin.css">
+                                 <children>
+                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="149.0" text="Today's Icome" textFill="WHITE">
+                                       <font>
+                                          <Font name="Californian FB Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/money.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="display_todayIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="231.0" text="\$0:0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
+                                       <font>
+                                          <Font name="Cambria Math" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="798.0" layoutY="8.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data2" stylesheets="@../css/dashboard_admin.css">
+                                 <children>
+                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="141.0" text="Monthly Icome" textFill="WHITE">
+                                       <font>
+                                          <Font name="Californian FB Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/money-bag.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="display_totalIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="232.0" text="\$0:0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
+                                       <font>
+                                          <Font name="Cambria Math" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AreaChart fx:id="data_chart" layoutX="10.0" layoutY="209.0" prefHeight="289.0" prefWidth="1050.0" title="Data Chart Icome" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                          <xAxis>
+                            <CategoryAxis prefHeight="0.0" prefWidth="993.0" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextField fx:id="product_search" layoutX="777.0" layoutY="19.0" onKeyTyped="#productSearch" prefHeight="32.0" prefWidth="275.0" promptText="Search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="14.0" layoutY="22.0" text="Catergory:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="67.0" text="Product Id:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="106.0" text="Product Name:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="441.0" layoutY="23.0" text="Quanlity:" AnchorPane.leftAnchor="441.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="443.0" layoutY="67.0" text="Price($):" AnchorPane.leftAnchor="443.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_productName" layoutX="105.0" layoutY="102.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <Label layoutX="441.0" layoutY="107.0" text="Status:" AnchorPane.leftAnchor="443.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_productId" layoutX="105.0" layoutY="58.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <TextField fx:id="text_catergory" layoutX="105.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <TextField fx:id="text_price" layoutX="495.0" layoutY="61.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <TextField fx:id="text_quanlity" layoutX="495.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <Button fx:id="btn_addProduct" alignment="CENTER" layoutX="726.0" layoutY="162.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Add" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_UpadateProduct" alignment="CENTER" layoutX="814.0" layoutY="162.0" mnemonicParsing="false" onAction="#producUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="900.0" layoutY="162.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_deleteProduct" alignment="CENTER" layoutX="988.0" layoutY="162.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox fx:id="product_status_choose" layoutX="495.0" layoutY="104.0" onAction="#productListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Choose" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="product_tableVew" layoutX="90.0" layoutY="267.0" onMouseClicked="#productSelect" prefHeight="416.0" prefWidth="1070.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="239.0">
+                          <columns>
+                            <TableColumn fx:id="tableView_colunm_catergory" prefWidth="192.0" text="Catergory" />
+                            <TableColumn fx:id="tableView_colunm_productID" minWidth="0.0" prefWidth="150.0" text="Product Id" />
+                              <TableColumn fx:id="tableView_colunm_productName" prefWidth="169.0" text="Product Name" />
+                              <TableColumn fx:id="tableView_colunm_quanlity" prefWidth="151.0" text="Quanlity" />
+                              <TableColumn fx:id="tableView_colunm_price" minWidth="0.0" prefWidth="158.0" text="Price$)" />
+                              <TableColumn fx:id="tableView_colunm_status" minWidth="0.0" prefWidth="249.0" text="Status" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="employee_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutY="376.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="376.0">
+                           <children>
+                              <TextField fx:id="text_employeeSearch" layoutX="777.0" layoutY="19.0" prefHeight="32.0" prefWidth="275.0" promptText="Search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="14.0" layoutY="22.0" prefHeight="18.0" prefWidth="76.0" text="Employee_Id:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="67.0" text="Password:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="106.0" text="First Name:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="440.0" layoutY="23.0" text="DateOfBirth:" AnchorPane.leftAnchor="443.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="443.0" layoutY="68.0" prefHeight="18.0" prefWidth="67.0" text="Gender:" AnchorPane.leftAnchor="443.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employeeFirstName" layoutX="105.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <TextField fx:id="text_employeeId" layoutX="105.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <TextField fx:id="text_employeeDateOfBirth" layoutX="535.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="730.0" layoutY="227.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Save" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="818.0" layoutY="227.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="904.0" layoutY="227.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="992.0" layoutY="227.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="14.0" layoutY="152.0" text="Last Name:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employee_lastName" layoutX="105.0" layoutY="149.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="443.0" layoutY="108.0" text="Salary:" AnchorPane.leftAnchor="443.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employee_salary" layoutX="535.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <PasswordField fx:id="text_employee_password" layoutX="105.0" layoutY="63.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <ComboBox fx:id="combochoose_gender" layoutX="535.0" layoutY="63.0" onAction="#employeeListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Choose" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="443.0" layoutY="154.0" text="Phone Number:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employee_phone" layoutX="535.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="employee_tableview" layoutX="88.0" layoutY="53.0" onMouseClicked="#employeeSelect" prefHeight="367.0" prefWidth="1070.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="employee_colunmId" prefWidth="130.0" text="Employee_Id" />
+                            <TableColumn fx:id="employee_colunm_password" prefWidth="91.0" text="Password" />
+                              <TableColumn fx:id="employee_colunm_firstName" prefWidth="98.0" text="First Name" />
+                              <TableColumn fx:id="employee_colunm_lastName" prefWidth="123.0" text="Last Name" />
+                              <TableColumn fx:id="employee_colunm_dateOfbirth" prefWidth="125.0" text="Date Of Birth" />
+                              <TableColumn fx:id="employee_colunm_gender" prefWidth="85.0" text="Gender" />
+                              <TableColumn fx:id="employee_colunm_startDate" prefWidth="117.0" text="Start Date" />
+                              <TableColumn fx:id="employee_colunm_salary" prefWidth="133.0" text="Salary" />
+                              <TableColumn fx:id="employee_colunm_phone" prefWidth="167.0" text="Phone Number" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -10,4 +10,6 @@ module subsc.smart_electronic {
     exports subsc.smart_electronic;
     opens subsc.smart_electronic.controllers;
     exports subsc.smart_electronic.controllers;
+    opens subsc.smart_electronic.models;
+    exports subsc.smart_electronic.models;
 }
