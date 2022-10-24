@@ -28,7 +28,7 @@
                      <children>
                         <ImageView fitHeight="63.0" fitWidth="68.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/screenshot_1665740495-removebg-preview.png" />
+                              <Image url="@../images_admin/screenshot_1665740495-removebg-preview.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="87.0" layoutY="26.0" text="Smart Electronic Mall System Manangerment" textFill="#fff9f9">
@@ -38,12 +38,12 @@
                         </Label>
                         <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="1291.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <image>
-                              <Image url="@../images/cancel%20(1).png" />
+                              <Image url="@../images_admin/cancel%20(1).png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1250.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="6.0">
                            <image>
-                              <Image url="@../images/minimize.png" />
+                              <Image url="@../images_admin/minimize.png" />
                            </image>
                         </ImageView>
                         <Hyperlink layoutX="548.0" layoutY="21.0" stylesheets="@../css/dashboard_admin.css" text="View all Icome statistics" textFill="WHITE">
@@ -79,7 +79,7 @@
                   <Line endX="100.0" layoutX="129.0" layoutY="215.0" startX="-100.0" stroke="#c3b5ff" />
                   <ImageView fitHeight="94.0" fitWidth="74.0" layoutX="92.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/screenshot_1665806738-removebg-preview.png" />
+                        <Image url="@../images_admin/screenshot_1665806738-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="btn_product" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Product" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
@@ -99,7 +99,7 @@
                   </Button>
                   <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="14.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/sou-removebg-preview.png" />
+                        <Image url="@../images_admin/sou-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="btn_reciept" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Receipt" textFill="WHITE" AnchorPane.leftAnchor="14.0">
@@ -112,7 +112,7 @@
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_signout" layoutX="15.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="104.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="          Sign out" textFill="WHITE">
+                  <Button fx:id="btn_signout" layoutX="17.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="111.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="          Sign out" textFill="WHITE">
                      <font>
                         <Font name="Californian FB" size="15.0" />
                      </font>
@@ -123,7 +123,7 @@
          <center>
             <AnchorPane prefHeight="550.0" prefWidth="769.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="dashboar_form" layoutX="130.0" layoutY="229.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="dashboar_form" layoutX="130.0" layoutY="229.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="156.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -136,7 +136,7 @@
                                     </Label>
                                     <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/skill%20(2).png" />
+                                          <Image url="@../images_admin/skill%20(2).png" />
                                        </image>
                                     </ImageView>
                                     <Label fx:id="display_employeeActive" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="193.0" text="0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
@@ -155,7 +155,7 @@
                                     </Label>
                                     <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/money.png" />
+                                          <Image url="@../images_admin/money.png" />
                                        </image>
                                     </ImageView>
                                     <Label fx:id="display_todayIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="231.0" text="\$0:0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
@@ -174,7 +174,7 @@
                                     </Label>
                                     <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/money-bag.png" />
+                                          <Image url="@../images_admin/money-bag.png" />
                                        </image>
                                     </ImageView>
                                     <Label fx:id="display_totalIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="232.0" text="\$0:0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
@@ -196,7 +196,7 @@
                         </AreaChart>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
