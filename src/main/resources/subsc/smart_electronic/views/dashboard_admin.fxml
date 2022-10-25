@@ -32,9 +32,9 @@
                               <Image url="@../images_admin/screenshot_1665740495-removebg-preview.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="87.0" layoutY="26.0" text="Smart Electronic Mall System Manangerment" textFill="#fff9f9">
+                        <Label layoutX="87.0" layoutY="26.0" text="Hệ thống bán hàng Smart Electronic" textFill="#fff9f9">
                            <font>
-                              <Font name="Californian FB Bold" size="20.0" />
+                              <Font name="Cambria Math" size="21.0" />
                            </font>
                         </Label>
                         <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="1291.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -47,7 +47,7 @@
                               <Image url="@../images_admin/minimize.png" />
                            </image>
                         </ImageView>
-                        <Hyperlink layoutX="548.0" layoutY="21.0" stylesheets="@../css/dashboard_admin.css" text="View all Icome statistics" textFill="WHITE">
+                        <Hyperlink layoutX="548.0" layoutY="21.0" stylesheets="@../css/dashboard_admin.css" text="Xem tất cả thông kê" textFill="WHITE">
                            <font>
                               <Font name="Cambria Math" size="14.0" />
                            </font>
@@ -62,7 +62,7 @@
          <left>
             <AnchorPane prefHeight="651.0" prefWidth="258.0" styleClass="top_form" stylesheets="@../css/dashboard_admin.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn_dashboard" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Dashboard" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                  <Button fx:id="btn_dashboard" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Trang chủ" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
@@ -83,17 +83,17 @@
                         <Image url="@../images_admin/screenshot_1665806738-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btn_product" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Product" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                  <Button fx:id="btn_product" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Sản phẩm" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_employee" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Employees" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                  <Button fx:id="btn_employee" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Nhân viên" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_customer" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Customer" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                  <Button fx:id="btn_customer" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Khách hàng" textFill="WHITE" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
@@ -103,17 +103,17 @@
                         <Image url="@../images_admin/sou-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btn_reciept" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Receipt" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                  <Button fx:id="btn_reciept" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Hóa đơn" textFill="WHITE" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_InventoryManangerment" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="499.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Inventory management" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                  <Button fx:id="btn_InventoryManangerment" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="499.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Quản lý kho" textFill="WHITE" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_signout" layoutX="17.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="111.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="          Sign out" textFill="WHITE">
+                  <Button fx:id="btn_signout" alignment="CENTER_RIGHT" layoutX="17.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="114.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="Đăng xuất" textFill="WHITE">
                      <font>
                         <Font name="Californian FB" size="15.0" />
                      </font>
@@ -130,7 +130,7 @@
                            <children>
                               <AnchorPane layoutX="7.0" layoutY="8.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data" stylesheets="@../css/dashboard_admin.css">
                                  <children>
-                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="141.0" text="Employees Active" textFill="WHITE">
+                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="141.0" text="Nhân viên Active" textFill="WHITE">
                                        <font>
                                           <Font name="Californian FB Bold" size="15.0" />
                                        </font>
@@ -149,7 +149,7 @@
                               </AnchorPane>
                               <AnchorPane layoutX="403.0" layoutY="8.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data1" stylesheets="@../css/dashboard_admin.css">
                                  <children>
-                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="149.0" text="Today's Icome" textFill="WHITE">
+                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="149.0" text="Doanh thu trong ngày" textFill="WHITE">
                                        <font>
                                           <Font name="Californian FB Bold" size="15.0" />
                                        </font>
@@ -159,7 +159,7 @@
                                           <Image url="@../images_admin/money.png" />
                                        </image>
                                     </ImageView>
-                                    <Label fx:id="display_todayIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="231.0" text="\$0:0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
+                                    <Label fx:id="display_todayIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="231.0" text="0:0đ" textFill="WHITE" AnchorPane.rightAnchor="6.0">
                                        <font>
                                           <Font name="Cambria Math" size="15.0" />
                                        </font>
@@ -168,7 +168,7 @@
                               </AnchorPane>
                               <AnchorPane layoutX="798.0" layoutY="8.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data2" stylesheets="@../css/dashboard_admin.css">
                                  <children>
-                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="141.0" text="Monthly Icome" textFill="WHITE">
+                                    <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="157.0" text="Doanh thu trong tháng" textFill="WHITE">
                                        <font>
                                           <Font name="Californian FB Bold" size="15.0" />
                                        </font>
@@ -178,7 +178,7 @@
                                           <Image url="@../images_admin/money-bag.png" />
                                        </image>
                                     </ImageView>
-                                    <Label fx:id="display_totalIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="232.0" text="\$0:0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
+                                    <Label fx:id="display_totalIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="232.0" text="0:0đ" textFill="WHITE" AnchorPane.rightAnchor="6.0">
                                        <font>
                                           <Font name="Cambria Math" size="15.0" />
                                        </font>
@@ -187,7 +187,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AreaChart fx:id="data_chart" layoutX="10.0" layoutY="209.0" prefHeight="289.0" prefWidth="1050.0" title="Data Chart Icome" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                        <AreaChart fx:id="data_chart" layoutX="10.0" layoutY="209.0" prefHeight="289.0" prefWidth="1050.0" title="Biểu đồ dữ liệu doanh thu" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                           <xAxis>
                             <CategoryAxis prefHeight="0.0" prefWidth="993.0" side="BOTTOM" />
                           </xAxis>
@@ -201,73 +201,73 @@
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <TextField fx:id="product_search" layoutX="777.0" layoutY="19.0" onKeyTyped="#productSearch" prefHeight="32.0" prefWidth="275.0" promptText="Search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="14.0" layoutY="22.0" text="Catergory:">
+                              <TextField fx:id="product_search" layoutX="777.0" layoutY="19.0" onKeyTyped="#productSearch" prefHeight="32.0" prefWidth="275.0" promptText="Tìm kiếm" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="14.0" layoutY="22.0" text="Danh mục:">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="67.0" text="Product Id:">
+                              <Label layoutX="14.0" layoutY="67.0" text="Mã sản phẩm:">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="106.0" text="Product Name:">
+                              <Label layoutX="14.0" layoutY="106.0" text="Tên sản phẩm:">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="441.0" layoutY="23.0" text="Quanlity:" AnchorPane.leftAnchor="441.0">
+                              <Label layoutX="441.0" layoutY="23.0" text="Số lượng:" AnchorPane.leftAnchor="428.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="443.0" layoutY="67.0" text="Price($):" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="443.0" layoutY="67.0" text="Giá($):" AnchorPane.leftAnchor="428.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="text_productName" layoutX="105.0" layoutY="102.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
-                              <Label layoutX="441.0" layoutY="107.0" text="Status:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="441.0" layoutY="107.0" text="Trạng thái:" AnchorPane.leftAnchor="428.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="text_productId" layoutX="105.0" layoutY="58.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
                               <TextField fx:id="text_catergory" layoutX="105.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
                               <TextField fx:id="text_price" layoutX="495.0" layoutY="61.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
                               <TextField fx:id="text_quanlity" layoutX="495.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <Button fx:id="btn_addProduct" alignment="CENTER" layoutX="726.0" layoutY="162.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Add" textFill="WHITE">
+                              <Button fx:id="btn_addProduct" alignment="CENTER" layoutX="726.0" layoutY="162.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Thêm" textFill="WHITE">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_UpadateProduct" alignment="CENTER" layoutX="814.0" layoutY="162.0" mnemonicParsing="false" onAction="#producUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
+                              <Button fx:id="btn_UpadateProduct" alignment="CENTER" layoutX="803.0" layoutY="162.0" mnemonicParsing="false" onAction="#producUpdate" prefHeight="38.0" prefWidth="75.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Cập nhật" textFill="WHITE">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="900.0" layoutY="162.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
+                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="900.0" layoutY="162.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Dặt lại" textFill="WHITE">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_deleteProduct" alignment="CENTER" layoutX="988.0" layoutY="162.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                              <Button fx:id="btn_deleteProduct" alignment="CENTER" layoutX="988.0" layoutY="162.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Xóa" textFill="WHITE">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Button>
-                              <ComboBox fx:id="product_status_choose" layoutX="495.0" layoutY="104.0" onAction="#productListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Choose" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <ComboBox fx:id="product_status_choose" layoutX="495.0" layoutY="104.0" onAction="#productListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Chọn" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
                            </children>
                         </AnchorPane>
                         <TableView fx:id="product_tableVew" layoutX="90.0" layoutY="267.0" onMouseClicked="#productSelect" prefHeight="416.0" prefWidth="1070.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="239.0">
                           <columns>
-                            <TableColumn fx:id="tableView_colunm_catergory" prefWidth="192.0" text="Catergory" />
-                            <TableColumn fx:id="tableView_colunm_productID" minWidth="0.0" prefWidth="150.0" text="Product Id" />
-                              <TableColumn fx:id="tableView_colunm_productName" prefWidth="169.0" text="Product Name" />
-                              <TableColumn fx:id="tableView_colunm_quanlity" prefWidth="151.0" text="Quanlity" />
-                              <TableColumn fx:id="tableView_colunm_price" minWidth="0.0" prefWidth="158.0" text="Price$)" />
-                              <TableColumn fx:id="tableView_colunm_status" minWidth="0.0" prefWidth="249.0" text="Status" />
+                            <TableColumn fx:id="tableView_colunm_catergory" prefWidth="192.0" text="Danh mục" />
+                            <TableColumn fx:id="tableView_colunm_productID" minWidth="0.0" prefWidth="150.0" text="Mã sản phẩm" />
+                              <TableColumn fx:id="tableView_colunm_productName" prefWidth="169.0" text="Tên sản phẩm" />
+                              <TableColumn fx:id="tableView_colunm_quanlity" prefWidth="151.0" text="Số lượng" />
+                              <TableColumn fx:id="tableView_colunm_price" minWidth="0.0" prefWidth="158.0" text="Giá($)" />
+                              <TableColumn fx:id="tableView_colunm_status" minWidth="0.0" prefWidth="249.0" text="Trạng thái" />
                           </columns>
                         </TableView>
                      </children>
@@ -277,87 +277,87 @@
                         <AnchorPane layoutY="376.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="376.0">
                            <children>
                               <TextField fx:id="text_employeeSearch" layoutX="777.0" layoutY="19.0" onAction="#employeeSearch" prefHeight="32.0" prefWidth="275.0" promptText="Search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="14.0" layoutY="22.0" prefHeight="18.0" prefWidth="76.0" text="Employee_Id:">
+                              <Label layoutX="14.0" layoutY="22.0" prefHeight="18.0" prefWidth="89.0" text="Nhân viên _Id:" AnchorPane.rightAnchor="967.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="67.0" text="Password:">
+                              <Label layoutX="14.0" layoutY="67.0" text="Mật khẩu:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="967.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="106.0" text="First Name:">
+                              <Label layoutX="14.0" layoutY="106.0" text="Họ:">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="440.0" layoutY="23.0" text="DateOfBirth:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="440.0" layoutY="23.0" text="Ngày sinh:" AnchorPane.leftAnchor="443.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="443.0" layoutY="68.0" prefHeight="18.0" prefWidth="67.0" text="Gender:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="443.0" layoutY="68.0" prefHeight="18.0" prefWidth="67.0" text="Giới tính:" AnchorPane.leftAnchor="443.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="text_employeeFirstName" layoutX="105.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
                               <TextField fx:id="text_employeeId" layoutX="105.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
-                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="730.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeSave" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Save" textFill="WHITE">
+                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="713.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeSave" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Lưu" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria Math" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="806.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeUpdate" prefHeight="38.0" prefWidth="76.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Cập nhật" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria Math" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="904.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeReset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Dặt lại" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria Math" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="992.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Xóa" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="818.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="152.0" text="Tên:">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="904.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeReset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
-                                 <font>
-                                    <Font name="Californian FB" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="992.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
-                                 <font>
-                                    <Font name="Californian FB" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Label layoutX="14.0" layoutY="152.0" text="Last Name:">
-                                 <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="text_employee_lastName" layoutX="105.0" layoutY="149.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="443.0" layoutY="108.0" text="Salary:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="443.0" layoutY="108.0" text="Lương:" AnchorPane.leftAnchor="443.0">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="text_employee_salary" layoutX="535.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
                               <PasswordField fx:id="text_employee_password" layoutX="105.0" layoutY="63.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <ComboBox fx:id="combochoose_gender" layoutX="535.0" layoutY="63.0" onAction="#employeeListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Choose" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="443.0" layoutY="154.0" text="Phone Number:">
+                              <ComboBox fx:id="combochoose_gender" layoutX="535.0" layoutY="63.0" onAction="#employeeListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Chọn" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="443.0" layoutY="154.0" text="Số điện thoại:">
                                  <font>
-                                    <Font name="Californian FB" size="14.0" />
+                                    <Font name="Cambria Math" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="text_employee_phone" layoutX="535.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <DatePicker fx:id="text_datePicker" layoutX="535.0" layoutY="17.0" prefHeight="30.0" prefWidth="200.0" promptText="Choose date" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <DatePicker fx:id="text_datePicker" layoutX="535.0" layoutY="17.0" prefHeight="30.0" prefWidth="200.0" promptText="Chọn ngày" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
                            </children>
                         </AnchorPane>
                         <TableView fx:id="employee_tableview" layoutX="88.0" layoutY="53.0" onMouseClicked="#employeeSelect" prefHeight="367.0" prefWidth="1070.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="employee_colunmId" prefWidth="130.0" text="Employee_Id" />
-                            <TableColumn fx:id="employee_colunm_password" prefWidth="91.0" text="Password" />
-                              <TableColumn fx:id="employee_colunm_firstName" prefWidth="98.0" text="First Name" />
-                              <TableColumn fx:id="employee_colunm_lastName" prefWidth="123.0" text="Last Name" />
-                              <TableColumn fx:id="employee_colunm_dateOfbirth" prefWidth="125.0" text="Date Of Birth" />
-                              <TableColumn fx:id="employee_colunm_gender" prefWidth="85.0" text="Gender" />
-                              <TableColumn fx:id="employee_colunm_startDate" prefWidth="117.0" text="Start Date" />
-                              <TableColumn fx:id="employee_colunm_salary" prefWidth="133.0" text="Salary" />
-                              <TableColumn fx:id="employee_colunm_phone" prefWidth="167.0" text="Phone Number" />
+                            <TableColumn fx:id="employee_colunmId" prefWidth="130.0" text="Nhân viên Id" />
+                            <TableColumn fx:id="employee_colunm_password" prefWidth="111.0" text="Mật khẩu" />
+                              <TableColumn fx:id="employee_colunm_firstName" prefWidth="90.0" text="Họ" />
+                              <TableColumn fx:id="employee_colunm_lastName" prefWidth="111.0" text="Tên" />
+                              <TableColumn fx:id="employee_colunm_dateOfbirth" prefWidth="125.0" text="Ngày sinh" />
+                              <TableColumn fx:id="employee_colunm_gender" prefWidth="85.0" text="Giới tính" />
+                              <TableColumn fx:id="employee_colunm_startDate" prefWidth="117.0" text="Ngày bắt đầu" />
+                              <TableColumn fx:id="employee_colunm_salary" prefWidth="133.0" text="Lương" />
+                              <TableColumn fx:id="employee_colunm_phone" prefWidth="167.0" text="Số điện thoại" />
                           </columns>
                         </TableView>
                      </children>
@@ -366,18 +366,18 @@
                      <children>
                         <TableView fx:id="tableView_customer" layoutX="28.0" layoutY="85.0" prefHeight="568.0" prefWidth="1066.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="85.0">
                           <columns>
-                            <TableColumn fx:id="tableView_ColunmCustomerID" prefWidth="149.0" text="Customer Id" />
-                              <TableColumn fx:id="tableView_ColunmCustomerCatergory" minWidth="0.0" prefWidth="179.0" text="Catergory" />
-                              <TableColumn fx:id="tableView_ColunmCustomerProName" minWidth="0.0" prefWidth="218.0" text="Product Name" />
-                              <TableColumn fx:id="tableView_ColunmCustomerQuanlity" minWidth="0.0" prefWidth="166.0" text="Quanlity" />
-                              <TableColumn fx:id="tableView_ColunmCustomerPrice" minWidth="0.0" prefWidth="158.0" text="Price($)" />
-                              <TableColumn fx:id="tableView_ColunmCustomerDate" minWidth="0.0" prefWidth="194.0" text="Date" />
+                            <TableColumn fx:id="tableView_ColunmCustomerID" prefWidth="149.0" text="Mã khách hàng" />
+                              <TableColumn fx:id="tableView_ColunmCustomerCatergory" minWidth="0.0" prefWidth="179.0" text="Danh mục" />
+                              <TableColumn fx:id="tableView_ColunmCustomerProName" minWidth="0.0" prefWidth="218.0" text="Tên sản phẩm" />
+                              <TableColumn fx:id="tableView_ColunmCustomerQuanlity" minWidth="0.0" prefWidth="166.0" text="Số lượng" />
+                              <TableColumn fx:id="tableView_ColunmCustomerPrice" minWidth="0.0" prefWidth="158.0" text="Giá($)" />
+                              <TableColumn fx:id="tableView_ColunmCustomerDate" minWidth="0.0" prefWidth="194.0" text="Ngày" />
                           </columns>
                         </TableView>
                         <AnchorPane layoutX="67.0" layoutY="6.0" prefHeight="74.0" prefWidth="1068.0" styleClass="white-bg1" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <TextField fx:id="text_customerSearch" alignment="BASELINE_LEFT" layoutX="160.0" layoutY="22.0" prefHeight="32.0" prefWidth="411.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" />
-                              <Hyperlink fx:id="hyperlink_editCustomer" layoutX="14.0" layoutY="27.0" text="Edit customer" textFill="#070606">
+                              <TextField fx:id="text_customerSearch" alignment="BASELINE_LEFT" layoutX="160.0" layoutY="22.0" prefHeight="32.0" prefWidth="411.0" promptText="Tìm kiếm" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" />
+                              <Hyperlink fx:id="hyperlink_editCustomer" layoutX="14.0" layoutY="27.0" text="Chỉnh sửa" textFill="#070606">
                                  <font>
                                     <Font name="Cambria Math" size="16.0" />
                                  </font>
