@@ -272,7 +272,7 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="employee_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="employee_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutY="376.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="376.0">
                            <children>
@@ -362,6 +362,38 @@
                         </TableView>
                      </children>
                   </AnchorPane>
+                  <AnchorPane fx:id="customer_form" layoutX="12.0" layoutY="10.0" prefHeight="436.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="221.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView layoutX="28.0" layoutY="85.0" prefHeight="568.0" prefWidth="1066.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="85.0">
+                          <columns>
+                            <TableColumn prefWidth="149.0" text="Customer Id" />
+                            <TableColumn minWidth="0.0" prefWidth="161.0" text="Receitp Id" />
+                              <TableColumn minWidth="0.0" prefWidth="179.0" text="Catergory" />
+                              <TableColumn minWidth="0.0" prefWidth="174.0" text="Product Name" />
+                              <TableColumn minWidth="0.0" prefWidth="103.0" text="Quanlity" />
+                              <TableColumn minWidth="0.0" prefWidth="151.0" text="Price($)" />
+                              <TableColumn minWidth="0.0" prefWidth="147.0" text="Date" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="67.0" layoutY="6.0" prefHeight="74.0" prefWidth="1068.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <TextField layoutX="314.0" layoutY="505.0" prefHeight="32.0" prefWidth="335.0" promptText="Search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
+                  <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="288.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="758.0" AnchorPane.topAnchor="505.0">
+                     <image>
+                        <Image url="@../images_admin/searching2.png" />
+                     </image>
+                  </ImageView>
+                  <Hyperlink alignment="CENTER_RIGHT" layoutX="59.0" layoutY="509.0" prefHeight="30.0" prefWidth="68.0" text="Edit" textFill="#030303">
+                     <font>
+                        <Font name="Californian FB" size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="59.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="507.0">
+                     <image>
+                        <Image url="@../images_admin/edit-file.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </center>
