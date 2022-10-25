@@ -20,6 +20,11 @@
     -fx-background-radius: 8px;
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
 }
+.white-bg1{
+    -fx-background-color:#fff;
+    -fx-background-radius: 2px;
+    -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
+}
 .nav_buttom{
     /*-fx-background-color: transparent;*/
     -fx-background-color: linear-gradient(to top right,#605575,#819a77,#899196);
@@ -33,14 +38,15 @@
 }
 .edit_buttom{
     /*-fx-background-color: transparent;*/
-    -fx-background-color: #af916b;
-    -fx-background-radius: 5px;
+    -fx-background-color: #ab8f8f;
+    /*linear-gradient(to top right,#605575,#819a77,#899196);*/
+    -fx-background-radius:13px;
     -fx-cursor: hand;
     /*#905e5e*/
 }
 .edit_buttom:hover{
     -fx-background-color: #6b7cad;
-        /*linear-gradient(to top right, #c5b8a7,#af916b);*/
+    /*linear-gradient(to top right, #c5b8a7,#af916b);*/
 
 }
 .sign_out{
@@ -69,7 +75,7 @@
 }
 .top-data3{
     -fx-background-color: #754f4f;
-        /*linear-gradient(to top right,#754f4f,#a8b3cc,#754f4f);*/
+    /*linear-gradient(to top right,#754f4f,#a8b3cc,#754f4f);*/
     -fx-background-radius: 8px;
 }
 .search{
@@ -141,6 +147,18 @@
 }
 .textField:focused{
     -fx-border-width:0px 0px 2px 0px;
+}
+.customarSearch{
+    -fx-background-color: transparent;
+    -fx-border-color:#000;
+    /*linear-gradient(to top right,#a1bb6d,#6d7cba);*/
+
+    -fx-border-width:0px 0px 1px 0px;
+
+}
+.customarSearch:focused{
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-border-color:linear-gradient(to top right,#23825e,#6d6e30);
 }
 
 .combobox{

@@ -368,18 +368,18 @@
                           <columns>
                             <TableColumn fx:id="tableView_ColunmCustomerID" prefWidth="149.0" text="Customer Id" />
                               <TableColumn fx:id="tableView_ColunmCustomerCatergory" minWidth="0.0" prefWidth="179.0" text="Catergory" />
-                              <TableColumn fx:id="tableView_ColunmCustomerProName" minWidth="0.0" prefWidth="174.0" text="Product Name" />
-                              <TableColumn fx:id="tableView_ColunmCustomerQuanlity" minWidth="0.0" prefWidth="103.0" text="Quanlity" />
-                              <TableColumn fx:id="tableView_ColunmCustomerPrice" minWidth="0.0" prefWidth="151.0" text="Price($)" />
-                              <TableColumn fx:id="tableView_ColunmCustomerDate" minWidth="0.0" prefWidth="308.0" text="Date" />
+                              <TableColumn fx:id="tableView_ColunmCustomerProName" minWidth="0.0" prefWidth="218.0" text="Product Name" />
+                              <TableColumn fx:id="tableView_ColunmCustomerQuanlity" minWidth="0.0" prefWidth="166.0" text="Quanlity" />
+                              <TableColumn fx:id="tableView_ColunmCustomerPrice" minWidth="0.0" prefWidth="158.0" text="Price($)" />
+                              <TableColumn fx:id="tableView_ColunmCustomerDate" minWidth="0.0" prefWidth="194.0" text="Date" />
                           </columns>
                         </TableView>
-                        <AnchorPane layoutX="67.0" layoutY="6.0" prefHeight="74.0" prefWidth="1068.0" styleClass="top-data3" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="67.0" layoutY="6.0" prefHeight="74.0" prefWidth="1068.0" styleClass="white-bg1" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <TextField layoutX="117.0" layoutY="22.0" prefHeight="32.0" prefWidth="411.0" promptText="Type to search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
-                              <Hyperlink layoutX="14.0" layoutY="24.0" prefHeight="23.0" prefWidth="43.0" text="Edit" textFill="WHITE">
+                              <TextField fx:id="text_customerSearch" alignment="BASELINE_LEFT" layoutX="160.0" layoutY="22.0" prefHeight="32.0" prefWidth="411.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" />
+                              <Hyperlink fx:id="hyperlink_editCustomer" layoutX="14.0" layoutY="27.0" text="Edit customer" textFill="#070606">
                                  <font>
-                                    <Font name="Californian FB Bold" size="16.0" />
+                                    <Font name="Cambria Math" size="16.0" />
                                  </font>
                               </Hyperlink>
                            </children></AnchorPane>
