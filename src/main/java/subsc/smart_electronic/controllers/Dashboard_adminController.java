@@ -41,8 +41,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.control.Hyperlink;
 import subsc.smart_electronic.connectViews.electronicConnectViews;
 import subsc.smart_electronic.db.database;
+import subsc.smart_electronic.models.customerData;
 import subsc.smart_electronic.models.employeeData;
 import subsc.smart_electronic.models.getData;
 import subsc.smart_electronic.models.productData;
@@ -234,6 +236,39 @@ public class Dashboard_adminController implements Initializable {
 
     @FXML
     private TableColumn<employeeData, String> employee_colunm_phone;
+    @FXML
+    private AnchorPane customer_form;
+
+    @FXML
+    private TableView<customerData> tableView_customer;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerID;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerReceipt;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerCatergory;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerProName;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerQuanlity;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerPrice;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerDate;
+
+    @FXML
+    private TextField customerSearch;
+
+    @FXML
+    private Hyperlink eidt_hyperlink;
+
     private Connection conn;
     private ResultSet resultSet;
     private PreparedStatement preparedStatement;
@@ -659,6 +694,42 @@ public class Dashboard_adminController implements Initializable {
         text_employee_phone.setText(employeeD.getPhoneNumber());
     }
 
+    public ObservableList<customerData> customerListData() {
+        ObservableList<customerData> custList = FXCollections.observableArrayList();
+        String sql = "select *from customer";
+        conn = database.ConnectDB();
+        try {
+            customerData customer;
+            preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                customer = new customerData(resultSet.getString("customer_Id"),
+                        resultSet.getString("catergory"),
+                        resultSet.getString("productName"),
+                        resultSet.getInt("quanlity"),
+                        resultSet.getDouble("price"),
+                        resultSet.getDate("date"));
+                custList.add(customer);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return custList;
+    }
+    private ObservableList<customerData> addListCustomer;
+
+    public void showListCustomer() {
+        addListCustomer = customerListData();
+        tableView_ColunmCustomerID.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        tableView_ColunmCustomerCatergory.setCellValueFactory(new PropertyValueFactory<>("catergory"));
+        tableView_ColunmCustomerProName.setCellValueFactory(new PropertyValueFactory<>("producName"));
+        tableView_ColunmCustomerQuanlity.setCellValueFactory(new PropertyValueFactory<>("quanlity"));
+        tableView_ColunmCustomerPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        tableView_ColunmCustomerDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tableView_customer.setItems(addListCustomer);
+    }
+
     public ObservableList<productData> productListData() {
         ObservableList<productData> productList = FXCollections.observableArrayList();
         String sql = "select*from product";
@@ -759,11 +830,12 @@ public class Dashboard_adminController implements Initializable {
             dashboar_form.setVisible(true);
             product_form.setVisible(false);
             employee_form.setVisible(false);
-
+            customer_form.setVisible(false);
         } else if (event.getSource() == btn_product) {
             dashboar_form.setVisible(false);
             product_form.setVisible(true);
             employee_form.setVisible(false);
+            customer_form.setVisible(false);
             productclear();
             productShowData();
             productSearch();
@@ -772,10 +844,18 @@ public class Dashboard_adminController implements Initializable {
             dashboar_form.setVisible(false);
             product_form.setVisible(false);
             employee_form.setVisible(true);
+            customer_form.setVisible(false);
             employeeDatashow();
             employeeListStatusList();
             employeeSearch();
+        } else if (event.getSource() == btn_customer) {
+            dashboar_form.setVisible(false);
+            product_form.setVisible(false);
+            employee_form.setVisible(false);
+            customer_form.setVisible(true);
+            showListCustomer();
         }
+
     }
 
     public void close() {
@@ -823,6 +903,7 @@ public class Dashboard_adminController implements Initializable {
         employeeDatashow();
         employeeSearch();
         employeeListStatusList();
+        showListCustomer();
     }
 
 }

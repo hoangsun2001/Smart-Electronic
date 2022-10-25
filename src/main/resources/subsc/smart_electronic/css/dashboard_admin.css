@@ -31,6 +31,18 @@
     -fx-background-color: linear-gradient(to top right,#899196,#819a77,#605575);
 
 }
+.edit_buttom{
+    /*-fx-background-color: transparent;*/
+    -fx-background-color: #af916b;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    /*#905e5e*/
+}
+.edit_buttom:hover{
+    -fx-background-color: #6b7cad;
+        /*linear-gradient(to top right, #c5b8a7,#af916b);*/
+
+}
 .sign_out{
     -fx-background-color: transparent;
     -fx-cursor: hand;
@@ -55,6 +67,11 @@
     -fx-background-color: linear-gradient(to top right,#754f4f,#a8b3cc);
     -fx-background-radius: 8px;
 }
+.top-data3{
+    -fx-background-color: #754f4f;
+        /*linear-gradient(to top right,#754f4f,#a8b3cc,#754f4f);*/
+    -fx-background-radius: 8px;
+}
 .search{
     -fx-background-color: linear-gradient(to bottom ,#efefef,#eee);
     -fx-background-radius:4px;
@@ -74,6 +91,7 @@
 .search:focused{
     -fx-border-color:linear-gradient(to bottom right,#23825e,#6d6e30);
 }
+
 .btn-add{
     -fx-background-color:linear-gradient(to bottom right,#b4c581,#4c572c);
     -fx-background-radius:8px;
