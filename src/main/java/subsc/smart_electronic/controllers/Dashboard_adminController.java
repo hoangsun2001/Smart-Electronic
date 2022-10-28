@@ -114,10 +114,10 @@ public class Dashboard_adminController implements Initializable {
     private TextField product_search;
 
     @FXML
-    private TextField text_productName;
+    private TextField text_productModel;
 
     @FXML
-    private TextField text_productId;
+    private TextField text_productName;
 
     @FXML
     private TextField text_catergory;
@@ -127,8 +127,7 @@ public class Dashboard_adminController implements Initializable {
 
     @FXML
     private TextField text_quanlity;
-    @FXML
-    private ComboBox<?> product_status_choose;
+
     @FXML
     private Button btn_addProduct;
 
@@ -142,25 +141,61 @@ public class Dashboard_adminController implements Initializable {
     private Button btn_deleteProduct;
 
     @FXML
+    private TextField text_productType;
+
+    @FXML
+    private TextField text_productBrand;
+
+    @FXML
+    private DatePicker text_porductdatePicker;
+
+    @FXML
+    private TextField text_productInsur;
+
+    @FXML
+    private TextField text_productcontent;
+
+    @FXML
+    private TextField text_productColor;
+
+    @FXML
     private TableView<productData> product_tableVew;
 
     @FXML
-    private TableColumn<productData, String> tableView_colunm_catergory;
+    private TableColumn<productData, String> tableViewPro_colunm_cate;
 
     @FXML
-    private TableColumn<productData, String> tableView_colunm_productID;
+    private TableColumn<productData, String> tableViewPro_colunm_proName;
 
     @FXML
-    private TableColumn<productData, String> tableView_colunm_productName;
+    private TableColumn<productData, String> tableViewPro_colunm_model;
 
     @FXML
-    private TableColumn<productData, String> tableView_colunm_quanlity;
+    private TableColumn<productData, String> tableViewPro_colunm_quanlity;
 
     @FXML
     private TableColumn<productData, String> tableView_colunm_price;
 
     @FXML
-    private TableColumn<productData, String> tableView_colunm_status;
+    private TableColumn<productData, String> tableViewPro_colunm_type;
+
+    @FXML
+    private TableColumn<productData, String> tableViewPro_colunm_brand;
+
+    @FXML
+    private TableColumn<productData, String> tableViewPro_colunm_date;
+
+    @FXML
+    private TableColumn<productData, String> tableViewPro_colunm_insur;
+
+    @FXML
+    private TableColumn<productData, String> tableViewPro_colunm_content;
+
+    @FXML
+    private TableColumn<productData, String> tableViewPro_colunm_color;
+
+    @FXML
+    private TableColumn<productData, String> tableViewPro_colunm_image;
 
     @FXML
     private AnchorPane employee_form;
@@ -275,35 +310,48 @@ public class Dashboard_adminController implements Initializable {
     private Statement statement;
 
     public void addProduct() {
-        String insertInto = "insert into product"
-                + "(catergory,product_id, product_name,quanlity,price,status)"
-                + "values(?,?,?,?,?,?)";
+        String insertInto = "insert into products"
+                + "(product_cate,product_name, product_model,product_quantity,product_price,"
+                + "product_type,product_brand,product_date_up,product_insurance,product_content,product_color)"
+                + "values(?,?,?,?,?,?,?,?,?,?,?)";
         conn = database.ConnectDB();
         try {
             if (text_catergory.getText().isEmpty()
-                    || text_productId.getText().isEmpty()
                     || text_productName.getText().isEmpty()
+                    || text_productModel.getText().isEmpty()
                     || text_quanlity.getText().isEmpty()
                     || text_price.getText().isEmpty()
-                    || product_status_choose.getSelectionModel().getSelectedItem() == null) {
+                    || text_productType.getText().isEmpty()
+                    || text_productBrand.getText().isEmpty()
+                    || text_productInsur.getText().isEmpty()
+                    || text_productColor.getText().isEmpty()
+                    || text_productcontent.getText().isEmpty()
+                    || text_porductdatePicker.getEditor().getText().isEmpty()) {
 
                 InforError("Please fill all blank fields", null, "Error message");
 
             } else {
-                String check = "select * from product where product_id='" + text_productId.getText() + "'";
+                String check = "select * from products where product_model='" + text_productModel.getText() + "'";
                 statement = conn.createStatement();
                 resultSet = statement.executeQuery(check);
 
                 if (resultSet.next()) {
-                    InforError("The product_Id " + text_productId.getText() + " already exist!", null, "Error message");
+                    InforError("The product_model " + text_productModel.getText() + " already exist!", null, "Error message");
                 } else {
+//                    Date date;
+//                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
                     preparedStatement = conn.prepareStatement(insertInto);
                     preparedStatement.setString(1, text_catergory.getText());
-                    preparedStatement.setString(2, text_productId.getText());
-                    preparedStatement.setString(3, text_productName.getText());
+                    preparedStatement.setString(2, text_productName.getText());
+                    preparedStatement.setString(3, text_productModel.getText());
                     preparedStatement.setString(4, text_quanlity.getText());
-                    preparedStatement.setString(5, text_price.getText());
-                    preparedStatement.setString(6, (String) product_status_choose.getSelectionModel().getSelectedItem());
+                    preparedStatement.setString(5, text_productType.getText());
+                    preparedStatement.setString(6, text_productcontent.getText());
+                    preparedStatement.setString(7, text_price.getText());
+                    preparedStatement.setString(8, text_productBrand.getText());
+                    preparedStatement.setString(9, text_porductdatePicker.getEditor().getText());
+                    preparedStatement.setString(10, text_productInsur.getText());
+                    preparedStatement.setString(11, text_productColor.getText());
 
                     preparedStatement.executeUpdate();
 
@@ -313,19 +361,25 @@ public class Dashboard_adminController implements Initializable {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void deleteProduct() {
-        String deleteproduct = "delete from product where product_id='" + text_productId.getText() + "'";
+        String deleteproduct = "delete from products where product_model='" + text_productModel.getText() + "'";
         conn = database.ConnectDB();
         try {
             if (text_catergory.getText().isEmpty()
-                    || text_productId.getText().isEmpty()
+                    || text_productModel.getText().isEmpty()
                     || text_productName.getText().isEmpty()
                     || text_quanlity.getText().isEmpty()
                     || text_price.getText().isEmpty()
-                    || product_status_choose.getSelectionModel().getSelectedItem() == null) {
+                    || text_productBrand.getText().isEmpty()
+                    || text_productColor.getText().isEmpty()
+                    || text_productType.getText().isEmpty()
+                    || text_productInsur.getText().isEmpty()
+                    || text_productcontent.getText().isEmpty()
+                    || text_porductdatePicker.getEditor().getText().isEmpty()) {
 
                 InforError("Please fill all blank fields", null, "Error message");
 
@@ -333,7 +387,7 @@ public class Dashboard_adminController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
                 alert.setHeaderText(null);
-                alert.setContentText("Are you sure that you want to delete the product_id " + text_productId.getText() + "?");
+                alert.setContentText("Are you sure that you want to delete the product_model " + text_productModel.getText() + "?");
                 Optional<ButtonType> optional = alert.showAndWait();
 
                 if (optional.get().equals(ButtonType.OK)) {
@@ -351,21 +405,30 @@ public class Dashboard_adminController implements Initializable {
     }
 
     public void producUpdate() {
-        String updateProduct = "update product set catergory='"
-                + text_catergory.getText() + "',product_name='"
-                + text_productName.getText() + "',quanlity='"
-                + text_quanlity.getText() + "',price='"
-                + text_price.getText() + "',status='"
-                + product_status_choose.getSelectionModel().getSelectedItem() + "'"
-                + "where product_id='" + text_productId.getText() + "'";
+        String updateProduct = "update products set product_cate='" + text_catergory.getText()
+                + "',product_name='" + text_productName.getText()
+                + "',product_quantity='" + text_quanlity.getText()
+                + "',product_price='" + text_price.getText()
+                + "',product_type='" + text_productType.getText()
+                + "',product_brand='" + text_productBrand.getText()
+                + "',product_date_up='" + text_porductdatePicker.getEditor().getText()
+                + "',product_insurance='" + text_productInsur.getText()
+                + "',product_content='" + text_productcontent.getText()
+                + "',product_color='" + text_productColor.getText()
+                + "where product_model='" + text_productModel.getText() + "'";
         conn = database.ConnectDB();
         try {
             if (text_catergory.getText().isEmpty()
-                    || text_productId.getText().isEmpty()
+                    || text_productModel.getText().isEmpty()
                     || text_productName.getText().isEmpty()
                     || text_quanlity.getText().isEmpty()
                     || text_price.getText().isEmpty()
-                    || product_status_choose.getSelectionModel().getSelectedItem() == null) {
+                    || text_productBrand.getText().isEmpty()
+                    || text_productColor.getText().isEmpty()
+                    || text_productType.getText().isEmpty()
+                    || text_productInsur.getText().isEmpty()
+                    || text_productcontent.getText().isEmpty()
+                    || text_porductdatePicker.getEditor().getText().isEmpty()) {
 
                 InforError("Please fill all blank fields", null, "Error message");
 
@@ -373,7 +436,7 @@ public class Dashboard_adminController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
                 alert.setHeaderText(null);
-                alert.setContentText("Are you sure that you want to update the product_id" + text_productId.getText() + "?");
+                alert.setContentText("Are you sure that you want to update the product_model" + text_productModel.getText() + "?");
                 Optional<ButtonType> optional = alert.showAndWait();
 
                 if (optional.get().equals(ButtonType.OK)) {
@@ -392,22 +455,27 @@ public class Dashboard_adminController implements Initializable {
 
     public void productclear() {
         text_catergory.setText("");
-        text_productId.setText("");
+        text_productModel.setText("");
         text_productName.setText("");
         text_quanlity.setText("");
         text_price.setText("");
-        product_status_choose.getSelectionModel().clearSelection();
+        text_productBrand.setText("");
+        text_productInsur.setText("");
+        text_productType.setText("");
+        text_porductdatePicker.getEditor().setText("");
+        text_productcontent.setText("");
+        text_productColor.setText("");
     }
-    private String[] statusList = {"Available", "Not available"};
-
-    public void productListStatusList() {
-        List<String> listS = new ArrayList<>();
-        for (String data : statusList) {
-            listS.add(data);
-        }
-        ObservableList sattusData = FXCollections.observableArrayList(listS);
-        product_status_choose.setItems(sattusData);
-    }
+//    private String[] statusList = {"Available", "Not available"};
+//    
+//    public void productListStatusList() {
+//        List<String> listS = new ArrayList<>();
+//        for (String data : statusList) {
+//            listS.add(data);
+//        }
+//        ObservableList sattusData = FXCollections.observableArrayList(listS);
+////        product_status_choose.setItems(sattusData);
+//    }
 
     public void productSearch() {
         FilteredList<productData> filter = new FilteredList<>(addproductList, e -> true);
@@ -421,7 +489,7 @@ public class Dashboard_adminController implements Initializable {
                 if (predicateProductData.getCatergory().toLowerCase().contains(searchKey)) {
                     return true;
 
-                } else if (predicateProductData.getProductId().toLowerCase().contains(searchKey)) {
+                } else if (predicateProductData.getProductModel().toLowerCase().contains(searchKey)) {
                     return true;
                 } else if (predicateProductData.getProductName().toLowerCase().contains(searchKey)) {
                     return true;
@@ -429,7 +497,17 @@ public class Dashboard_adminController implements Initializable {
                     return true;
                 } else if (predicateProductData.getPrice().toString().contains(searchKey)) {
                     return true;
-                } else if (predicateProductData.getStatus().toLowerCase().contains(searchKey)) {
+                } else if (predicateProductData.getColor().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateProductData.getType().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateProductData.getDate().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateProductData.getInsurance().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateProductData.getBrand().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateProductData.getContent().toLowerCase().contains(searchKey)) {
                     return true;
                 }
                 return false;
@@ -442,7 +520,7 @@ public class Dashboard_adminController implements Initializable {
     }
 
     public void employeeDelete() {
-        String employeeDelete = "delete from employee where employee_Id='"
+        String employeeDelete = "delete from employees where employee_Id='"
                 + text_employeeId.getText() + "'";
         conn = database.ConnectDB();
         try {
@@ -456,7 +534,7 @@ public class Dashboard_adminController implements Initializable {
                 InforError("Please fill all the blank fields!", null, "Error message");
 
             } else {
-                String check = "select *from employee where gender='" + combochoose_gender.getSelectionModel().getSelectedItem() + "'";
+                String check = "select *from employees where gender='" + combochoose_gender.getSelectionModel().getSelectedItem() + "'";
                 statement = conn.createStatement();
                 resultSet = statement.executeQuery(check);
 
@@ -482,7 +560,7 @@ public class Dashboard_adminController implements Initializable {
     }
 
     public void employeeUpdate() {
-        String upadateEmployee = "update employee set password='" + text_employee_password.getText()
+        String upadateEmployee = "update employees set password='" + text_employee_password.getText()
                 + "',firstname='" + text_employeeFirstName.getText()
                 + "',lastname='" + text_employee_lastName.getText()
                 + "',dateofbirth='" + text_datePicker.getEditor().getText()
@@ -527,7 +605,7 @@ public class Dashboard_adminController implements Initializable {
         Date date = new Date();
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-        String insertEmployee = "insert into employee(employee_Id,password,firstname,lastname,dateofbirth,gender,startdate,salary,phoneNumber)"
+        String insertEmployee = "insert into employees(employee_Id,password,firstname,lastname,dateofbirth,gender,startdate,salary,phoneNumber)"
                 + "values(?,?,?,?,?,?,?,?,?)";
         conn = database.ConnectDB();
         try {
@@ -542,7 +620,7 @@ public class Dashboard_adminController implements Initializable {
 
             } else {
 
-                String check = "select *from employee where employee_Id='" + text_employeeId.getText() + "'";
+                String check = "select *from employees where employee_Id='" + text_employeeId.getText() + "'";
                 statement = conn.createStatement();
                 resultSet = statement.executeQuery(check);
 
@@ -576,7 +654,7 @@ public class Dashboard_adminController implements Initializable {
 
     public ObservableList<employeeData> employeeListData() {
         ObservableList<employeeData> employeeData = FXCollections.observableArrayList();
-        String sql = "select*from employee";
+        String sql = "select*from employees";
         conn = database.ConnectDB();
         try {
             employeeData employeeD;
@@ -696,7 +774,7 @@ public class Dashboard_adminController implements Initializable {
 
     public ObservableList<customerData> customerListData() {
         ObservableList<customerData> custList = FXCollections.observableArrayList();
-        String sql = "select *from customer";
+        String sql = "select *from customers";
         conn = database.ConnectDB();
         try {
             customerData customer;
@@ -732,7 +810,7 @@ public class Dashboard_adminController implements Initializable {
 
     public ObservableList<productData> productListData() {
         ObservableList<productData> productList = FXCollections.observableArrayList();
-        String sql = "select*from product";
+        String sql = "select*from products";
         conn = database.ConnectDB();
         try {
             productData product;
@@ -740,12 +818,19 @@ public class Dashboard_adminController implements Initializable {
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                product = new productData(resultSet.getString("catergory"),
-                        resultSet.getString("product_id"),
+                product = new productData(resultSet.getString("product_cate"),
                         resultSet.getString("product_name"),
-                        resultSet.getInt("quanlity"),
-                        resultSet.getDouble("price"),
-                        resultSet.getString("status"));
+                        resultSet.getString("product_model"),
+                        resultSet.getInt("product_quantity"),
+                        resultSet.getDouble("product_price"),
+                        resultSet.getString("product_type"),
+                        resultSet.getString("product_brand"),
+                        resultSet.getDate("product_date_up"),
+                        resultSet.getString("product_insurance"),
+                        resultSet.getString("product_content"),
+                        resultSet.getString("product_color"),
+                        resultSet.getString("product_image"));
+
                 productList.add(product);
 
             }
@@ -762,13 +847,18 @@ public class Dashboard_adminController implements Initializable {
     public void productShowData() {
         addproductList = productListData();
 
-        tableView_colunm_catergory.setCellValueFactory(new PropertyValueFactory<>("catergory"));
-        tableView_colunm_productID.setCellValueFactory(new PropertyValueFactory<>("productId"));
-        tableView_colunm_productName.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        tableView_colunm_quanlity.setCellValueFactory(new PropertyValueFactory<>("quanlity"));
+        tableViewPro_colunm_cate.setCellValueFactory(new PropertyValueFactory<>("catergory"));
+        tableViewPro_colunm_proName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        tableViewPro_colunm_model.setCellValueFactory(new PropertyValueFactory<>("productModel"));
+        tableViewPro_colunm_quanlity.setCellValueFactory(new PropertyValueFactory<>("quanlity"));
         tableView_colunm_price.setCellValueFactory(new PropertyValueFactory<>("price"));
-        tableView_colunm_status.setCellValueFactory(new PropertyValueFactory<>("status"));
-
+        tableViewPro_colunm_type.setCellValueFactory(new PropertyValueFactory<>("type"));
+        tableViewPro_colunm_brand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        tableViewPro_colunm_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tableViewPro_colunm_insur.setCellValueFactory(new PropertyValueFactory<>("insurance"));
+        tableViewPro_colunm_content.setCellValueFactory(new PropertyValueFactory<>("content"));
+        tableViewPro_colunm_color.setCellValueFactory(new PropertyValueFactory<>("color"));
+        tableViewPro_colunm_image.setCellValueFactory(new PropertyValueFactory<>("image"));
         product_tableVew.setItems(addproductList);
     }
 
@@ -779,10 +869,16 @@ public class Dashboard_adminController implements Initializable {
 
         }
         text_catergory.setText(product.getCatergory());
-        text_productId.setText(product.getProductId());
+        text_productModel.setText(product.getProductModel());
         text_productName.setText(product.getProductName());
         text_quanlity.setText(String.valueOf(product.getQuanlity()));
         text_price.setText(String.valueOf(product.getPrice()));
+        text_productBrand.setText(product.getBrand());
+        text_productType.setText(product.getType());
+        text_productInsur.setText(product.getInsurance());
+        text_productColor.setText(product.getColor());
+        text_productcontent.setText(product.getContent());
+        text_porductdatePicker.getEditor().setText(String.valueOf(product.getDate()));
     }
 
     private double x = 0;
@@ -897,7 +993,7 @@ public class Dashboard_adminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         productShowData();
-        productListStatusList();
+//        productListStatusList();
         displayUsername();
         productSearch();
         employeeDatashow();

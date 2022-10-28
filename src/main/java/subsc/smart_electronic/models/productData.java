@@ -4,6 +4,8 @@
  */
 package subsc.smart_electronic.models;
 
+import java.util.Date;
+
 /**
  *
  * @author Admin
@@ -11,19 +13,31 @@ package subsc.smart_electronic.models;
 public class productData {
 
     private String catergory;
-    private String productId;
     private String productName;
+    private String productModel;
     private Integer quanlity;
     private Double price;
-    private String status;
+    private String type;
+    private String brand;
+    private Date date;
+    private String insurance;
+    private String content;
+    private String color;
+    private String image;
 
-    public productData(String catergory, String productId, String productName, Integer quanlity, Double price, String status) {
+    public productData(String catergory, String productName, String productModel, Integer quanlity, Double price, String type, String brand, Date date, String insurance, String content, String color, String image) {
         this.catergory = catergory;
-        this.productId = productId;
         this.productName = productName;
+        this.productModel = productModel;
         this.quanlity = quanlity;
         this.price = price;
-        this.status = status;
+        this.type = type;
+        this.brand = brand;
+        this.date = date;
+        this.insurance = insurance;
+        this.content = content;
+        this.color = color;
+        this.image = image;
     }
 
     public String getCatergory() {
@@ -34,20 +48,20 @@ public class productData {
         this.catergory = catergory;
     }
 
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
     public String getProductName() {
         return productName;
     }
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getProductModel() {
+        return productModel;
+    }
+
+    public void setProductModel(String productModel) {
+        this.productModel = productModel;
     }
 
     public Integer getQuanlity() {
@@ -66,12 +80,60 @@ public class productData {
         this.price = price;
     }
 
-    public String getStatus() {
-        return status;
+    public String getType() {
+        return type;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getInsurance() {
+        return insurance;
+    }
+
+    public void setInsurance(String insurance) {
+        this.insurance = insurance;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }

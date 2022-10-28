@@ -12,10 +12,10 @@ import java.sql.*;
  */
 public class database {
 
-    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=SmartElectric;encrypt=true;trustServerCertificate=true;";
+    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=smartelectric;encrypt=true;trustServerCertificate=true;";
 //    Connection conn;
     private static String UserName = "omega";
-    private static String password = "omega123";
+    private static String password = "123";
 
     public database() {
     }
