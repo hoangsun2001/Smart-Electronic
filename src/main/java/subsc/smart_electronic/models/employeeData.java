@@ -14,24 +14,28 @@ public class employeeData {
 
     private String employeeId;
     private String password;
-    private String firstName;
-    private String lastName;
-    private Date dateofBirth;
+    private String fullName;
+    private Date dateOfBirth;
     private String gender;
+    private String address;
+    private String dept;
     private Date startDate;
-    private Double Salary;
+    private Double salary;
     private String phoneNumber;
+    private String email;
 
-    public employeeData(String employeeId, String password, String firstName, String lastName, Date dateofBirth, String gender, Date startDate, Double Salary, String phoneNumber) {
+    public employeeData(String employeeId, String password, String fullName, Date dateOfBirth, String gender, String address, String dept, Date startDate, Double salary, String phoneNumber, String email) {
         this.employeeId = employeeId;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateofBirth = dateofBirth;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
+        this.address = address;
+        this.dept = dept;
         this.startDate = startDate;
-        this.Salary = Salary;
+        this.salary = salary;
         this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public String getEmployeeId() {
@@ -50,28 +54,20 @@ public class employeeData {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getDateofBirth() {
-        return dateofBirth;
-    }
-
-    public void setDateofBirth(Date dateofBirth) {
-        this.dateofBirth = dateofBirth;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getGender() {
@@ -80,6 +76,22 @@ public class employeeData {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
     }
 
     public Date getStartDate() {
@@ -91,11 +103,11 @@ public class employeeData {
     }
 
     public Double getSalary() {
-        return Salary;
+        return salary;
     }
 
-    public void setSalary(Double Salary) {
-        this.Salary = Salary;
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
     public String getPhoneNumber() {
@@ -106,8 +118,12 @@ public class employeeData {
         this.phoneNumber = phoneNumber;
     }
 
-    public Object getCatergory() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }

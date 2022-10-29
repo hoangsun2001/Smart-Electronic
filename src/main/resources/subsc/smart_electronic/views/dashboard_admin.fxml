@@ -197,7 +197,7 @@
                         </AreaChart>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="280.0" prefWidth="1132.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -242,7 +242,7 @@
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="971.0" layoutY="225.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="65.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Resset" textFill="WHITE">
+                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="971.0" layoutY="225.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="65.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
@@ -318,92 +318,112 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="employee_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="employee_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutY="376.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="376.0">
                            <children>
-                              <TextField fx:id="text_employeeSearch" layoutX="777.0" layoutY="19.0" onAction="#employeeSearch" prefHeight="32.0" prefWidth="275.0" promptText="Search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="14.0" layoutY="22.0" prefHeight="18.0" prefWidth="89.0" text="Nhân viên _Id:" AnchorPane.rightAnchor="967.0">
+                              <TextField fx:id="text_employeeSearch" layoutX="774.0" layoutY="8.0" onAction="#employeeSearch" prefHeight="25.0" prefWidth="340.0" promptText="Search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="14.0" layoutY="12.0" prefHeight="18.0" prefWidth="89.0" text="Employee_Id:" AnchorPane.rightAnchor="1029.0">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="67.0" text="Mật khẩu:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="967.0">
+                              <Label layoutX="14.0" layoutY="56.0" text="Password:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="967.0">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="106.0" text="Họ:">
+                              <Label layoutX="14.0" layoutY="95.0" prefHeight="18.0" prefWidth="72.0" text="Full_Name:">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="440.0" layoutY="23.0" text="Ngày sinh:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="435.0" layoutY="56.0" text="Star Date:" AnchorPane.leftAnchor="438.0">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="443.0" layoutY="68.0" prefHeight="18.0" prefWidth="67.0" text="Giới tính:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="14.0" layoutY="191.0" prefHeight="18.0" prefWidth="67.0" text="Gender:" AnchorPane.leftAnchor="14.0">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="text_employeeFirstName" layoutX="105.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
-                              <TextField fx:id="text_employeeId" layoutX="105.0" layoutY="18.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
-                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="713.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeSave" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Lưu" textFill="WHITE">
-                                 <font>
-                                    <Font name="Cambria Math" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="806.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeUpdate" prefHeight="38.0" prefWidth="76.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Cập nhật" textFill="WHITE">
-                                 <font>
-                                    <Font name="Cambria Math" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="904.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeReset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Dặt lại" textFill="WHITE">
-                                 <font>
-                                    <Font name="Cambria Math" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="992.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Xóa" textFill="WHITE">
+                              <TextField fx:id="text_employeeName" layoutX="105.0" layoutY="92.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <TextField fx:id="text_employee_Id" layoutX="105.0" layoutY="7.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
+                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="775.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeSave" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Save" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="14.0" layoutY="152.0" text="Tên:">
+                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="868.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeUpdate" prefHeight="38.0" prefWidth="76.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="966.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeReset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Resset" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="1054.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="14.0" layoutY="141.0" text="DateOfBirth:">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="text_employee_lastName" layoutX="105.0" layoutY="149.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="443.0" layoutY="108.0" text="Lương:" AnchorPane.leftAnchor="443.0">
+                              <Label layoutX="438.0" layoutY="12.0" text="Depart_ment:" AnchorPane.leftAnchor="438.0">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="text_employee_salary" layoutX="535.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <PasswordField fx:id="text_employee_password" layoutX="105.0" layoutY="63.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <ComboBox fx:id="combochoose_gender" layoutX="535.0" layoutY="63.0" onAction="#employeeListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Chọn" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="443.0" layoutY="154.0" text="Số điện thoại:">
+                              <TextField fx:id="text_employee_dept" layoutX="526.0" layoutY="7.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <PasswordField fx:id="text_employee_password" layoutX="105.0" layoutY="52.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <ComboBox fx:id="text_employee_combochoose_gender" layoutX="106.0" layoutY="186.0" onAction="#employeeListStatusList" prefHeight="30.0" prefWidth="200.0" promptText="Choose" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <DatePicker fx:id="text_employee_stardatePicker" layoutX="526.0" layoutY="50.0" prefHeight="30.0" prefWidth="200.0" promptText="Choose date" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <DatePicker fx:id="text_employeeBirthday_datePicker" layoutX="105.0" layoutY="137.0" prefHeight="30.0" prefWidth="200.0" promptText="Choose date" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="14.0" layoutY="232.0" text="Address:">
                                  <font>
-                                    <Font name="Cambria Math" size="14.0" />
+                                    <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="text_employee_phone" layoutX="535.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <DatePicker fx:id="text_datePicker" layoutX="535.0" layoutY="17.0" prefHeight="30.0" prefWidth="200.0" promptText="Chọn ngày" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <TextField fx:id="text_employee_address" layoutX="106.0" layoutY="227.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="437.0" layoutY="96.0" text="Salary:" AnchorPane.leftAnchor="438.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employee_salary" layoutX="526.0" layoutY="91.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="438.0" layoutY="139.0" text="Contact:" AnchorPane.leftAnchor="438.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employee_phone" layoutX="526.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="438.0" layoutY="188.0" text="Email:" AnchorPane.leftAnchor="438.0">
+                                 <font>
+                                    <Font name="Californian FB" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="text_employee_email" layoutX="526.0" layoutY="184.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
                            </children>
                         </AnchorPane>
                         <TableView fx:id="employee_tableview" layoutX="88.0" layoutY="53.0" onMouseClicked="#employeeSelect" prefHeight="367.0" prefWidth="1070.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="employee_colunmId" prefWidth="130.0" text="Nhân viên Id" />
-                            <TableColumn fx:id="employee_colunm_password" prefWidth="111.0" text="Mật khẩu" />
-                              <TableColumn fx:id="employee_colunm_firstName" prefWidth="90.0" text="Họ" />
-                              <TableColumn fx:id="employee_colunm_lastName" prefWidth="111.0" text="Tên" />
-                              <TableColumn fx:id="employee_colunm_dateOfbirth" prefWidth="125.0" text="Ngày sinh" />
-                              <TableColumn fx:id="employee_colunm_gender" prefWidth="85.0" text="Giới tính" />
-                              <TableColumn fx:id="employee_colunm_startDate" prefWidth="117.0" text="Ngày bắt đầu" />
-                              <TableColumn fx:id="employee_colunm_salary" prefWidth="133.0" text="Lương" />
-                              <TableColumn fx:id="employee_colunm_phone" prefWidth="167.0" text="Số điện thoại" />
+                            <TableColumn fx:id="employee_colunmId" prefWidth="77.99996948242188" text="Emoloyee-Id" />
+                            <TableColumn fx:id="employee_colunm_password" prefWidth="89.0" text="Password" />
+                              <TableColumn fx:id="employee_colunm_Name" prefWidth="121.0" text="Employee-Name" />
+                              <TableColumn fx:id="employee_colunm_birthday" prefWidth="102.0" text="DateOfBirth" />
+                              <TableColumn fx:id="employee_colunm_gender" prefWidth="68.0" text="Gender" />
+                              <TableColumn fx:id="employee_colunm_address" prefWidth="128.0" text="Address" />
+                              <TableColumn fx:id="employee_colunm_dept" prefWidth="97.0" text="Depart-ment" />
+                              <TableColumn fx:id="employee_colunm_startdate" prefWidth="97.0" text="Start Date" />
+                              <TableColumn fx:id="employee_colunm_salary" prefWidth="104.0" text="Salary" />
+                              <TableColumn fx:id="employee_colunm_phone" prefWidth="126.0" text="Contact" />
+                              <TableColumn fx:id="employee_colunm_email" prefWidth="121.0" text="Email" />
                           </columns>
                         </TableView>
                      </children>
