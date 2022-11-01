@@ -593,9 +593,6 @@ public class Dashboard_adminController implements Initializable {
                 InforError("Please fill all the blank fields!", null, "Error message");
 
             } else {
-                String check = "select *from employees where emp_gender='" + text_employee_combochoose_gender.getSelectionModel().getSelectedItem() + "'";
-                statement = conn.createStatement();
-                resultSet = statement.executeQuery(check);
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
@@ -610,8 +607,6 @@ public class Dashboard_adminController implements Initializable {
                     employeeDatashow();
                     employeeReset();
 
-                } else {
-                    InforError("Thess", null, "ss");
                 }
             }
         } catch (Exception e) {
@@ -671,7 +666,7 @@ public class Dashboard_adminController implements Initializable {
 //        Date date = new Date();
 //        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-        String insertEmployee = "insert into employees(emp_id,emp_name,emp_pwd,emp_birthday,emp_gender,emp_address,emp_dept,emp_startdate,emp_salary,emp_contact,emp_email)"
+        String insertEmployee = "insert into employees(emp_id,emp_pwd,emp_name,emp_birthday,emp_gender,emp_address,emp_dept,emp_startdate,emp_salary,emp_contact,emp_email)"
                 + "values(?,?,?,?,?,?,?,?,?,?,?)";
         conn = database.ConnectDB();
         try {
@@ -859,6 +854,156 @@ public class Dashboard_adminController implements Initializable {
         text_employee_email.setText(employeeD.getEmail());
     }
 
+    public void deleteCustomer() {
+        String deleteCust = "delete from customers where customer_id='" + text_customerId.getText() + "'";
+        conn = database.ConnectDB();
+        try {
+            if (text_customerName.getText().isEmpty()
+                    || text_customerAddress.getText().isEmpty()
+                    || text_customerPhone.getText().isEmpty()
+                    || text_customerPhone.getText().isEmpty()
+                    || text_customerEmail.getText().isEmpty()
+                    || text_customerCate.getText().isEmpty()
+                    || text_customerProName.getText().isEmpty()
+                    || text_customerQuanlity.getText().isEmpty()
+                    || text_customerTPrice.getText().isEmpty()
+                    || text_customerRank.getText().isEmpty()
+                    || text_customerId.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+            } else {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure that you want to delete the customer_Id " + text_customerId.getText() + "?");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    statement = conn.createStatement();
+                    statement.executeUpdate(deleteCust);
+
+                    InforBox("Deleted Successfully", null, "Information");
+                    showListCustomer();
+                    customerResset();
+
+                }
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    public void customerResset() {
+        text_customerId.setText("");
+        text_customerName.setText("");
+        text_customerAddress.setText("");
+        text_customerPhone.setText("");
+        text_customerEmail.setText("");
+        text_customerCate.setText("");
+        text_customerProName.setText("");
+        text_customerQuanlity.setText("");
+        text_customerTPrice.setText("");
+        text_customerRank.setText("");
+    }
+
+    public void customerSearch() {
+        FilteredList<customerData> filter = new FilteredList<>(addListCustomer, e -> true);
+        text_customerSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+
+            filter.setPredicate(predicateEmployeeData -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String searchKey = newValue.toLowerCase();
+                if (predicateEmployeeData.getCustomerId().toLowerCase().contains(searchKey)) {
+                    return true;
+
+                } else if (predicateEmployeeData.getCustomerName().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getAddress().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getCustomerPhone().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getEmail().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getCatergory().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getProductName().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getQuanlity().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getPrice().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateEmployeeData.getRank().toString().contains(searchKey)) {
+                    return true;
+                }
+                return false;
+            });
+            SortedList<customerData> sortedLists = new SortedList<>(filter);
+            sortedLists.comparatorProperty().bind(tableView_customer.comparatorProperty());
+            tableView_customer.setItems(sortedLists);
+        });
+
+    }
+
+    public void customerUpdate() {
+        String sqlcustomerUpdate = "update customers set customer_name='" + text_customerName.getText()
+                + "',customer_address='" + text_customerAddress.getText()
+                + "',customer_contact='" + text_customerPhone.getText()
+                + "',customer_email='" + text_customerEmail.getText()
+                + "',customer_cate='" + text_customerCate.getText()
+                + "',customer_prodName='" + text_customerProName.getText()
+                + "',customer_quanlity='" + text_customerQuanlity.getText()
+                + "',customer_totalPrice='" + text_customerTPrice.getText()
+                + "',customer_rank='" + text_customerRank.getText()
+                + "'where customer_id='" + text_customerId.getText() + "'";
+        conn = database.ConnectDB();
+        try {
+            if (text_customerName.getText().isEmpty()
+                    || text_customerAddress.getText().isEmpty()
+                    || text_customerPhone.getText().isEmpty()
+                    || text_customerPhone.getText().isEmpty()
+                    || text_customerEmail.getText().isEmpty()
+                    || text_customerCate.getText().isEmpty()
+                    || text_customerProName.getText().isEmpty()
+                    || text_customerQuanlity.getText().isEmpty()
+                    || text_customerTPrice.getText().isEmpty()
+                    || text_customerRank.getText().isEmpty()
+                    || text_customerId.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+            } else {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure that you want to update the customer_Id " + text_customerId.getText() + "?");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    statement = conn.createStatement();
+                    statement.executeUpdate(sqlcustomerUpdate);
+                    InforBox("Updated Successfully", null, "Information");
+                    showListCustomer();
+                    customerListData();
+                }
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    public void customerSelect() {
+        customerData custSelect = tableView_customer.getSelectionModel().getSelectedItem();
+        int num = tableView_customer.getSelectionModel().getSelectedIndex();
+        if ((num - 1) < -1) {
+            return;
+        }
+        text_customerId.setText(custSelect.getCustomerId());
+        text_customerName.setText(custSelect.getCustomerName());
+        text_customerAddress.setText(custSelect.getAddress());
+        text_customerPhone.setText(custSelect.getCustomerPhone());
+        text_customerEmail.setText(custSelect.getEmail());
+        text_customerCate.setText(custSelect.getCatergory());
+        text_customerProName.setText(custSelect.getProductName());
+        text_customerQuanlity.setText(String.valueOf(custSelect.getQuanlity()));
+        text_customerTPrice.setText(String.valueOf(custSelect.getPrice()));
+        text_customerRank.setText(String.valueOf(custSelect.getRank()));
+    }
+
     public ObservableList<customerData> customerListData() {
         ObservableList<customerData> custList = FXCollections.observableArrayList();
         String sql = "select *from customers";
@@ -1040,12 +1185,14 @@ public class Dashboard_adminController implements Initializable {
             employeeDatashow();
             employeeListStatusList();
             employeeSearch();
+            employeeReset();
         } else if (event.getSource() == btn_customer) {
             dashboar_form.setVisible(false);
             product_form.setVisible(false);
             employee_form.setVisible(false);
             customer_form.setVisible(true);
             showListCustomer();
+            customerResset();
         }
 
     }

@@ -27,7 +27,7 @@
 }
 .white-bg-customer{
     -fx-background-color:#fff;
-    -fx-background-radius: 4px;
+    -fx-background-radius: 3px;
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
 }
 .nav_buttom{
