@@ -294,10 +294,19 @@ public class Dashboard_adminController implements Initializable {
     private TableColumn<customerData, String> tableView_ColunmCustomerID;
 
     @FXML
-    private TableColumn<customerData, String> tableView_ColunmCustomerReceipt;
+    private TableColumn<customerData, String> tableView_ColunmCustomerName;
 
     @FXML
-    private TableColumn<customerData, String> tableView_ColunmCustomerCatergory;
+    private TableColumn<customerData, String> tableView_ColunmCustomerAddress;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerphone;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerEmail;
+
+    @FXML
+    private TableColumn<customerData, String> tableView_ColunmCustomerCate;
 
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerProName;
@@ -306,16 +315,52 @@ public class Dashboard_adminController implements Initializable {
     private TableColumn<customerData, String> tableView_ColunmCustomerQuanlity;
 
     @FXML
-    private TableColumn<customerData, String> tableView_ColunmCustomerPrice;
+    private TableColumn<customerData, String> tableView_ColunmCustomerTPrice;
 
     @FXML
-    private TableColumn<customerData, String> tableView_ColunmCustomerDate;
+    private TableColumn<customerData, String> tableView_ColunmCustomerRank;
 
     @FXML
-    private TextField customerSearch;
+    private TextField text_customerId;
 
     @FXML
-    private Hyperlink eidt_hyperlink;
+    private TextField text_customerName;
+
+    @FXML
+    private TextField text_customerAddress;
+
+    @FXML
+    private TextField text_customerPhone;
+
+    @FXML
+    private TextField text_customerEmail;
+
+    @FXML
+    private TextField text_customerTPrice;
+
+    @FXML
+    private TextField text_customerSearch;
+
+    @FXML
+    private Button btn_CustomerSave;
+
+    @FXML
+    private Button btn_CustomerClear;
+
+    @FXML
+    private Button btn_CustomerDelete;
+
+    @FXML
+    private TextField text_customerCate;
+
+    @FXML
+    private TextField text_customerProName;
+
+    @FXML
+    private TextField text_customerQuanlity;
+
+    @FXML
+    private TextField text_customerRank;
 
     private Connection conn;
     private ResultSet resultSet;
@@ -572,7 +617,7 @@ public class Dashboard_adminController implements Initializable {
         } catch (Exception e) {
         }
     }
-    
+
     public void employeeUpdate() {
         String upadateEmployee = "update employees set emp_pwd='" + text_employee_password.getText()
                 + "',emp_name='" + text_employeeName.getText()
@@ -824,12 +869,17 @@ public class Dashboard_adminController implements Initializable {
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                customer = new customerData(resultSet.getString("customer_Id"),
-                        resultSet.getString("catergory"),
-                        resultSet.getString("productName"),
-                        resultSet.getInt("quanlity"),
-                        resultSet.getDouble("price"),
-                        resultSet.getDate("date"));
+                customer = new customerData(resultSet.getString("customer_id"),
+                        resultSet.getString("customer_name"),
+                        resultSet.getString("customer_address"),
+                        resultSet.getString("customer_contact"),
+                        resultSet.getString("customer_email"),
+                        resultSet.getString("customer_cate"),
+                        resultSet.getString("customer_prodName"),
+                        resultSet.getInt("customer_quanlity"),
+                        resultSet.getDouble("customer_totalPrice"),
+                        resultSet.getInt("customer_rank")
+                );
                 custList.add(customer);
             }
         } catch (Exception e) {
@@ -842,11 +892,15 @@ public class Dashboard_adminController implements Initializable {
     public void showListCustomer() {
         addListCustomer = customerListData();
         tableView_ColunmCustomerID.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        tableView_ColunmCustomerCatergory.setCellValueFactory(new PropertyValueFactory<>("catergory"));
-        tableView_ColunmCustomerProName.setCellValueFactory(new PropertyValueFactory<>("producName"));
+        tableView_ColunmCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
+        tableView_ColunmCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        tableView_ColunmCustomerphone.setCellValueFactory(new PropertyValueFactory<>("customerPhone"));
+        tableView_ColunmCustomerEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        tableView_ColunmCustomerCate.setCellValueFactory(new PropertyValueFactory<>("catergory"));
+        tableView_ColunmCustomerProName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         tableView_ColunmCustomerQuanlity.setCellValueFactory(new PropertyValueFactory<>("quanlity"));
-        tableView_ColunmCustomerPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        tableView_ColunmCustomerDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tableView_ColunmCustomerTPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        tableView_ColunmCustomerRank.setCellValueFactory(new PropertyValueFactory<>("rank"));
         tableView_customer.setItems(addListCustomer);
     }
 

@@ -25,6 +25,11 @@
     -fx-background-radius: 2px;
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
 }
+.white-bg-customer{
+    -fx-background-color:#fff;
+    -fx-background-radius: 4px;
+    -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
+}
 .nav_buttom{
     /*-fx-background-color: transparent;*/
     -fx-background-color: linear-gradient(to top right,#605575,#819a77,#899196);
@@ -74,8 +79,7 @@
     -fx-background-radius: 8px;
 }
 .top-data3{
-    -fx-background-color: #754f4f;
-    /*linear-gradient(to top right,#754f4f,#a8b3cc,#754f4f);*/
+    -fx-background-color:linear-gradient(to top right,#568979,#90a1b5);
     -fx-background-radius: 8px;
 }
 .search{
@@ -141,12 +145,14 @@
 
 .textField{
     -fx-background-color: transparent;
-    -fx-border-color:linear-gradient(to top right,#64522c,#a8962b);
+    -fx-border-color:#000;
+        /*linear-gradient(to top right,#64522c,#a8962b);*/
     -fx-border-width:0px 0px 1px 0px;
 
 }
 .textField:focused{
-    -fx-border-width:0px 0px 2px 0px;
+    /*-fx-border-width:0px 0px 2px 0px;*/
+     -fx-border-color:linear-gradient(to top right,#23825e,#6d6e30);
 }
 .customarSearch{
     -fx-background-color: transparent;

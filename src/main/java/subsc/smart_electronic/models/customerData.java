@@ -4,7 +4,6 @@
  */
 package subsc.smart_electronic.models;
 
-import java.util.Date;
 
 /**
  *
@@ -13,19 +12,27 @@ import java.util.Date;
 public class customerData {
 
     private String customerId;
+    private String customerName;
+    private String address;
+    private String customerPhone;
+    private String email;
     private String catergory;
-    private String producName;
+    private String productName;
     private Integer quanlity;
     private Double price;
-    private Date date;
+    private Integer rank;
 
-    public customerData(String customerId, String catergory, String producName, Integer quanlity, Double price, Date date) {
+    public customerData(String customerId, String customerName, String address, String customerPhone, String email, String catergory, String productName, Integer quanlity, Double price, Integer rank) {
         this.customerId = customerId;
+        this.customerName = customerName;
+        this.address = address;
+        this.customerPhone = customerPhone;
+        this.email = email;
         this.catergory = catergory;
-        this.producName = producName;
+        this.productName = productName;
         this.quanlity = quanlity;
         this.price = price;
-        this.date = date;
+        this.rank = rank;
     }
 
     public String getCustomerId() {
@@ -36,6 +43,38 @@ public class customerData {
         this.customerId = customerId;
     }
 
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
+
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getCatergory() {
         return catergory;
     }
@@ -44,12 +83,12 @@ public class customerData {
         this.catergory = catergory;
     }
 
-    public String getProducName() {
-        return producName;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProducName(String producName) {
-        this.producName = producName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Integer getQuanlity() {
@@ -68,15 +107,12 @@ public class customerData {
         this.price = price;
     }
 
-    public Date getDate() {
-        return date;
+    public Integer getRank() {
+        return rank;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
-
-   
-    
 
 }
