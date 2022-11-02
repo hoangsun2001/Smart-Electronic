@@ -4,6 +4,7 @@
  */
 package subsc.smart_electronic.controllers;
 
+import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.net.URL;
@@ -41,9 +42,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.scene.control.Hyperlink;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import subsc.smart_electronic.connectViews.electronicConnectViews;
 import subsc.smart_electronic.db.database;
+import subsc.smart_electronic.models.ReceiptData;
 import subsc.smart_electronic.models.customerData;
 import subsc.smart_electronic.models.employeeData;
 import subsc.smart_electronic.models.getData;
@@ -196,7 +200,14 @@ public class Dashboard_adminController implements Initializable {
 
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_image;
+    @FXML
+    private AnchorPane AnchonPaneImage;
 
+    @FXML
+    private ImageView productImage;
+
+    @FXML
+    private Button btn_productImage;
     @FXML
     private AnchorPane employee_form;
 
@@ -362,16 +373,68 @@ public class Dashboard_adminController implements Initializable {
     @FXML
     private TextField text_customerRank;
 
+    @FXML
+    private AnchorPane receipt_form;
+
+    @FXML
+    private TableView<ReceiptData> tableView_Receipt;
+
+    @FXML
+    private TableColumn<ReceiptData, String> tableView_ColumnReceiptID;
+
+    @FXML
+    private TableColumn<ReceiptData, String> tableView_ColumnReceiptCustID;
+
+    @FXML
+    private TableColumn<ReceiptData, String> tableView_ColumnDate;
+
+    @FXML
+    private TableColumn<ReceiptData, String> tableView_ColumnTPrice;
+
+    @FXML
+    private TableColumn<ReceiptData, String> tableView_ColumnDiscount;
+
+    @FXML
+    private TableColumn<ReceiptData, String> tableView_ColumnPaymentTpye;
+
+    @FXML
+    private TextField text_receiptId;
+
+    @FXML
+    private TextField text_receiptCustomerId;
+
+    @FXML
+    private TextField text_receiptSearch;
+
+    @FXML
+    private Button btn_receiptUpdate;
+
+    @FXML
+    private Button btn_receiptCrear;
+
+    @FXML
+    private Button btn_receiptDelete;
+
+    @FXML
+    private TextField text_receiptTPrice;
+
+    @FXML
+    private TextField text_receiptDiscount;
+
+    @FXML
+    private TextField text_receiptPayment;
+
     private Connection conn;
     private ResultSet resultSet;
     private PreparedStatement preparedStatement;
     private Statement statement;
+    private Image image;
 
     public void addProduct() {
         String insertInto = "insert into products"
                 + "(product_cate,product_name, product_model,product_quantity,product_price,"
-                + "product_type,product_brand,product_date_up,product_insurance,product_content,product_color)"
-                + "values(?,?,?,?,?,?,?,?,?,?,?)";
+                + "product_type,product_brand,product_date_up,product_insurance,product_content,product_color,product_image)"
+                + "values(?,?,?,?,?,?,?,?,?,?,?,?)";
         conn = database.ConnectDB();
         try {
             if (text_catergory.getText().isEmpty()
@@ -384,7 +447,8 @@ public class Dashboard_adminController implements Initializable {
                     || text_productInsur.getText().isEmpty()
                     || text_productColor.getText().isEmpty()
                     || text_productcontent.getText().isEmpty()
-                    || text_porductdatePicker.getEditor().getText().isEmpty()) {
+                    || text_porductdatePicker.getEditor().getText().isEmpty()
+                    || getData.path == null || getData.path == "") {
 
                 InforError("Please fill all blank fields", null, "Error message");
 
@@ -408,6 +472,10 @@ public class Dashboard_adminController implements Initializable {
                     preparedStatement.setString(9, text_productInsur.getText());
                     preparedStatement.setString(10, text_productcontent.getText());
                     preparedStatement.setString(11, text_productColor.getText());
+                    String url = getData.path;
+                    url = url.replace("\\", "/");
+
+                    preparedStatement.setString(12, url);
 
                     preparedStatement.executeUpdate();
 
@@ -418,6 +486,17 @@ public class Dashboard_adminController implements Initializable {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void productInsertImage() {
+        FileChooser openFile = new FileChooser();
+        File file = openFile.showOpenDialog(main_form.getScene().getWindow());
+        if (file != null) {
+            getData.path = file.getAbsolutePath();
+
+            image = new Image(file.toURI().toString(), 310, 200, false, true);
+            productImage.setImage(image);
         }
     }
 
@@ -461,6 +540,9 @@ public class Dashboard_adminController implements Initializable {
     }
 
     public void producUpdate() {
+        String url = getData.path;
+        url = url.replace("\\", "/");
+
         String updateProduct = "update products set product_cate='" + text_catergory.getText()
                 + "',product_name='" + text_productName.getText()
                 + "',product_quantity='" + text_quanlity.getText()
@@ -471,6 +553,7 @@ public class Dashboard_adminController implements Initializable {
                 + "',product_insurance='" + text_productInsur.getText()
                 + "',product_content='" + text_productcontent.getText()
                 + "',product_color='" + text_productColor.getText()
+                + "',product_image='" + url
                 + "'where product_model='" + text_productModel.getText() + "'";
         conn = database.ConnectDB();
         try {
@@ -521,6 +604,8 @@ public class Dashboard_adminController implements Initializable {
         text_porductdatePicker.getEditor().setText("");
         text_productcontent.setText("");
         text_productColor.setText("");
+        productImage.setImage(null);
+        getData.path = "";
     }
     private String[] statusList = {"Available", "Not available"};
 
@@ -1004,6 +1089,41 @@ public class Dashboard_adminController implements Initializable {
         text_customerRank.setText(String.valueOf(custSelect.getRank()));
     }
 
+    public ObservableList<ReceiptData> receiptListData() {
+        ObservableList<ReceiptData> receiptList = FXCollections.observableArrayList();
+        String sql = "select *from bills";
+        conn = database.ConnectDB();
+        try {
+            ReceiptData receiptD;
+            preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                receiptD = new ReceiptData(resultSet.getInt("bill_id"),
+                        resultSet.getInt("bill_customer_id"),
+                        resultSet.getDate("bill_date"),
+                        resultSet.getDouble("bill_total_payment"),
+                        resultSet.getDouble("bill_discount"),
+                        resultSet.getInt("payment_type"));
+                receiptList.add(receiptD);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return receiptList;
+    }
+    private ObservableList<ReceiptData> addListReceipt;
+
+    public void showReceiptList() {
+        addListReceipt = receiptListData();
+        tableView_ColumnReceiptID.setCellValueFactory(new PropertyValueFactory<>("billId"));
+        tableView_ColumnReceiptCustID.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        tableView_ColumnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tableView_ColumnTPrice.setCellValueFactory(new PropertyValueFactory<>("totalTprice"));
+        tableView_ColumnDiscount.setCellValueFactory(new PropertyValueFactory<>("discount"));
+        tableView_ColumnPaymentTpye.setCellValueFactory(new PropertyValueFactory<>("paymentTpye"));
+        tableView_Receipt.setItems(addListReceipt);
+    }
+
     public ObservableList<customerData> customerListData() {
         ObservableList<customerData> custList = FXCollections.observableArrayList();
         String sql = "select *from customers";
@@ -1120,6 +1240,10 @@ public class Dashboard_adminController implements Initializable {
         text_productColor.setText(product.getColor());
         text_productcontent.setText(product.getContent());
         text_porductdatePicker.getEditor().setText(String.valueOf(product.getDate()));
+        getData.path = product.getImage();
+        String url = "file:" + product.getImage();
+        image = new Image(url, 310, 200, false, true);
+        productImage.setImage(image);
     }
 
     private double x = 0;
@@ -1168,11 +1292,13 @@ public class Dashboard_adminController implements Initializable {
             product_form.setVisible(false);
             employee_form.setVisible(false);
             customer_form.setVisible(false);
+            receipt_form.setVisible(false);
         } else if (event.getSource() == btn_product) {
             dashboar_form.setVisible(false);
             product_form.setVisible(true);
             employee_form.setVisible(false);
             customer_form.setVisible(false);
+            receipt_form.setVisible(false);
             productclear();
             productShowData();
             productSearch();
@@ -1182,6 +1308,7 @@ public class Dashboard_adminController implements Initializable {
             product_form.setVisible(false);
             employee_form.setVisible(true);
             customer_form.setVisible(false);
+            receipt_form.setVisible(false);
             employeeDatashow();
             employeeListStatusList();
             employeeSearch();
@@ -1191,8 +1318,15 @@ public class Dashboard_adminController implements Initializable {
             product_form.setVisible(false);
             employee_form.setVisible(false);
             customer_form.setVisible(true);
+            receipt_form.setVisible(false);
             showListCustomer();
             customerResset();
+        } else if (event.getSource() == btn_reciept) {
+            dashboar_form.setVisible(false);
+            product_form.setVisible(false);
+            employee_form.setVisible(false);
+            customer_form.setVisible(false);
+            receipt_form.setVisible(true);
         }
 
     }
@@ -1243,6 +1377,7 @@ public class Dashboard_adminController implements Initializable {
         employeeSearch();
         employeeListStatusList();
         showListCustomer();
+        showReceiptList();
     }
 
 }
