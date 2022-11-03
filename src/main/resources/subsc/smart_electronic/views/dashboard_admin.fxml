@@ -216,7 +216,7 @@
                         </AreaChart>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="275.0" prefWidth="1124.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <children>
@@ -534,9 +534,9 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="receipt_form" layoutX="12.0" layoutY="10.0" prefHeight="436.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                  <AnchorPane fx:id="receipt_form" layoutX="12.0" layoutY="10.0" prefHeight="436.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
-                        <TableView fx:id="tableView_Receipt" layoutX="344.0" layoutY="32.0" onMouseClicked="#customerSelect" prefHeight="417.0" prefWidth="1124.0" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <TableView fx:id="tableView_Receipt" layoutX="344.0" layoutY="32.0" onMouseClicked="#receiptSelect" prefHeight="417.0" prefWidth="1124.0" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <columns>
                               <TableColumn fx:id="tableView_ColumnReceiptID" prefWidth="168.00003051757812" text="Receipt_Id" />
                               <TableColumn fx:id="tableView_ColumnReceiptCustID" minWidth="0.0" prefWidth="178.0" text="Customer_Id" />
@@ -565,10 +565,10 @@
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="text_receiptSearch" alignment="BASELINE_LEFT" layoutX="814.0" layoutY="10.0" onKeyTyped="#customerSearch" prefHeight="26.0" prefWidth="301.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="814.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
-                              <Button fx:id="btn_receiptUpdate" layoutX="878.0" layoutY="166.0" mnemonicParsing="false" onAction="#customerUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE" />
-                              <Button fx:id="btn_receiptCrear" layoutX="962.0" layoutY="166.0" mnemonicParsing="false" onAction="#customerResset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE" />
-                              <Button fx:id="btn_receiptDelete" layoutX="1045.0" layoutY="166.0" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
+                              <TextField fx:id="text_receiptSearch" alignment="BASELINE_LEFT" layoutX="814.0" layoutY="10.0" onAction="#receiptSearch" onKeyTyped="#customerSearch" prefHeight="26.0" prefWidth="301.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="814.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                              <Button fx:id="btn_receiptUpdate" layoutX="878.0" layoutY="166.0" mnemonicParsing="false" onAction="#receiptUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE" />
+                              <Button fx:id="btn_receiptCrear" layoutX="962.0" layoutY="166.0" mnemonicParsing="false" onAction="#ressetReceipt" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE" />
+                              <Button fx:id="btn_receiptDelete" layoutX="1045.0" layoutY="166.0" mnemonicParsing="false" onAction="#receiptDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
                               <Label layoutX="473.0" layoutY="15.0" text="Total Price:" AnchorPane.leftAnchor="473.0">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
@@ -587,7 +587,7 @@
                                  </font>
                               </Label>
                               <TextField fx:id="text_receiptPayment" layoutX="568.0" layoutY="102.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <DatePicker layoutX="108.0" layoutY="100.0" prefHeight="30.0" prefWidth="200.0" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
+                              <DatePicker fx:id="text_receiptDate" layoutX="108.0" layoutY="100.0" prefHeight="30.0" prefWidth="200.0" styleClass="combobox" stylesheets="@../css/dashboard_admin.css" />
                            </children>
                         </AnchorPane>
                      </children>

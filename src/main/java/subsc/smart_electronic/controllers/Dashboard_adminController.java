@@ -12,7 +12,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -423,6 +425,8 @@ public class Dashboard_adminController implements Initializable {
 
     @FXML
     private TextField text_receiptPayment;
+    @FXML
+    private DatePicker text_receiptDate;
 
     private Connection conn;
     private ResultSet resultSet;
@@ -648,6 +652,8 @@ public class Dashboard_adminController implements Initializable {
                 } else if (predicateProductData.getBrand().toLowerCase().contains(searchKey)) {
                     return true;
                 } else if (predicateProductData.getContent().toLowerCase().contains(searchKey)) {
+                    return true;
+                } else if (predicateProductData.getImage().toLowerCase().contains(searchKey)) {
                     return true;
                 }
                 return false;
@@ -1068,6 +1074,7 @@ public class Dashboard_adminController implements Initializable {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -1087,6 +1094,125 @@ public class Dashboard_adminController implements Initializable {
         text_customerQuanlity.setText(String.valueOf(custSelect.getQuanlity()));
         text_customerTPrice.setText(String.valueOf(custSelect.getPrice()));
         text_customerRank.setText(String.valueOf(custSelect.getRank()));
+    }
+    public void ressetReceipt(){
+        text_receiptId.setText("");
+        text_receiptCustomerId.setText("");
+        text_receiptDate.getEditor().setText("");
+        text_receiptTPrice.setText("");
+        text_receiptDiscount.setText("");
+        text_receiptPayment.setText("");
+    }
+
+    public void receiptDelete() {
+        String deleteReceipt = "delete from bills where bill_id='" + text_receiptId.getText() + "'";
+        conn = database.ConnectDB();
+        try {
+            if (text_receiptId.getText().isEmpty()
+                    || text_receiptCustomerId.getText().isEmpty()
+                    || text_receiptDate.getEditor().getText().isEmpty()
+                    || text_receiptTPrice.getText().isEmpty()
+                    || text_receiptDiscount.getText().isEmpty()
+                    || text_receiptPayment.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+            } else {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure that you want to delete the receipt_id " + text_receiptId.getText() + "?");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    statement = conn.createStatement();
+                    statement.executeUpdate(deleteReceipt);
+                    InforBox("Deleted Successfully", null, "Information");
+                    showReceiptList();
+                    ressetReceipt();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void receiptSearch() {
+        FilteredList<ReceiptData> filter = new FilteredList<>(addListReceipt, e -> true);
+        text_receiptSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+
+            filter.setPredicate(predicateReceiptData -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String searchKey = newValue.toLowerCase();
+                if (predicateReceiptData.getBillId().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateReceiptData.getCustomerId().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateReceiptData.getDate().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateReceiptData.getDiscount().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateReceiptData.getTotalTprice().toString().contains(searchKey)) {
+                    return true;
+                } else if (predicateReceiptData.getPaymentTpye().toString().contains(searchKey)) {
+                    return true;
+                }
+                return false;
+            });
+            SortedList<ReceiptData> sorted = new SortedList<>(filter);
+            sorted.comparatorProperty().bind(tableView_Receipt.comparatorProperty());
+            tableView_Receipt.setItems(sorted);
+        });
+
+    }
+
+    public void receiptUpdate() {
+
+        String sqlReceipt = "update bills set bill_date='" + text_receiptDate.getEditor().getText()
+                + "',bill_total_payment='" + text_receiptTPrice.getText()
+                + "',bill_discount='" + text_receiptDiscount.getText()
+                + "',payment_type='" + text_receiptPayment.getText()
+                + "'where bill_id='" + text_receiptId.getText()
+                + "'and bill_customer_id='" + text_receiptCustomerId.getText() + "'";
+        conn = database.ConnectDB();
+        try {
+
+            if (text_receiptId.getText().isEmpty()
+                    || text_receiptCustomerId.getText().isEmpty()
+                    || text_receiptDate.getEditor().getText().isEmpty()
+                    || text_receiptTPrice.getText().isEmpty()
+                    || text_receiptDiscount.getText().isEmpty()
+                    || text_receiptPayment.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+            } else {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure that you want to update receipt_id " + text_receiptId.getText() + "?");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    statement = conn.createStatement();
+                    statement.executeUpdate(sqlReceipt);
+                    InforBox("Updated Successfully", null, "Information");
+                    showReceiptList();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void receiptSelect() {
+        ReceiptData receiptD = tableView_Receipt.getSelectionModel().getSelectedItem();
+        int num = tableView_Receipt.getSelectionModel().getSelectedIndex();
+        if ((num - 1) < -1) {
+            return;
+        }
+        text_receiptId.setText(String.valueOf(receiptD.getBillId()));
+        text_receiptCustomerId.setText(String.valueOf(receiptD.getCustomerId()));
+        text_receiptDate.getEditor().setText(String.valueOf(receiptD.getDate()));
+        text_receiptTPrice.setText(String.valueOf(receiptD.getTotalTprice()));
+        text_receiptDiscount.setText(String.valueOf(receiptD.getDiscount()));
+        text_receiptPayment.setText(String.valueOf(receiptD.getPaymentTpye()));
     }
 
     public ObservableList<ReceiptData> receiptListData() {
@@ -1327,6 +1453,7 @@ public class Dashboard_adminController implements Initializable {
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(true);
+//            receiptSearch();
         }
 
     }
@@ -1378,6 +1505,7 @@ public class Dashboard_adminController implements Initializable {
         employeeListStatusList();
         showListCustomer();
         showReceiptList();
+        receiptSearch();
     }
 
 }
