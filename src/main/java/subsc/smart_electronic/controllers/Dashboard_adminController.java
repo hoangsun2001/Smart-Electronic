@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -47,6 +49,7 @@ import javafx.stage.StageStyle;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.util.StringConverter;
 import subsc.smart_electronic.connectViews.electronicConnectViews;
 import subsc.smart_electronic.db.database;
 import subsc.smart_electronic.models.ReceiptData;
@@ -1095,7 +1098,8 @@ public class Dashboard_adminController implements Initializable {
         text_customerTPrice.setText(String.valueOf(custSelect.getPrice()));
         text_customerRank.setText(String.valueOf(custSelect.getRank()));
     }
-    public void ressetReceipt(){
+
+    public void ressetReceipt() {
         text_receiptId.setText("");
         text_receiptCustomerId.setText("");
         text_receiptDate.getEditor().setText("");
@@ -1194,6 +1198,7 @@ public class Dashboard_adminController implements Initializable {
                     statement.executeUpdate(sqlReceipt);
                     InforBox("Updated Successfully", null, "Information");
                     showReceiptList();
+                    ressetReceipt();
                 }
             }
         } catch (Exception e) {
@@ -1454,6 +1459,7 @@ public class Dashboard_adminController implements Initializable {
             customer_form.setVisible(false);
             receipt_form.setVisible(true);
 //            receiptSearch();
+            ressetReceipt();
         }
 
     }
@@ -1506,6 +1512,7 @@ public class Dashboard_adminController implements Initializable {
         showListCustomer();
         showReceiptList();
         receiptSearch();
+
     }
 
 }
