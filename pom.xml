@@ -31,12 +31,7 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>11.2.1.jre18</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>18</version>
-            <type>jar</type>
-        </dependency>
+
     </dependencies>
     <build>
         <plugins>
