@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -26,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -1406,6 +1408,59 @@ public class Dashboard_adminController implements Initializable {
         }
     }
 
+    public void disPlayChartData() {
+        data_chart.getData().clear();
+
+        String sql = "select bill_date, sum(bill_total_payment)from bills group by bill_date order by (bill_date)asc ";
+        conn = database.ConnectDB();
+        try {
+            XYChart.Series chart = new XYChart.Series<>();
+            preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                chart.getData().add(new XYChart.Data<>(resultSet.getString(1), resultSet.getInt(2)));
+            }
+            data_chart.getData().add(chart);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void disPlayTodayIcome() {
+        Date date = new Date();
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        String sql = "select sum(bill_total_payment)as total_payment from bills where bill_date='" + sqlDate + "'";
+        conn = database.ConnectDB();
+        double sumT = 0;
+        try {
+            statement = conn.createStatement();
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                sumT = resultSet.getDouble("total_payment");
+            }
+            display_todayIcome.setText("$" + String.valueOf(sumT));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void disPlayEmployeeActive() {
+        String sql = "select count(id) as emp_id from employees";
+        conn = database.ConnectDB();
+        int emp = 0;
+        try {
+            statement = conn.createStatement();
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                emp = resultSet.getInt("emp_id");
+            }
+            display_employeeActive.setText(String.valueOf(emp));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void displayUsername() {
         display_username.setText(getData.AdminUsername);
     }
@@ -1417,6 +1472,9 @@ public class Dashboard_adminController implements Initializable {
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(false);
+            disPlayEmployeeActive();
+            disPlayTodayIcome();
+            disPlayChartData();
         } else if (event.getSource() == btn_product) {
             dashboar_form.setVisible(false);
             product_form.setVisible(true);
@@ -1453,6 +1511,7 @@ public class Dashboard_adminController implements Initializable {
             receipt_form.setVisible(true);
 //            receiptSearch();
             ressetReceipt();
+            showReceiptList();
         }
 
     }
@@ -1505,7 +1564,9 @@ public class Dashboard_adminController implements Initializable {
         showListCustomer();
         showReceiptList();
         receiptSearch();
-
+        disPlayEmployeeActive();
+        disPlayTodayIcome();
+        disPlayChartData();
     }
 
 }

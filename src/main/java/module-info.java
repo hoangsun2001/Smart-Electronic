@@ -5,6 +5,8 @@ module subsc.smart_electronic {
     requires java.base;
     requires fontawesomefx;
     requires com.microsoft.sqlserver.jdbc;
+    requires jasperreports;
+    
     
 
     opens subsc.smart_electronic to javafx.fxml;

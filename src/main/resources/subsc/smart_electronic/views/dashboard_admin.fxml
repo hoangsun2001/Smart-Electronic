@@ -124,7 +124,7 @@
          <center>
             <AnchorPane prefHeight="550.0" prefWidth="769.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="dashboar_form" layoutX="130.0" layoutY="229.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="dashboar_form" layoutX="130.0" layoutY="229.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="156.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -142,7 +142,7 @@
                                     </ImageView>
                                     <Label fx:id="display_employeeActive" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="193.0" text="0" textFill="WHITE" AnchorPane.rightAnchor="6.0">
                                        <font>
-                                          <Font name="Cambria Math" size="14.0" />
+                                          <Font name="Californian FB" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -161,7 +161,7 @@
                                     </ImageView>
                                     <Label fx:id="display_todayIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="231.0" text="0:0đ" textFill="WHITE" AnchorPane.rightAnchor="6.0">
                                        <font>
-                                          <Font name="Cambria Math" size="14.0" />
+                                          <Font name="Californian FB" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -180,7 +180,7 @@
                                     </ImageView>
                                     <Label fx:id="display_totalIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="232.0" text="0:0đ" textFill="WHITE" AnchorPane.rightAnchor="6.0">
                                        <font>
-                                          <Font name="Cambria Math" size="14.0" />
+                                          <Font name="Californian FB" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -199,16 +199,16 @@
                                     </ImageView>
                                     <Label fx:id="display_yearIcome" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="6.0" prefHeight="18.0" prefWidth="231.0" text="0:0đ" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="6.0">
                                        <font>
-                                          <Font name="Cambria Math" size="14.0" />
+                                          <Font name="Californian FB" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AreaChart fx:id="data_chart" layoutX="10.0" layoutY="209.0" prefHeight="340.0" prefWidth="1112.0" title="Icome Chart Data" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                        <AreaChart fx:id="data_chart" layoutX="14.0" layoutY="227.0" prefHeight="398.0" prefWidth="1122.0" title="Icome Chart Data" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
                           <xAxis>
-                            <CategoryAxis prefHeight="0.0" prefWidth="993.0" side="BOTTOM" />
+                            <CategoryAxis side="BOTTOM" />
                           </xAxis>
                           <yAxis>
                             <NumberAxis side="LEFT" />
@@ -216,7 +216,7 @@
                         </AreaChart>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="product_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="275.0" prefWidth="1124.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <children>
