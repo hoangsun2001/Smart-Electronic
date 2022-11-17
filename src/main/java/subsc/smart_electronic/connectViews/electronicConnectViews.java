@@ -13,7 +13,7 @@ public final class electronicConnectViews {
     public static String views = "/subsc/smart_electronic/views/";
     public static String Login = views + "loginForm.fxml";
     public static String admin_dashboard = views + "dashboard_admin.fxml";
+    public static String employee = views + "employee.fxml";
 //    public static String employee_dashboard = views + "employee_dashboard.fxml";
 
-    public static String myemployee = views + "myemployeeform.fxml";
 }

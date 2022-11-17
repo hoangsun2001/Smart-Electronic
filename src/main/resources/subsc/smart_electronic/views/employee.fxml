@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,10 +15,10 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="main_form" prefHeight="726.0" prefWidth="1332.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subsc.supermarket.controllers.Dashboard_adminController">
-    <stylesheets>
-        <URL value="@/subsc/supermarket/css/dashboard_admin.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" fx:id="main_form" prefHeight="726.0" prefWidth="1332.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subsc.smart_electronic.controllers.EmployeeController">
+<!--    <stylesheets>
+        <URL value="@/subsc/smart_electronic.css" />
+    </stylesheets>-->
    <children>
       <BorderPane layoutX="91.0" layoutY="106.0" prefHeight="707.0" prefWidth="1332.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -31,6 +36,18 @@
                               <Font name="Californian FB Bold" size="20.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="1286.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images_admin/cancel%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1257.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images_admin/minimize.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btn_minimize" layoutX="1253.0" layoutY="16.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" />
+                        <Button fx:id="btn_close" layoutX="1290.0" layoutY="13.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" />
                      </children>
                   </AnchorPane>
                </children>
@@ -39,12 +56,12 @@
          <left>
             <AnchorPane prefHeight="651.0" prefWidth="258.0" styleClass="nav_form" stylesheets="@../css/general_css.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Tính năng 01" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
+                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Purchase" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Label layoutX="68.0" layoutY="151.0" text="Welcome nhân viên" textFill="WHITE">
+                  <Label layoutX="102.0" layoutY="152.0" text="Welcome" textFill="WHITE">
                      <font>
                         <Font name="Californian FB Bold" size="13.0" />
                      </font>
@@ -60,17 +77,7 @@
                         <Image url="@../gerneral_Images/screenshot_1665806738-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Tính năng 02" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
-                     <font>
-                        <Font name="Californian FB Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Tính năng 03" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
-                     <font>
-                        <Font name="Californian FB Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Tính năng 03" textFill="WHITE" AnchorPane.leftAnchor="14.0">
+                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Receipt" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
@@ -80,12 +87,7 @@
                         <Image url="@../gerneral_Images/sou-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/general_css.css" text="Tính năng 04" textFill="WHITE" AnchorPane.leftAnchor="14.0">
-                     <font>
-                        <Font name="Californian FB Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="17.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="125.0" styleClass="sign_out" stylesheets="@../css/general_css.css" text="        Đăng xuất" textFill="WHITE">
+                  <Button layoutX="17.0" layoutY="598.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" styleClass="sign_out" stylesheets="@../css/general_css.css" text="        Đăng xuất" textFill="WHITE">
                      <font>
                         <Font name="Californian FB" size="15.0" />
                      </font>
@@ -96,7 +98,120 @@
          <center>
             <AnchorPane prefHeight="550.0" prefWidth="769.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="form_quản_lý_kho" layoutY="1.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/general_css.css" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="1.0" />
+                  <AnchorPane fx:id="employeeform" layoutY="1.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/general_css.css" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <TableView fx:id="tbl_order" prefHeight="220.0" prefWidth="1079.0">
+                          <columns>
+                            <TableColumn fx:id="column_customer_id" prefWidth="73.60000455379486" text="customer_id" />
+                            <TableColumn fx:id="column_customer_name" prefWidth="96.00000762939453" text="customer_name" />
+                              <TableColumn fx:id="column_customer_address" prefWidth="109.59991455078125" text="customer_address" />
+                              <TableColumn fx:id="column_customer_contact" prefWidth="56.79998779296875" text="customer_contact" />
+                              <TableColumn fx:id="column_customer_email" minWidth="0.0" prefWidth="64.79998779296875" text="customer_email" />
+                              <TableColumn fx:id="column_customer_cate" minWidth="0.0" prefWidth="58.4000244140625" text="customer_cate" />
+                              <TableColumn fx:id="column_customer_prodName" prefWidth="73.60000610351562" text="customer_prodName" />
+                              <TableColumn fx:id="column_customer_model" prefWidth="68.79998779296875" text="customer_model" />
+                              <TableColumn fx:id="column_customer_brand" minWidth="0.0" prefWidth="69.60003662109375" text="customer_brand" />
+                              <TableColumn fx:id="column_customer_quantity" prefWidth="81.5999755859375" text="customer_quantity" />
+                              <TableColumn fx:id="column_customer_totalPrice" prefWidth="103.199951171875" text="customer_totalPrice" />
+                              <TableColumn fx:id="column_customer_discount" prefWidth="82.4000244140625" text="customer_discount" />
+                              <TableColumn fx:id="column_customer_date" prefWidth="89.5999755859375" text="customer_date" />
+                              <TableColumn fx:id="column_customer_delivery" prefWidth="53.5999755859375" text="customer_delivery" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btn_reprint" layoutX="961.0" layoutY="542.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="72.0" text="Reprint ">
+                           <font>
+                              <Font name="Californian FB Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btn_checkout" layoutX="828.0" layoutY="541.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="73.0" text="Check out" />
+                        <Label layoutX="52.0" layoutY="238.0" text="Category:" AnchorPane.rightAnchor="950.0">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="288.0" text="Product Name:" AnchorPane.rightAnchor="950.0">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="76.0" layoutY="334.0" text="Brand:" AnchorPane.rightAnchor="950.0">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="74.0" layoutY="381.0" text="Model:" AnchorPane.rightAnchor="950.0">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="52.0" layoutY="426.0" text="Quantity:" AnchorPane.rightAnchor="950.0">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="495.0" text="Discount Code:">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="text_discountcode" layoutX="148.0" layoutY="493.0" prefHeight="26.0" prefWidth="150.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <Label layoutX="804.0" layoutY="439.0" text="Total:">
+                           <font>
+                              <Font name="Californian FB" size="36.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="category" layoutX="148.0" layoutY="237.0" prefWidth="150.0" />
+                        <ComboBox fx:id="brand" layoutX="148.0" layoutY="333.0" prefWidth="150.0" />
+                        <ComboBox fx:id="productname" layoutX="148.0" layoutY="286.0" prefWidth="150.0" />
+                        <ComboBox fx:id="model" layoutX="148.0" layoutY="380.0" prefWidth="150.0" />
+                        <Spinner fx:id="quantity" layoutX="149.0" layoutY="425.0" />
+                        <Label layoutX="812.0" layoutY="369.0" text="Discount:">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="837.0" layoutY="287.0" text="VAT:">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="text_vat" layoutX="902.0" layoutY="285.0" prefHeight="26.0" prefWidth="150.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <TextField fx:id="text_discountmoney" layoutX="902.0" layoutY="357.0" prefHeight="26.0" prefWidth="150.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <TextField fx:id="text_total" layoutX="902.0" layoutY="412.0" prefHeight="61.0" prefWidth="150.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <Button fx:id="btn_reset" layoutX="485.0" layoutY="562.0" mnemonicParsing="false" onAction="#orderReset" prefHeight="50.0" prefWidth="55.0" text="Reset" />
+                        <Button fx:id="btn_delete" layoutX="606.0" layoutY="562.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="59.0" text="Delete" />
+                        <Button fx:id="btn_add" layoutX="365.0" layoutY="562.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="54.0" text="Add" />
+                        <Label layoutX="504.0" layoutY="236.0" text="Delivery Information">
+                           <font>
+                              <Font name="Californian FB" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="406.0" layoutY="276.0" text="Name: ">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="407.0" layoutY="332.0" text="Phone:">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="392.0" layoutY="392.0" text="Address:">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="411.0" layoutY="449.0" text="Note:">
+                           <font>
+                              <Font name="Californian FB" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="text_namecustomer" layoutX="463.0" layoutY="271.0" prefHeight="26.0" prefWidth="291.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <TextField fx:id="text_phonecustomer" layoutX="458.0" layoutY="332.0" prefHeight="26.0" prefWidth="298.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <TextField fx:id="text_addresscustomer" layoutX="457.0" layoutY="390.0" prefHeight="26.0" prefWidth="298.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <TextField fx:id="text_note" layoutX="455.0" layoutY="447.0" prefHeight="26.0" prefWidth="301.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
+                        <CheckBox fx:id="radio_delivery" layoutX="711.0" layoutY="546.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="86.0" text="Delivery" />
+                     </children></AnchorPane>
                </children>
             </AnchorPane>
          </center>

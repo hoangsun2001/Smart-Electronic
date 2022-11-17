@@ -4,6 +4,7 @@
  */
 package subsc.smart_electronic.models;
 
+
 /**
  *
  * @author Admin
