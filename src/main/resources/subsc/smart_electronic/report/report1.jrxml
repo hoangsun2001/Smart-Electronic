@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="566" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a2b6f119-d7d4-4d96-b480-3334c1161f7a">
+	<property name="ireport.zoom" value="2.1435888100000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="electricR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select *from customers inner join bills on customers.customer_id=bills.bill_customer_id where bills.bill_customer_id=$P{electricR}]]>
+	</queryString>
+	<field name="customer_id" class="java.lang.Integer"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="customer_address" class="java.lang.String"/>
+	<field name="customer_contact" class="java.lang.String"/>
+	<field name="customer_email" class="java.lang.String"/>
+	<field name="customer_cate" class="java.lang.String"/>
+	<field name="customer_prodName" class="java.lang.String"/>
+	<field name="customer_quanlity" class="java.lang.Integer"/>
+	<field name="customer_totalPrice" class="java.math.BigDecimal"/>
+	<field name="customer_rank" class="java.lang.Integer"/>
+	<field name="bill_id" class="java.lang.Integer"/>
+	<field name="bill_customer_id" class="java.lang.Integer"/>
+	<field name="bill_date" class="java.sql.Timestamp"/>
+	<field name="bill_total_payment" class="java.math.BigDecimal"/>
+	<field name="bill_discount" class="java.math.BigDecimal"/>
+	<field name="payment_type" class="java.lang.String"/>
+	<group name="customer_id">
+		<groupExpression><![CDATA[$F{customer_id}]]></groupExpression>
+	</group>
+	<group name="electricGroup">
+		<groupExpression><![CDATA[$F{customer_id}]]></groupExpression>
+		<groupFooter>
+			<band height="50">
+				<staticText>
+					<reportElement x="75" y="14" width="30" height="12" uuid="dfa3db7f-35f2-4514-aa32-1caa41ad9d03"/>
+					<textElement>
+						<font fontName="Baskerville Old Face"/>
+					</textElement>
+					<text><![CDATA[Total:$]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="105" y="14" width="95" height="12" uuid="fbdfbfbe-97b7-4bfa-bbac-7ab12364de59"/>
+					<textElement>
+						<font fontName="Baskerville Old Face"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bill_total_payment}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="40" width="186" height="1" uuid="1ff68ce8-9ef9-42fc-8177-5a41aedb9fd9"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="186" height="27" uuid="1585149b-c58b-464b-84e0-57e37c903254"/>
+				<textElement textAlignment="Center">
+					<font fontName="Baskerville Old Face" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Smart Electric Mall]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="0" width="38" height="10" uuid="7e9e9743-5b65-4fa0-99d9-a76e9fa44e6e"/>
+				<textElement>
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<text><![CDATA[Customer#:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="163" y="0" width="54" height="10" uuid="09b6138f-78ce-4b1f-b2ae-78fed4b9a45f"/>
+				<textElement>
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="186" height="1" uuid="96098615-9406-4007-a986-21a5b0c4b8ef"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="33" height="9" uuid="ef8d8432-46ef-458e-bdfd-ce8a0ab0651a"/>
+				<textElement>
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<text><![CDATA[Catergory]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="1" width="48" height="9" uuid="36d1133d-c325-485b-a476-e38223615cae"/>
+				<textElement>
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="1" width="28" height="9" uuid="b7509479-77d6-4f17-9e36-0b2f801e753f"/>
+				<textElement>
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<text><![CDATA[Quanlity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="1" width="59" height="12" uuid="fb5d56cd-b3ac-4148-b688-7152c292523c"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_cate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="1" width="82" height="12" uuid="699990ca-2b05-443e-b518-20472f57d6c9"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_prodName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="1" width="73" height="12" uuid="085dca3e-26c0-46f9-8c8d-1e5dc1cc5868"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Baskerville Old Face" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_quanlity}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="186" height="1" uuid="a82a811b-b56a-44a7-bad3-195b20f19c88"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -18,26 +18,25 @@ import subsc.smart_electronic.connectViews.electronicConnectViews;
 public class App extends Application {
 
 //    private static Scene scene;
-
-     private double x = 0;
+    private double x = 0;
     private double y = 0;
 
     @Override
     public void start(Stage stage) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource(electronicConnectViews.employee));
+        Parent root = FXMLLoader.load(getClass().getResource(electronicConnectViews.admin_dashboard));
         Scene scene = new Scene(root);
 
         root.setOnMousePressed((MouseEvent event) -> {
             x = event.getSceneX();
             y = event.getSceneY();
         });
-        root.setOnMouseDragged((MouseEvent event) -> {
-            stage.setX(event.getScreenX() - x);
-            stage.setY(event.getScreenY() - y);
-
-            stage.setOpacity(.8);
-        });
+//        root.setOnMouseDragged((MouseEvent event) -> {
+//            stage.setX(event.getScreenX() - x);
+//            stage.setY(event.getScreenY() - y);
+//
+//            stage.setOpacity(.8);
+//        });
         root.setOnMouseReleased((MouseEvent event) -> {
             stage.setOpacity(1);
         });
@@ -50,6 +49,5 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 
 }

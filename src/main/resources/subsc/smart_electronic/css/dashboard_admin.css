@@ -11,6 +11,7 @@
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
     -fx-background-radius: 1px;
 }
+/**/
 .semi_top_form{
     -fx-background-color: #fff;
     -fx-border-color: #b59696;
@@ -19,6 +20,12 @@
     -fx-background-color:#fff;
     -fx-background-radius: 8px;
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.4),3,0,0,0);
+}
+.import-image{
+    /*-fx-background-color: linear-gradient(to top right,#605575,#c8fbf9,#605575);*/
+    -fx-background-color:#605575;
+    -fx-cursor: hand;
+    -fx-background-radius: 2px;
 }
 .white-bg1{
     -fx-background-color:#fff;
@@ -82,6 +89,7 @@
     -fx-background-color:linear-gradient(to top right,#568979,#90a1b5);
     -fx-background-radius: 8px;
 }
+/*#568979*/
 .search{
     -fx-background-color: linear-gradient(to bottom ,#efefef,#eee);
     -fx-background-radius:4px;
@@ -146,13 +154,13 @@
 .textField{
     -fx-background-color: transparent;
     -fx-border-color:#000;
-        /*linear-gradient(to top right,#64522c,#a8962b);*/
+    /*linear-gradient(to top right,#64522c,#a8962b);*/
     -fx-border-width:0px 0px 1px 0px;
 
 }
 .textField:focused{
     /*-fx-border-width:0px 0px 2px 0px;*/
-     -fx-border-color:linear-gradient(to top right,#23825e,#6d6e30);
+    -fx-border-color:linear-gradient(to top right,#23825e,#6d6e30);
 }
 .customarSearch{
     -fx-background-color: transparent;

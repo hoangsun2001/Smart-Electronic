@@ -11,4 +11,5 @@ package subsc.smart_electronic.models;
 public class getData {
     public static String AdminUsername;
     public static String password;
+    public static String path;
 }

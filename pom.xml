@@ -27,11 +27,23 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
         <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>18</version>
+            <type>jar</type>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>11.2.1.jre18</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.20.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
