@@ -177,13 +177,12 @@ public class EmployeeController implements Initializable {
         brand.getItems().add("logitech");
         model.getItems().add("pro");
     }
-    
-    public void RequiredFieldValidator(){
-        
-        
+
+    public void RequiredFieldValidator() {
+
     }
 
-    public ObservableList<orderData> productListData() {
+    public ObservableList<orderData> orderListData() {
         ObservableList<orderData> orderList = FXCollections.observableArrayList();
         String sql = "select*from customers";
         conn = database.ConnectDB();
@@ -205,8 +204,8 @@ public class EmployeeController implements Initializable {
                         resultSet.getInt("customer_quatity"),
                         resultSet.getDouble("customer_totalPrice"),
                         resultSet.getDouble("customer_discount"));
-                        resultSet.getDate("customer_date");
-                        resultSet.getInt("customer_delivery");
+                resultSet.getDate("customer_date");
+                resultSet.getInt("customer_delivery");
 
                 orderList.add(order);
 
@@ -218,77 +217,69 @@ public class EmployeeController implements Initializable {
         return orderList;
 
     }
-    private ObservableList<orderData> addproductList;
+    private ObservableList<orderData> orderList;
 
-    public void productShowData() {
-        addproductList = productListData();
+    public void orderDataShow() {
+        orderList = orderListData();
 
-        column_customer_id.setCellValueFactory(new PropertyValueFactory<>("catergory"));
-        column_customer_name.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        column_customer_address.setCellValueFactory(new PropertyValueFactory<>("productModel"));
-        column_customer_contact.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        column_customer_email.setCellValueFactory(new PropertyValueFactory<>("price"));
-        column_customer_cate.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        column_customer_prodName.setCellValueFactory(new PropertyValueFactory<>("date"));
-        column_customer_model.setCellValueFactory(new PropertyValueFactory<>("color"));
-        column_customer_brand.setCellValueFactory(new PropertyValueFactory<>("price"));
-        column_customer_quantity.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        column_customer_totalPrice.setCellValueFactory(new PropertyValueFactory<>("date"));
-        column_customer_discount.setCellValueFactory(new PropertyValueFactory<>("color"));
-        column_customer_date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        column_customer_delivery.setCellValueFactory(new PropertyValueFactory<>("color"));
-        tbl_order.setItems(addproductList);
+        column_customer_id.setCellValueFactory(new PropertyValueFactory<>("customer_id"));
+        column_customer_name.setCellValueFactory(new PropertyValueFactory<>("customer_name"));
+        column_customer_address.setCellValueFactory(new PropertyValueFactory<>("customer_address"));
+        column_customer_contact.setCellValueFactory(new PropertyValueFactory<>("customer_contact"));
+        column_customer_email.setCellValueFactory(new PropertyValueFactory<>("customer_email"));
+        column_customer_cate.setCellValueFactory(new PropertyValueFactory<>("customer_cate"));
+        column_customer_prodName.setCellValueFactory(new PropertyValueFactory<>("customer_prodName"));
+        column_customer_model.setCellValueFactory(new PropertyValueFactory<>("customer_model"));
+        column_customer_brand.setCellValueFactory(new PropertyValueFactory<>("customer_brand"));
+        column_customer_quantity.setCellValueFactory(new PropertyValueFactory<>("customer_quantity"));
+        column_customer_totalPrice.setCellValueFactory(new PropertyValueFactory<>("customer_totalPrice"));
+        column_customer_discount.setCellValueFactory(new PropertyValueFactory<>("Discount"));
+        column_customer_date.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        column_customer_delivery.setCellValueFactory(new PropertyValueFactory<>("Delivery"));
+        tbl_order.setItems(orderList);
     }
-    
-//    public void orderAdd() {
-//        String insertcustomers = "insert into customers(customer_id,customer_name,customer_address,customer_contact,customer_email,customer_cate,customer_prodName,customer_model,customer_brand,customer_quantity,customer_totalPrice,customer_discount,customer_date,customer_delivery)"
-//                + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-//        conn = database.ConnectDB();
-//        try {
-//            if (category.getSelectionModel().getSelectedItem() == null
-//                    || productname.getSelectionModel().getSelectedItem() == null
-//                    || brand.getSelectionModel().getSelectedItem() == null
-//                    || model.getSelectionModel().getSelectedItem() == null
-//                    || quantity.getEditor().getText() == null
-//                    || text_namecustomer.getText().isEmpty()
-//                    || text_phonecustomer.getText().isEmpty()
-//                    || text_addresscustomer.getText().isEmpty() ){
-//                InforError("Please fill all the blank fields!", null, "Error message");
-//
-//            } else {
-//
-//                String check = "select * from customers where customer_name='" + text_namecustomer.getText() + "'";
-//                statement = conn.createStatement();
-//                resultSet = statement.executeQuery(check);
-//
-//                if (resultSet.next()) {
-//                    InforError("The customer_id " + customer_id.getText() + " already exist!", null, "Error message");
-//
-//                } else {
-//                    preparedStatement = conn.prepareStatement(insertcustomers);
-//                    preparedStatement.setString(1, category.getEditor());
-//                    preparedStatement.setString(2, productname.getEditor());
-//                    preparedStatement.setString(3, brand.getEditor());
-//                    preparedStatement.setString(4, model.getEditor().getText());
-//                    preparedStatement.setString(5, quantity.getEditor().getText());
-//                    preparedStatement.setString(6, text_discountcode.getText());
-//                    preparedStatement.setString(7, text_namecustomer.getText());
-//                    preparedStatement.setString(8, text_phonecustomer.getText());
-//                    preparedStatement.setString(9, text_addresscustomer.getText());
-//                    preparedStatement.setString(10, text_note.getText());
-//
-//                    preparedStatement.executeUpdate();
-//                    InforBox("Add successfully", null, "Information");
-//                    employeeListData();
-//                    employeeDatashow();
-//                    employeeReset();
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-    
+
+    public void orderAdd() {
+        String insertcustomers = "insert into customers(customer_id,customer_name,customer_address,customer_contact,customer_email,customer_cate,customer_prodName,customer_model,customer_brand,customer_quantity,customer_totalPrice,customer_discount,customer_date,customer_delivery)"
+                + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        conn = database.ConnectDB();
+        try {
+            if (category.getSelectionModel().getSelectedItem() == null
+                    || productname.getSelectionModel().getSelectedItem() == null
+                    || brand.getSelectionModel().getSelectedItem() == null
+                    || model.getSelectionModel().getSelectedItem() == null
+                    || quantity.getEditor().getText() == null
+                    || text_namecustomer.getText().isEmpty()
+                    || text_phonecustomer.getText().isEmpty()
+                    || text_addresscustomer.getText().isEmpty()) {
+                InforError("Please fill all the blank fields!", null, "Error message");
+
+            } else {
+
+                preparedStatement = conn.prepareStatement(insertcustomers);
+                preparedStatement.setString(1, category.getEditor().getText());
+                preparedStatement.setString(2, productname.getEditor().getText());
+                preparedStatement.setString(3, brand.getEditor().getText());
+                preparedStatement.setString(4, model.getEditor().getText());
+                preparedStatement.setString(5, quantity.getEditor().getText());
+                preparedStatement.setString(6, text_discountcode.getText());
+                preparedStatement.setString(7, text_namecustomer.getText());
+                preparedStatement.setString(8, text_phonecustomer.getText());
+                preparedStatement.setString(9, text_addresscustomer.getText());
+                preparedStatement.setString(10, text_note.getText());
+
+                preparedStatement.executeUpdate();
+                InforBox("Add successfully", null, "Information");
+                orderListData();
+                orderDataShow();
+                orderReset();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void orderReset() {
         category.getSelectionModel().clearSelection();
         productname.getSelectionModel().clearSelection();
@@ -319,9 +310,18 @@ public class EmployeeController implements Initializable {
         Stage stage = (Stage) main_form.getScene().getWindow();
         stage.setIconified(true);
     }
-    
+
     public void InforError(String message, String headerText, String title) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText(message);
+        alert.setHeaderText(headerText);
+        alert.setTitle(title);
+        alert.showAndWait();
+
+    }
+
+    public void InforBox(String message, String headerText, String title) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(message);
         alert.setHeaderText(headerText);
         alert.setTitle(title);
