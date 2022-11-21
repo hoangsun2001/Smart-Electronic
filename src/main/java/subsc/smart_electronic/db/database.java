@@ -34,7 +34,7 @@ import java.sql.*;
 //}
 public class database {
 
-    private static String urlConnection = "jdbc:sqlserver://ADMIN;databaseName=smartelectric;encrypt=true;trustServerCertificate=true;";
+    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=smartelectric;encrypt=true;trustServerCertificate=true";
     private static String UserName = "omega";
     private static String password = "123";
 
