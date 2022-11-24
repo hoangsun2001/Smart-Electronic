@@ -4,6 +4,8 @@
  */
 package subsc.smart_electronic.models;
 
+import java.util.Date;
+
 /**
  *
  * @author Admin
@@ -19,9 +21,10 @@ public class customerData {
     private String productName;
     private Integer quanlity;
     private Double price;
+    Date date;
     private Integer rank;
 
-    public customerData(String customerId, String customerName, String address, String customerPhone, String email, String catergory, String productName, Integer quanlity, Double price, Integer rank) {
+    public customerData(String customerId, String customerName, String address, String customerPhone, String email, String catergory, String productName, Integer quanlity, Double price, Date date, Integer rank) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.address = address;
@@ -31,6 +34,7 @@ public class customerData {
         this.productName = productName;
         this.quanlity = quanlity;
         this.price = price;
+        this.date = date;
         this.rank = rank;
     }
 
@@ -106,6 +110,14 @@ public class customerData {
         this.price = price;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public Integer getRank() {
         return rank;
     }
@@ -114,4 +126,5 @@ public class customerData {
         this.rank = rank;
     }
 
+   
 }

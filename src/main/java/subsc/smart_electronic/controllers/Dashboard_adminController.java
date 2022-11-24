@@ -49,6 +49,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import subsc.smart_electronic.connectViews.electronicConnectViews;
 import subsc.smart_electronic.db.database;
+import subsc.smart_electronic.models.IcomeDetail;
 import subsc.smart_electronic.models.ReceiptData;
 import subsc.smart_electronic.models.customerData;
 import subsc.smart_electronic.models.employeeData;
@@ -1320,6 +1321,7 @@ public class Dashboard_adminController implements Initializable {
                         resultSet.getString("customer_prodName"),
                         resultSet.getInt("customer_quanlity"),
                         resultSet.getDouble("customer_totalPrice"),
+                        resultSet.getDate("customer_date"),
                         resultSet.getInt("customer_rank")
                 );
                 custList.add(customer);
@@ -1344,6 +1346,38 @@ public class Dashboard_adminController implements Initializable {
         tableView_ColunmCustomerTPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         tableView_ColunmCustomerRank.setCellValueFactory(new PropertyValueFactory<>("rank"));
         tableView_customer.setItems(addListCustomer);
+    }
+
+    public ObservableList<IcomeDetail> icomeList() {
+        Date date = new Date();
+        java.sql.Date sqlY = new java.sql.Date(date.getTime());
+        LocalDate ld = sqlY.toLocalDate();
+        ObservableList<IcomeDetail> icomeListData = FXCollections.observableArrayList();
+        String sql = "select sum (customer_totalPrice) as customer_totalPrice from customers where customer_date='" + ld.getDayOfMonth() + "'";
+        conn = database.ConnectDB();
+        try {
+            IcomeDetail icomeDetail;
+            preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                icomeDetail = new IcomeDetail(resultSet.getDouble("customer_totalPrice"),
+                resultSet.getDate("customer_date"));
+                icomeListData.add(icomeDetail);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return icomeListData;
+    }
+    private ObservableList<IcomeDetail> Idetails;
+
+    public void IcomeShowData() {
+        Idetails=icomeList();
+        table_icome_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colun_icomedate.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
+        
     }
 
     public ObservableList<productData> productListData() {
@@ -1578,24 +1612,6 @@ public class Dashboard_adminController implements Initializable {
         display_username.setText(getData.AdminUsername);
     }
 
-//    public void hyperLinkToDe(ActionEvent event) {
-//        if (event.getSource() == linktoDIcome) {
-//            detail_icome_form.setVisible(true);
-//            dashboar_form.setVisible(false);
-//            product_form.setVisible(false);
-//            employee_form.setVisible(false);
-//            customer_form.setVisible(false);
-//            receipt_form.setVisible(false);
-//
-//        } else if (event.getSource() == link_backtoDashboard) {
-//            detail_icome_form.setVisible(false);
-//            dashboar_form.setVisible(true);
-//            product_form.setVisible(false);
-//            employee_form.setVisible(false);
-//            customer_form.setVisible(false);
-//            receipt_form.setVisible(false);
-//        }
-//    }
     public void switchForm(ActionEvent event) {
         if (event.getSource() == btn_dashboard) {
             dashboar_form.setVisible(true);
