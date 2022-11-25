@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -20,7 +19,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="main_form" prefHeight="1000.0" prefWidth="1700.0" styleClass="mainFxmlClass" stylesheets="@../css/dashboard_admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subsc.smart_electronic.controllers.Dashboard_adminController">
+<AnchorPane id="AnchorPane" fx:id="main_form" prefHeight="726.0" prefWidth="1364.0" styleClass="mainFxmlClass" stylesheets="@../css/dashboard_admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subsc.smart_electronic.controllers.Dashboard_adminController">
    <children>
       <BorderPane layoutX="91.0" layoutY="106.0" prefHeight="707.0" prefWidth="1332.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -38,83 +37,78 @@
                               <Font name="Californian FB" size="21.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="1291.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="1291.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="3.0">
                            <image>
-                              <Image url="@../images_admin/cancel%20(1).png" />
+                              <Image url="@../images_admin/cross.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1250.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="6.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1250.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="7.0">
                            <image>
                               <Image url="@../images_admin/minimize.png" />
                            </image>
                         </ImageView>
-                        <Hyperlink fx:id="linktoDIcome" layoutX="548.0" layoutY="21.0" onAction="#switchForm" prefHeight="24.0" prefWidth="119.0" stylesheets="@../css/dashboard_admin.css" text="View detail Icome" textFill="WHITE">
+                        <Hyperlink fx:id="hyper_toDetail" layoutX="548.0" layoutY="21.0" onAction="#switchForm" prefHeight="24.0" prefWidth="119.0" stylesheets="@../css/dashboard_admin.css" text="View detail Icome" textFill="WHITE">
                            <font>
                               <Font name="Californian FB" size="14.0" />
                            </font>
                         </Hyperlink>
-                        <Button fx:id="btn_minimize" layoutX="1686.0" layoutY="6.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" />
-                        <Button fx:id="btn_close" layoutX="1331.0" layoutY="6.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" AnchorPane.rightAnchor="2.0" />
+                        <Button fx:id="btn_minimize" layoutX="1279.0" layoutY="6.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="31.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" />
+                        <Button fx:id="btn_close" layoutX="1331.0" layoutY="6.0" mnemonicParsing="false" onAction="#close" prefHeight="28.0" prefWidth="29.0" styleClass="btn-top" stylesheets="@../css/dashboard_admin.css" AnchorPane.rightAnchor="4.0" />
                      </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
          </top>
          <left>
-            <AnchorPane fx:id="nav_view" prefHeight="931.0" prefWidth="309.0" styleClass="top_form" stylesheets="@../css/dashboard_admin.css" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="657.0" prefWidth="226.0" styleClass="top_form" stylesheets="@../css/dashboard_admin.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn_dashboard" alignment="CENTER" layoutX="22.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Dashboard" textFill="#f8f8f8" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+                  <Button fx:id="btn_dashboard" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Dashboard" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Label layoutX="103.0" layoutY="154.0" text="Welcome Admin" textFill="WHITE">
+                  <Label layoutX="63.0" layoutY="150.0" text="Welcome Admin" textFill="WHITE">
                      <font>
                         <Font name="Californian FB Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="display_username" alignment="CENTER" layoutX="67.0" layoutY="183.0" prefHeight="22.0" prefWidth="176.0" text="Hoang Ngoc Son" textFill="WHITE">
+                  <Label fx:id="display_username" alignment="CENTER" layoutX="27.0" layoutY="179.0" prefHeight="22.0" prefWidth="176.0" text="Hoang Ngoc Son" textFill="WHITE">
                      <font>
                         <Font name="Californian FB Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Line endX="70.0" layoutX="169.0" layoutY="216.0" startX="-100.0" stroke="#c3b5ff" />
-                  <ImageView fitHeight="113.0" fitWidth="133.0" layoutX="118.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="70.0" layoutX="129.0" layoutY="212.0" startX="-100.0" stroke="#c3b5ff" />
+                  <ImageView fitHeight="94.0" fitWidth="74.0" layoutX="78.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images_admin/screenshot_1665806738-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btn_product" alignment="CENTER" layoutX="22.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Product" textFill="#f8f8f8" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+                  <Button fx:id="btn_product" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Product" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_employee" alignment="CENTER" layoutX="22.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Employees" textFill="#f8f8f8" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+                  <Button fx:id="btn_employee" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Employees" textFill="#f8f8f8" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_customer" alignment="CENTER" layoutX="22.0" layoutY="399.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Customer" textFill="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+                  <Button fx:id="btn_customer" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Customer" textFill="WHITE" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="12.0" layoutY="876.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="14.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images_admin/sou-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btn_reciept" alignment="CENTER" layoutX="22.0" layoutY="449.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Receipt" textFill="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+                  <Button fx:id="btn_reciept" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Receipt" textFill="WHITE" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font name="Californian FB Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_InventoryManangerment" alignment="CENTER" layoutX="22.0" layoutY="499.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="195.0" styleClass="nav_buttom" stylesheets="@../css/dashboard_admin.css" text="Inventory" textFill="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
-                     <font>
-                        <Font name="Californian FB Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_signout" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="880.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="105.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="Sign out" textFill="WHITE">
+                  <Button fx:id="btn_signout" alignment="CENTER_RIGHT" layoutX="17.0" layoutY="598.0" mnemonicParsing="false" onAction="#signout" prefHeight="31.0" prefWidth="100.0" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="Sign out" textFill="WHITE">
                      <font>
                         <Font name="Californian FB" size="15.0" />
                      </font>
@@ -125,7 +119,7 @@
          <center>
             <AnchorPane prefHeight="550.0" prefWidth="769.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="dashboar_form" layoutX="130.0" layoutY="229.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="dashboar_form" layoutX="57.0" layoutY="8.0" prefHeight="655.0" prefWidth="1067.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="156.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -148,7 +142,7 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="417.0" layoutY="6.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data1" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="6.0">
+                              <AnchorPane layoutX="293.0" layoutY="6.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data1" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="6.0">
                                  <children>
                                     <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="149.0" text="Today's Icome" textFill="WHITE">
                                        <font>
@@ -177,7 +171,7 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="820.0" layoutY="6.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data2" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="6.0">
+                              <AnchorPane layoutX="575.0" layoutY="6.0" prefHeight="141.0" prefWidth="261.0" styleClass="top-data2" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="6.0">
                                  <children>
                                     <Label layoutX="52.0" layoutY="81.0" prefHeight="18.0" prefWidth="157.0" text="Monthly's Icome" textFill="WHITE">
                                        <font>
@@ -237,7 +231,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AreaChart fx:id="data_chart" layoutX="6.0" layoutY="297.0" prefHeight="398.0" prefWidth="1122.0" title="Icome Chart Data" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
+                        <AreaChart fx:id="data_chart" layoutX="16.0" layoutY="206.0" prefHeight="373.0" prefWidth="1097.0" title="Icome Chart Data" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -251,7 +245,7 @@
                      <children>
                         <AnchorPane layoutX="113.0" layoutY="28.0" prefHeight="275.0" prefWidth="1124.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <children>
-                              <TextField fx:id="product_search" layoutX="1117.0" layoutY="9.0" onKeyTyped="#productSearch" prefHeight="25.0" prefWidth="323.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.topAnchor="9.0" />
+                              <TextField fx:id="product_search" layoutX="790.0" layoutY="6.0" onKeyTyped="#productSearch" prefHeight="25.0" prefWidth="323.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.topAnchor="6.0" />
                               <Label layoutX="14.0" layoutY="10.0" text="Catergory:">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
@@ -282,22 +276,22 @@
                               <TextField fx:id="text_catergory" layoutX="112.0" layoutY="7.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="112.0" />
                               <TextField fx:id="text_price" layoutX="500.0" layoutY="7.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
                               <TextField fx:id="text_quanlity" layoutX="112.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="112.0" />
-                              <Button fx:id="btn_addProduct" alignment="CENTER" layoutX="1113.0" layoutY="219.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="38.0" prefWidth="65.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Add" textFill="WHITE">
+                              <Button fx:id="btn_addProduct" alignment="CENTER" layoutX="790.0" layoutY="225.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="38.0" prefWidth="65.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Add" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_UpadateProduct" alignment="CENTER" layoutX="1195.0" layoutY="219.0" mnemonicParsing="false" onAction="#producUpdate" prefHeight="38.0" prefWidth="65.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
+                              <Button fx:id="btn_UpadateProduct" alignment="CENTER" layoutX="872.0" layoutY="225.0" mnemonicParsing="false" onAction="#producUpdate" prefHeight="38.0" prefWidth="65.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="1294.0" layoutY="219.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="65.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
+                              <Button fx:id="btn_clearProduct" alignment="CENTER" layoutX="971.0" layoutY="225.0" mnemonicParsing="false" onAction="#productclear" prefHeight="38.0" prefWidth="65.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_deleteProduct" alignment="CENTER" layoutX="1375.0" layoutY="219.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="38.0" prefWidth="65.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                              <Button fx:id="btn_deleteProduct" alignment="CENTER" layoutX="1052.0" layoutY="225.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="38.0" prefWidth="65.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
@@ -353,28 +347,28 @@
                         </AnchorPane>
                         <TableView fx:id="product_tableVew" layoutX="90.0" layoutY="289.0" onMouseClicked="#productSelect" prefHeight="361.0" prefWidth="1124.0" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="289.0">
                           <columns>
-                            <TableColumn fx:id="tableViewPro_colunm_cate" prefWidth="146.0" text="Catergory" />
-                            <TableColumn fx:id="tableViewPro_colunm_proName" minWidth="0.0" prefWidth="123.0" text="Product Name" />
-                              <TableColumn fx:id="tableViewPro_colunm_model" prefWidth="93.0" text="Model" />
-                              <TableColumn fx:id="tableViewPro_colunm_quanlity" prefWidth="102.0" text="Quanlity" />
-                              <TableColumn fx:id="tableView_colunm_price" minWidth="0.0" prefWidth="134.0" text="Price($)" />
-                              <TableColumn fx:id="tableViewPro_colunm_type" minWidth="0.0" prefWidth="111.0" text="Status" />
-                              <TableColumn fx:id="tableViewPro_colunm_brand" minWidth="0.0" prefWidth="97.0" text="Brand" />
-                              <TableColumn fx:id="tableViewPro_colunm_date" minWidth="0.0" prefWidth="127.0" text="Date" />
-                              <TableColumn fx:id="tableViewPro_colunm_insur" minWidth="0.0" prefWidth="64.0" text="Insurance" />
-                              <TableColumn fx:id="tableViewPro_colunm_content" minWidth="0.0" prefWidth="134.0" text="Description" />
-                              <TableColumn fx:id="tableViewPro_colunm_color" minWidth="0.0" prefWidth="106.0" text="Color" />
-                              <TableColumn fx:id="tableViewPro_colunm_image" minWidth="0.0" prefWidth="222.0" text="Image" />
+                            <TableColumn fx:id="tableViewPro_colunm_cate" prefWidth="108.99996948242188" text="Catergory" />
+                            <TableColumn fx:id="tableViewPro_colunm_proName" minWidth="0.0" prefWidth="104.0" text="Product Name" />
+                              <TableColumn fx:id="tableViewPro_colunm_model" prefWidth="91.0" text="Model" />
+                              <TableColumn fx:id="tableViewPro_colunm_quanlity" prefWidth="77.0" text="Quanlity" />
+                              <TableColumn fx:id="tableView_colunm_price" minWidth="0.0" prefWidth="94.0" text="Price($)" />
+                              <TableColumn fx:id="tableViewPro_colunm_type" minWidth="0.0" prefWidth="70.0" text="Status" />
+                              <TableColumn fx:id="tableViewPro_colunm_brand" minWidth="0.0" prefWidth="83.0" text="Brand" />
+                              <TableColumn fx:id="tableViewPro_colunm_date" minWidth="0.0" prefWidth="98.0" text="Date" />
+                              <TableColumn fx:id="tableViewPro_colunm_insur" minWidth="0.0" prefWidth="75.0" text="Insurance" />
+                              <TableColumn fx:id="tableViewPro_colunm_content" minWidth="0.0" prefWidth="114.0" text="Content" />
+                              <TableColumn fx:id="tableViewPro_colunm_color" minWidth="0.0" prefWidth="84.0" text="Color" />
+                              <TableColumn fx:id="tableViewPro_colunm_image" minWidth="0.0" prefWidth="124.0" text="Image" />
                           </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
                   <AnchorPane fx:id="employee_form" layoutX="12.0" layoutY="10.0" prefHeight="622.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane layoutX="5.0" layoutY="593.0" prefHeight="298.0" prefWidth="1460.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="593.0">
+                        <AnchorPane layoutY="376.0" prefHeight="230.0" prefWidth="1066.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="376.0">
                            <children>
-                              <TextField fx:id="text_employeeSearch" layoutX="1106.0" layoutY="8.0" onAction="#employeeSearch" prefHeight="25.0" prefWidth="340.0" promptText="Search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" />
-                              <Label layoutX="14.0" layoutY="12.0" prefHeight="18.0" prefWidth="89.0" text="Employee_Id:">
+                              <TextField fx:id="text_employeeSearch" layoutX="774.0" layoutY="8.0" onAction="#employeeSearch" prefHeight="25.0" prefWidth="340.0" promptText="Search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" />
+                              <Label layoutX="14.0" layoutY="12.0" prefHeight="18.0" prefWidth="89.0" text="Employee_Id:" AnchorPane.rightAnchor="1029.0">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
@@ -401,22 +395,22 @@
                               </Label>
                               <TextField fx:id="text_employeeName" layoutX="105.0" layoutY="92.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
                               <TextField fx:id="text_employee_Id" layoutX="105.0" layoutY="7.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="105.0" />
-                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="1105.0" layoutY="279.0" mnemonicParsing="false" onAction="#employeeSave" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Save" textFill="WHITE">
+                              <Button fx:id="btn_addEmployee" alignment="CENTER" layoutX="775.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeSave" prefHeight="38.0" prefWidth="64.0" styleClass="btn-add" stylesheets="@../css/dashboard_admin.css" text="Save" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="1198.0" layoutY="279.0" mnemonicParsing="false" onAction="#employeeUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
+                              <Button fx:id="btn_updateEmployee" alignment="CENTER" layoutX="868.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="1296.0" layoutY="279.0" mnemonicParsing="false" onAction="#employeeReset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Resset" textFill="WHITE">
+                              <Button fx:id="btn_clearEmployee" alignment="CENTER" layoutX="966.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeReset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Resset" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="1384.0" layoutY="279.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
+                              <Button fx:id="btn_deleteEmployee" alignment="CENTER" layoutX="1054.0" layoutY="227.0" mnemonicParsing="false" onAction="#employeeDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
@@ -462,19 +456,19 @@
                               <TextField fx:id="text_employee_email" layoutX="526.0" layoutY="184.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
                            </children>
                         </AnchorPane>
-                        <TableView fx:id="employee_tableview" layoutX="88.0" layoutY="53.0" onMouseClicked="#employeeSelect" prefHeight="577.0" prefWidth="1460.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <TableView fx:id="employee_tableview" layoutX="88.0" layoutY="53.0" onMouseClicked="#employeeSelect" prefHeight="365.0" prefWidth="1124.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                           <columns>
                             <TableColumn fx:id="employee_colunmId" prefWidth="77.99996948242188" text="Emoloyee-Id" />
-                            <TableColumn fx:id="employee_colunm_password" prefWidth="111.0" text="Password" />
-                              <TableColumn fx:id="employee_colunm_Name" prefWidth="134.0" text="Employee-Name" />
-                              <TableColumn fx:id="employee_colunm_birthday" prefWidth="108.0" text="DateOfBirth" />
-                              <TableColumn fx:id="employee_colunm_gender" prefWidth="88.0" text="Gender" />
-                              <TableColumn fx:id="employee_colunm_address" prefWidth="96.0" text="Address" />
-                              <TableColumn fx:id="employee_colunm_dept" prefWidth="110.0" text="Depart-ment" />
-                              <TableColumn fx:id="employee_colunm_startdate" prefWidth="114.0" text="Start Date" />
-                              <TableColumn fx:id="employee_colunm_salary" prefWidth="185.0" text="Salary" />
-                              <TableColumn fx:id="employee_colunm_phone" prefWidth="143.0" text="Contact" />
-                              <TableColumn fx:id="employee_colunm_email" prefWidth="291.0" text="Email" />
+                            <TableColumn fx:id="employee_colunm_password" prefWidth="89.0" text="Password" />
+                              <TableColumn fx:id="employee_colunm_Name" prefWidth="121.0" text="Employee-Name" />
+                              <TableColumn fx:id="employee_colunm_birthday" prefWidth="102.0" text="DateOfBirth" />
+                              <TableColumn fx:id="employee_colunm_gender" prefWidth="68.0" text="Gender" />
+                              <TableColumn fx:id="employee_colunm_address" prefWidth="128.0" text="Address" />
+                              <TableColumn fx:id="employee_colunm_dept" prefWidth="97.0" text="Depart-ment" />
+                              <TableColumn fx:id="employee_colunm_startdate" prefWidth="97.0" text="Start Date" />
+                              <TableColumn fx:id="employee_colunm_salary" prefWidth="104.0" text="Salary" />
+                              <TableColumn fx:id="employee_colunm_phone" prefWidth="126.0" text="Contact" />
+                              <TableColumn fx:id="employee_colunm_email" prefWidth="121.0" text="Email" />
                           </columns>
                         </TableView>
                      </children>
@@ -485,14 +479,14 @@
                           <columns>
                             <TableColumn fx:id="tableView_ColunmCustomerID" prefWidth="93.00003051757812" text="Customer_Id" />
                               <TableColumn fx:id="tableView_ColunmCustomerName" minWidth="0.0" prefWidth="127.0" text="Customer Name" />
-                              <TableColumn fx:id="tableView_ColunmCustomerAddress" minWidth="0.0" prefWidth="148.0" text="Customer Address" />
-                              <TableColumn fx:id="tableView_ColunmCustomerphone" minWidth="0.0" prefWidth="129.0" text="Contact" />
-                              <TableColumn fx:id="tableView_ColunmCustomerEmail" minWidth="0.0" prefWidth="129.0" text="Email" />
-                              <TableColumn fx:id="tableView_ColunmCustomerCate" minWidth="0.0" prefWidth="145.0" text="Customer Catergory" />
-                              <TableColumn fx:id="tableView_ColunmCustomerProName" minWidth="0.0" prefWidth="131.0" text="Product Name" />
-                              <TableColumn fx:id="tableView_ColunmCustomerQuanlity" minWidth="0.0" prefWidth="151.0" text="Quanlity" />
-                              <TableColumn fx:id="tableView_ColunmCustomerTPrice" minWidth="0.0" prefWidth="130.0" text="Total Price" />
-                              <TableColumn fx:id="tableView_ColunmCustomerRank" minWidth="0.0" prefWidth="275.0" text="Rank" />
+                              <TableColumn fx:id="tableView_ColunmCustomerAddress" minWidth="0.0" prefWidth="125.0" text="Customer Address" />
+                              <TableColumn fx:id="tableView_ColunmCustomerphone" minWidth="0.0" prefWidth="122.0" text="Contact" />
+                              <TableColumn fx:id="tableView_ColunmCustomerEmail" minWidth="0.0" prefWidth="130.0" text="Email" />
+                              <TableColumn fx:id="tableView_ColunmCustomerCate" minWidth="0.0" prefWidth="132.0" text="Customer Catergory" />
+                              <TableColumn fx:id="tableView_ColunmCustomerProName" minWidth="0.0" prefWidth="135.0" text="Product Name" />
+                              <TableColumn fx:id="tableView_ColunmCustomerQuanlity" minWidth="0.0" prefWidth="87.0" text="Quanlity" />
+                              <TableColumn fx:id="tableView_ColunmCustomerTPrice" minWidth="0.0" prefWidth="87.0" text="Total Price" />
+                              <TableColumn fx:id="tableView_ColunmCustomerRank" minWidth="0.0" prefWidth="84.0" text="Rank" />
                           </columns>
                         </TableView>
                         <AnchorPane layoutX="78.0" layoutY="365.0" prefHeight="245.0" prefWidth="1124.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
@@ -533,10 +527,10 @@
                                  </font>
                               </Label>
                               <TextField fx:id="text_customerTPrice" layoutX="600.0" layoutY="143.0" prefHeight="25.0" prefWidth="200.0" styleClass="textField" stylesheets="@../css/dashboard_admin.css" />
-                              <TextField fx:id="text_customerSearch" alignment="BASELINE_LEFT" layoutX="1101.0" layoutY="11.0" onKeyTyped="#customerSearch" prefHeight="26.0" prefWidth="344.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="1101.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="11.0" />
-                              <Button fx:id="btn_CustomerSave" layoutX="1215.0" layoutY="196.0" mnemonicParsing="false" onAction="#customerUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE" />
-                              <Button fx:id="btn_CustomerClear" layoutX="1299.0" layoutY="196.0" mnemonicParsing="false" onAction="#customerResset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE" />
-                              <Button fx:id="btn_CustomerDelete" layoutX="1382.0" layoutY="196.0" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE" />
+                              <TextField fx:id="text_customerSearch" alignment="BASELINE_LEFT" layoutX="814.0" layoutY="10.0" onKeyTyped="#customerSearch" prefHeight="26.0" prefWidth="301.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="814.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                              <Button fx:id="btn_CustomerSave" layoutX="878.0" layoutY="192.0" mnemonicParsing="false" onAction="#customerUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE" />
+                              <Button fx:id="btn_CustomerClear" layoutX="962.0" layoutY="192.0" mnemonicParsing="false" onAction="#customerResset" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE" />
+                              <Button fx:id="btn_CustomerDelete" layoutX="1045.0" layoutY="192.0" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
                               <Label layoutX="473.0" layoutY="15.0" text="Customer Catergory:" AnchorPane.leftAnchor="473.0">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
@@ -567,17 +561,17 @@
                   </AnchorPane>
                   <AnchorPane fx:id="receipt_form" layoutX="12.0" layoutY="10.0" prefHeight="436.0" prefWidth="1070.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
-                        <TableView fx:id="tableView_Receipt" layoutX="344.0" layoutY="32.0" onMouseClicked="#receiptSelect" prefHeight="629.0" prefWidth="1460.0" AnchorPane.bottomAnchor="293.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <TableView fx:id="tableView_Receipt" layoutX="344.0" layoutY="32.0" onMouseClicked="#receiptSelect" prefHeight="417.0" prefWidth="1124.0" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <columns>
                               <TableColumn fx:id="tableView_ColumnReceiptID" prefWidth="168.00003051757812" text="Receipt_Id" />
                               <TableColumn fx:id="tableView_ColumnReceiptCustID" minWidth="0.0" prefWidth="178.0" text="Customer_Id" />
                               <TableColumn fx:id="tableView_ColumnDate" minWidth="0.0" prefWidth="205.0" text="Date" />
-                              <TableColumn fx:id="tableView_ColumnTPrice" minWidth="0.0" prefWidth="271.0" text="Total Price" />
-                              <TableColumn fx:id="tableView_ColumnDiscount" minWidth="0.0" prefWidth="223.0" text="Discount" />
-                              <TableColumn fx:id="tableView_ColumnPaymentTpye" minWidth="0.0" prefWidth="413.0" text="Payment Type" />
+                              <TableColumn fx:id="tableView_ColumnTPrice" minWidth="0.0" prefWidth="174.0" text="Total Price" />
+                              <TableColumn fx:id="tableView_ColumnDiscount" minWidth="0.0" prefWidth="203.0" text="Discount" />
+                              <TableColumn fx:id="tableView_ColumnPaymentTpye" minWidth="0.0" prefWidth="197.0" text="Payment Type" />
                            </columns>
                         </TableView>
-                        <AnchorPane layoutX="78.0" layoutY="365.0" prefHeight="277.0" prefWidth="1460.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                        <AnchorPane layoutX="78.0" layoutY="365.0" prefHeight="218.0" prefWidth="1124.0" styleClass="white-bg" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
                            <children>
                               <Label layoutX="14.0" layoutY="14.0" text="Receipt_Id:">
                                  <font>
@@ -596,10 +590,10 @@
                                     <Font name="Californian FB" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="text_receiptSearch" alignment="BASELINE_LEFT" layoutX="1083.0" layoutY="2.0" onAction="#receiptSearch" onKeyTyped="#customerSearch" prefHeight="26.0" prefWidth="362.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="1083.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="2.0" />
-                              <Button fx:id="btn_receiptUpdate" layoutX="1214.0" layoutY="225.0" mnemonicParsing="false" onAction="#receiptUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE" />
-                              <Button fx:id="btn_receiptCrear" layoutX="1298.0" layoutY="225.0" mnemonicParsing="false" onAction="#ressetReceipt" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE" />
-                              <Button fx:id="btn_receiptDelete" layoutX="1381.0" layoutY="225.0" mnemonicParsing="false" onAction="#receiptDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE" />
+                              <TextField fx:id="text_receiptSearch" alignment="BASELINE_LEFT" layoutX="814.0" layoutY="10.0" onAction="#receiptSearch" onKeyTyped="#customerSearch" prefHeight="26.0" prefWidth="301.0" promptText="Type to search" styleClass="customarSearch" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="814.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                              <Button fx:id="btn_receiptUpdate" layoutX="878.0" layoutY="166.0" mnemonicParsing="false" onAction="#receiptUpdate" prefHeight="38.0" prefWidth="64.0" styleClass="btn-update" stylesheets="@../css/dashboard_admin.css" text="Update" textFill="WHITE" />
+                              <Button fx:id="btn_receiptCrear" layoutX="962.0" layoutY="166.0" mnemonicParsing="false" onAction="#ressetReceipt" prefHeight="38.0" prefWidth="64.0" styleClass="btn-clear" stylesheets="@../css/dashboard_admin.css" text="Clear" textFill="WHITE" />
+                              <Button fx:id="btn_receiptDelete" layoutX="1045.0" layoutY="166.0" mnemonicParsing="false" onAction="#receiptDelete" prefHeight="38.0" prefWidth="64.0" styleClass="btn-delete" stylesheets="@../css/dashboard_admin.css" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
                               <Label layoutX="473.0" layoutY="15.0" text="Total Price:" AnchorPane.leftAnchor="473.0">
                                  <font>
                                     <Font name="Californian FB" size="14.0" />
@@ -623,31 +617,27 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="detail_icome_form" layoutX="-309.0" layoutY="42.0" prefHeight="931.0" prefWidth="1771.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-309.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="form_detailIcome" layoutX="-226.0" layoutY="12.0" prefHeight="657.0" prefWidth="1364.0" styleClass="white-bg-customer" stylesheets="@../css/dashboard_admin.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-226.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TableView fx:id="table_icome" layoutX="404.0" layoutY="123.0" prefHeight="889.0" prefWidth="1296.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="404.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <TableView fx:id="table_detail_Icome" layoutX="327.0" layoutY="83.0" prefHeight="657.0" prefWidth="1037.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                           <columns>
-                            <TableColumn fx:id="table_icome_date" prefWidth="241.0" text="Date" />
-                            <TableColumn fx:id="colun_icomedate" prefWidth="268.0" text="Icome" />
-                              <TableColumn fx:id="table_icome_month" prefWidth="192.0" text="Month" />
-                              <TableColumn fx:id="colun_icomemonth" prefWidth="192.0" text="Month's Icome" />
-                              <TableColumn fx:id="table_icome_year" prefWidth="192.0" text="Year" />
-                              <TableColumn fx:id="colun_icomeyear" prefWidth="276.0" text="Year's Icome" />
+                            <TableColumn fx:id="dColumn_date" prefWidth="133.0" text="Day" />
+                            <TableColumn fx:id="dColumn_DateIcome" prefWidth="302.0" text="Icome" />
+                              <TableColumn fx:id="dColumn_month" prefWidth="211.0" text="Mo" />
+                              <TableColumn fx:id="dColumn_MIcom" prefWidth="154.0" text="Ico" />
+                              <TableColumn fx:id="dColumn_year" prefWidth="105.0" text="Y" />
+                              <TableColumn fx:id="dColumn_YearIcome" prefWidth="124.0" text="IC" />
                           </columns>
                         </TableView>
-                        <AnchorPane layoutX="43.0" layoutY="148.0" prefHeight="921.0" prefWidth="393.0" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <AnchorPane layoutX="36.0" layoutY="98.0" prefHeight="647.0" prefWidth="315.0" styleClass="top-data3" stylesheets="@../css/dashboard_admin.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <children>
-                              <TextField fx:id="text_searchIcome" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" promptText="Type to search" styleClass="search" stylesheets="@../css/dashboard_admin.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="20.0" />
-                              <Hyperlink fx:id="link_backtoDashboard" layoutX="14.0" layoutY="859.0" onAction="#switchForm" prefHeight="23.0" prefWidth="129.0" text="Back to Dashboard" textFill="WHITE" AnchorPane.bottomAnchor="39.0" />
-                              <Button fx:id="btn_dd" layoutX="56.0" layoutY="379.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="149.0" styleClass="nav_buttomd" stylesheets="@../css/dashboard_admin.css" text="View all daily Icome" textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="44.0" />
-                              <Button fx:id="btn_dm" layoutX="56.0" layoutY="439.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="147.0" styleClass="nav_buttomd" stylesheets="@../css/dashboard_admin.css" text="View all monthly Icome" textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="44.0" />
-                              <Button fx:id="btn_dy" layoutX="56.0" layoutY="506.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="147.0" styleClass="nav_buttomd" stylesheets="@../css/dashboard_admin.css" text="View all yearly Icome" textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="44.0" />
-                              <Button fx:id="btnPrint_toEx" layoutX="293.0" layoutY="858.0" mnemonicParsing="false" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="Print to Excel" textFill="WHITE" />
+                              <TextField fx:id="dTextSearch" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="269.0" promptText="Type to search" styleClass="search" stylesheets="@../css/dashboard_admin.css" />
+                              <Hyperlink fx:id="hyperBacktoD" layoutX="14.0" layoutY="610.0" onAction="#switchForm" prefHeight="23.0" prefWidth="107.0" text="Back to dashboard" textFill="WHITE" />
+                              <Button fx:id="printToEx" layoutX="221.0" layoutY="609.0" mnemonicParsing="false" styleClass="sign_out" stylesheets="@../css/dashboard_admin.css" text="Print to Excel" textFill="WHITE" />
+                              <Button fx:id="btn_viewAllDay" layoutX="57.0" layoutY="178.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="202.0" styleClass="nav_buttomd" stylesheets="@../css/dashboard_admin.css" text="View all day Icome" textFill="WHITE" />
+                              <Button fx:id="btn_viewAllM" layoutX="57.0" layoutY="232.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="202.0" styleClass="nav_buttomd" stylesheets="@../css/dashboard_admin.css" text="View all month Icome" textFill="WHITE" />
+                              <Button fx:id="btn_viewAllY" layoutX="57.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="202.0" styleClass="nav_buttomd" stylesheets="@../css/dashboard_admin.css" text="View all year Icome" textFill="WHITE" />
                            </children>
-                           <styleClass>
-                              <String fx:value="white-bg-customer" />
-                              <String fx:value="top-data3" />
-                           </styleClass>
                         </AnchorPane>
                      </children>
                   </AnchorPane>

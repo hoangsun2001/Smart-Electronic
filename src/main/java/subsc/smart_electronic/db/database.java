@@ -10,31 +10,10 @@ import java.sql.*;
  *
  * @author Admin
  */
-//public class database {
-//
-////    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=smartelectric;encrypt=true;trustServerCertificate=true;";
-//////    Connection conn;
-////    private static String UserName = "omega";
-////    private static String password = "123";
-////
-////    public database() {
-////    }
-////
-////    public static Connection ConnectDB() {
-////        try {
-////            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-////            Connection conn = DriverManager.getConnection(urlConnection, UserName, password);
-////            return conn;
-////        } catch (Exception e) {
-////            e.printStackTrace();
-////        }
-////        return null;
-////    }
-//    
-//}
 public class database {
 
-    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=smartelectric;encrypt=true;trustServerCertificate=true";
+    private static String urlConnection = "jdbc:sqlserver://115.73.212.222:8888;databaseName=smartelectric;encrypt=true;trustServerCertificate=true;";
+//    Connection conn;
     private static String UserName = "omega";
     private static String password = "123";
 
@@ -51,5 +30,26 @@ public class database {
         }
         return null;
     }
-
+    
 }
+//public class database {
+//
+//    private static String urlConnection = "jdbc:sqlserver://ADMIN;databaseName=smartelectric;encrypt=true;trustServerCertificate=true;";
+//    private static String UserName = "omega";
+//    private static String password = "123";
+//
+//    public database() {
+//    }
+//
+//    public static Connection ConnectDB() {
+//        try {
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            Connection conn = DriverManager.getConnection(urlConnection, UserName, password);
+//            return conn;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
+//
+//}

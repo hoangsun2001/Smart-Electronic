@@ -12,19 +12,12 @@ import java.util.Date;
  */
 public class IcomeDetail {
 
+    private Date date;
     private Double totalPrice;
-    Date date;
+    private Integer dateM;
 
-    public IcomeDetail(Double totalPrice, Date date) {
-        this.totalPrice = totalPrice;
+    public IcomeDetail(Date date, Double totalPrice) {
         this.date = date;
-    }
-
-    public Double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -36,5 +29,15 @@ public class IcomeDetail {
         this.date = date;
     }
 
-    
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+   
+
+   
+
 }

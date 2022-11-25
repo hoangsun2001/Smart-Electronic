@@ -184,23 +184,24 @@
 .table-view{
     -fx-background-color: transparent;
     /*-fx-border-color: linear-gradient(to top right,#6d6e30,#a8b3cc);*/
-    -fx-border-color:#64522c;
+    -fx-border-color:#fff;
     -fx-border-width:1px;
     -fx-border-radius:3px;
     -fx-padding: 0px;
 }
+/*#64522c*/
 .table-view .table-column{
     -fx-alignment:CENTER;
 }
 .table-view .column-header-background{
-    -fx-border-color: #fff;
+    -fx-border-color:#fff;
         /*linear-gradient(to top right,#6d6e30,#a8b3cc);*/
     -fx-background-insets:0 0 0 0;
     /*-fx-background-radius:5px 5px 0px 0px;*/
 }
 
 .table-view .column-header, .filter{
-    -fx-background-color: white;
+    -fx-background-color: #fff;
     -fx-size:40px;
 }
 /*#754f4f*/
@@ -209,7 +210,6 @@
     -fx-font-family:"Californian FB";
     -fx-font-size:14px;
 }
-/*#452b3f*/
 .nav_buttomd{
     -fx-background-color:#212040;
         /*linear-gradient(to top right,#353047,#766c9a);*/

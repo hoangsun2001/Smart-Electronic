@@ -55,6 +55,7 @@ import subsc.smart_electronic.models.customerData;
 import subsc.smart_electronic.models.employeeData;
 import subsc.smart_electronic.models.getData;
 import subsc.smart_electronic.models.productData;
+import subsc.smart_electronic.models.IcomeDM;
 
 /**
  * FXML Controller class
@@ -69,419 +70,422 @@ public class Dashboard_adminController implements Initializable {
     @FXML
     private AnchorPane main_form;
     @FXML
-    private AnchorPane nav_view;
+    private AnchorPane form_detailIcome;
+    
     @FXML
     private Button btn_minimize;
-
+    
     @FXML
     private Button btn_close;
-
+    
     @FXML
     private Button btn_dashboard;
-
+    
     @FXML
     private Label display_username;
-
+    
     @FXML
     private Button btn_product;
-
+    
     @FXML
     private Button btn_employee;
-
+    
     @FXML
     private Button btn_customer;
-
+    
     @FXML
     private Button btn_reciept;
-
+    
     @FXML
     private Button btn_InventoryManangerment;
-
+    
     @FXML
     private Button btn_signout;
-
+    
     @FXML
     private AnchorPane dashboar_form;
-
+    
     @FXML
     private Label display_employeeActive;
-
+    
     @FXML
     private Label display_todayIcome;
-
+    
     @FXML
     private Label display_monthIcome;
     @FXML
     private Label display_yearIcome;
     @FXML
     private Label label_date;
-
+    
     @FXML
     private Label label_month;
-
+    
     @FXML
     private Label label_year;
-
+    
     @FXML
     private AreaChart<?, ?> data_chart;
-
+    
     @FXML
     private AnchorPane product_form;
-
+    
     @FXML
     private TextField product_search;
-
+    
     @FXML
     private TextField text_productModel;
-
+    
     @FXML
     private TextField text_productName;
-
+    
     @FXML
     private TextField text_catergory;
-
+    
     @FXML
     private TextField text_price;
-
+    
     @FXML
     private TextField text_quanlity;
-
+    
     @FXML
     private Button btn_addProduct;
-
+    
     @FXML
     private Button btn_UpadateProduct;
-
+    
     @FXML
     private Button btn_clearProduct;
-
+    
     @FXML
     private Button btn_deleteProduct;
-
+    
     @FXML
     private TextField text_productType;
-
+    
     @FXML
     private TextField text_productBrand;
-
+    
     @FXML
     private DatePicker text_porductdatePicker;
-
+    
     @FXML
     private TextField text_productInsur;
-
+    
     @FXML
     private TextField text_productcontent;
-
+    
     @FXML
     private TextField text_productColor;
-
+    
     @FXML
     private TableView<productData> product_tableVew;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_cate;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_proName;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_model;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_quanlity;
-
+    
     @FXML
     private TableColumn<productData, String> tableView_colunm_price;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_type;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_brand;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_date;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_insur;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_content;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_color;
-
+    
     @FXML
     private TableColumn<productData, String> tableViewPro_colunm_image;
     @FXML
     private AnchorPane AnchonPaneImage;
-
+    
     @FXML
     private ImageView productImage;
-
+    
     @FXML
     private Button btn_productImage;
     @FXML
     private AnchorPane employee_form;
-
+    
     @FXML
     private TextField text_employeeSearch;
-
+    
     @FXML
     private TextField text_employeeName;
-
+    
     @FXML
     private TextField text_employee_Id;
-
+    
     @FXML
     private Button btn_addEmployee;
-
+    
     @FXML
     private Button btn_updateEmployee;
-
+    
     @FXML
     private Button btn_clearEmployee;
-
+    
     @FXML
     private Button btn_deleteEmployee;
-
+    
     @FXML
     private TextField text_employee_dept;
-
+    
     @FXML
     private PasswordField text_employee_password;
-
+    
     @FXML
     private ComboBox<?> text_employee_combochoose_gender;
-
+    
     @FXML
     private DatePicker text_employee_stardatePicker;
-
+    
     @FXML
     private DatePicker text_employeeBirthday_datePicker;
-
+    
     @FXML
     private TextField text_employee_address;
-
+    
     @FXML
     private TextField text_employee_salary;
-
+    
     @FXML
     private TextField text_employee_phone;
-
+    
     @FXML
     private TextField text_employee_email;
-
+    
     @FXML
     private TableView<employeeData> employee_tableview;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunmId;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_password;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_Name;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_birthday;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_gender;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_address;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_dept;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_startdate;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_salary;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_phone;
-
+    
     @FXML
     private TableColumn<employeeData, String> employee_colunm_email;
-
+    
     @FXML
     private AnchorPane customer_form;
-
+    
     @FXML
     private TableView<customerData> tableView_customer;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerID;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerName;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerAddress;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerphone;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerEmail;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerCate;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerProName;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerQuanlity;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerTPrice;
-
+    
     @FXML
     private TableColumn<customerData, String> tableView_ColunmCustomerRank;
-
+    
     @FXML
     private TextField text_customerId;
-
+    
     @FXML
     private TextField text_customerName;
-
+    
     @FXML
     private TextField text_customerAddress;
-
+    
     @FXML
     private TextField text_customerPhone;
-
+    
     @FXML
     private TextField text_customerEmail;
-
+    
     @FXML
     private TextField text_customerTPrice;
-
+    
     @FXML
     private TextField text_customerSearch;
-
+    
     @FXML
     private Button btn_CustomerSave;
-
+    
     @FXML
     private Button btn_CustomerClear;
-
+    
     @FXML
     private Button btn_CustomerDelete;
-
+    
     @FXML
     private TextField text_customerCate;
-
+    
     @FXML
     private TextField text_customerProName;
-
+    
     @FXML
     private TextField text_customerQuanlity;
-
+    
     @FXML
     private TextField text_customerRank;
-
+    
     @FXML
     private AnchorPane receipt_form;
-
+    
     @FXML
     private TableView<ReceiptData> tableView_Receipt;
-
+    
     @FXML
     private TableColumn<ReceiptData, String> tableView_ColumnReceiptID;
-
+    
     @FXML
     private TableColumn<ReceiptData, String> tableView_ColumnReceiptCustID;
-
+    
     @FXML
     private TableColumn<ReceiptData, String> tableView_ColumnDate;
-
+    
     @FXML
     private TableColumn<ReceiptData, String> tableView_ColumnTPrice;
-
+    
     @FXML
     private TableColumn<ReceiptData, String> tableView_ColumnDiscount;
-
+    
     @FXML
     private TableColumn<ReceiptData, String> tableView_ColumnPaymentTpye;
-
+    
     @FXML
     private TextField text_receiptId;
-
+    
     @FXML
     private TextField text_receiptCustomerId;
-
+    
     @FXML
     private TextField text_receiptSearch;
-
+    
     @FXML
     private Button btn_receiptUpdate;
-
+    
     @FXML
     private Button btn_receiptCrear;
-
+    
     @FXML
     private Button btn_receiptDelete;
-
+    
     @FXML
     private TextField text_receiptTPrice;
-
+    
     @FXML
     private TextField text_receiptDiscount;
-
+    
     @FXML
     private TextField text_receiptPayment;
     @FXML
     private DatePicker text_receiptDate;
     @FXML
-    private AnchorPane detail_icome_form;
+    private Button btn_viewAllDay;
+    
     @FXML
-    private Hyperlink link_backtoDashboard;
+    private Button btn_viewAllM;
+    
     @FXML
-    private TableView<?> table_icome;
-
+    private Button btn_viewAllY;
     @FXML
-    private TableColumn<?, ?> table_icome_date;
-
+    private TableView<IcomeDetail> table_detail_Icome;
+    
     @FXML
-    private TableColumn<?, ?> table_icome_month;
-
+    private TableColumn<IcomeDetail, String> dColumn_DateIcome;
+    
     @FXML
-    private TableColumn<?, ?> table_icome_year;
+    private TableColumn<IcomeDetail, String> dColumn_MIcom;
+    
     @FXML
-    private TableColumn<?, ?> colun_icomedate;
-
+    private TableColumn<IcomeDetail, String> dColumn_YearIcome;
+    
     @FXML
-    private TableColumn<?, ?> colun_icomemonth;
-
+    private TableColumn<IcomeDetail, String> dColumn_date;
+    
     @FXML
-    private TableColumn<?, ?> colun_icomeyear;
+    private TableColumn<IcomeDetail, String> dColumn_month;
+    
     @FXML
-    private TextField text_searchIcome;
+    private TableColumn<IcomeDetail, String> dColumn_year;
+    
     @FXML
-    private Button btn_dd;
+    private TextField dTextSearch;
     @FXML
-    private Button btn_dm;
-
+    private Hyperlink hyperBacktoD;
+    
     @FXML
-    private Button btn_dy;
+    private Hyperlink hyper_toDetail;
     @FXML
-    private Button btnPrint_toEx;
-    @FXML
-    private Hyperlink linktoDIcome;
-
+    private Button printToEx;
+    
     private Connection conn;
     private ResultSet resultSet;
     private PreparedStatement preparedStatement;
     private Statement statement;
     private Image image;
-
+    
     public void addProduct() {
         String insertInto = "insert into products"
                 + "(product_cate,product_name, product_model,product_quantity,product_price,"
@@ -501,14 +505,14 @@ public class Dashboard_adminController implements Initializable {
                     || text_productcontent.getText().isEmpty()
                     || text_porductdatePicker.getEditor().getText().isEmpty()
                     || getData.path == null || getData.path == "") {
-
+                
                 InforError("Please fill all blank fields", null, "Error message");
-
+                
             } else {
                 String check = "select * from products where product_model='" + text_productModel.getText() + "'";
                 statement = conn.createStatement();
                 resultSet = statement.executeQuery(check);
-
+                
                 if (resultSet.next()) {
                     InforError("The product_model " + text_productModel.getText() + " already exist!", null, "Error message");
                 } else {
@@ -526,11 +530,11 @@ public class Dashboard_adminController implements Initializable {
                     preparedStatement.setString(11, text_productColor.getText());
                     String url = getData.path;
                     url = url.replace("\\", "/");
-
+                    
                     preparedStatement.setString(12, url);
-
+                    
                     preparedStatement.executeUpdate();
-
+                    
                     InforBox("Added successfully!", null, "Information");
                     productclear();
                     productShowData();
@@ -540,18 +544,18 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public void productInsertImage() {
         FileChooser openFile = new FileChooser();
         File file = openFile.showOpenDialog(main_form.getScene().getWindow());
         if (file != null) {
             getData.path = file.getAbsolutePath();
-
+            
             image = new Image(file.toURI().toString(), 310, 200, false, true);
             productImage.setImage(image);
         }
     }
-
+    
     public void deleteProduct() {
         String deleteproduct = "delete from products where product_model='" + text_productModel.getText() + "'";
         conn = database.ConnectDB();
@@ -567,20 +571,20 @@ public class Dashboard_adminController implements Initializable {
                     || text_productInsur.getText().isEmpty()
                     || text_productcontent.getText().isEmpty()
                     || text_porductdatePicker.getEditor().getText().isEmpty()) {
-
+                
                 InforError("Please fill all blank fields", null, "Error message");
-
+                
             } else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
                 alert.setHeaderText(null);
                 alert.setContentText("Are you sure that you want to delete the product_model " + text_productModel.getText() + "?");
                 Optional<ButtonType> optional = alert.showAndWait();
-
+                
                 if (optional.get().equals(ButtonType.OK)) {
                     statement = conn.createStatement();
                     statement.executeUpdate(deleteproduct);
-
+                    
                     InforBox("Deleted Succesfully!", null, "Information");
                     productShowData();
                     productclear();
@@ -590,11 +594,11 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public void producUpdate() {
         String url = getData.path;
         url = url.replace("\\", "/");
-
+        
         String updateProduct = "update products set product_cate='" + text_catergory.getText()
                 + "',product_name='" + text_productName.getText()
                 + "',product_quantity='" + text_quanlity.getText()
@@ -620,20 +624,20 @@ public class Dashboard_adminController implements Initializable {
                     || text_productInsur.getText().isEmpty()
                     || text_productcontent.getText().isEmpty()
                     || text_porductdatePicker.getEditor().getText().isEmpty()) {
-
+                
                 InforError("Please fill all blank fields", null, "Error message");
-
+                
             } else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
                 alert.setHeaderText(null);
                 alert.setContentText("Are you sure that you want to update the " + text_productModel.getText() + "?");
                 Optional<ButtonType> optional = alert.showAndWait();
-
+                
                 if (optional.get().equals(ButtonType.OK)) {
                     statement = conn.createStatement();
                     statement.executeUpdate(updateProduct);
-
+                    
                     InforBox("Update Succesfully!", null, "Information");
                     productShowData();
                     productclear();
@@ -643,7 +647,7 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public void productclear() {
         text_catergory.setText("");
         text_productModel.setText("");
@@ -672,7 +676,7 @@ public class Dashboard_adminController implements Initializable {
     public void productSearch() {
         FilteredList<productData> filter = new FilteredList<>(addproductList, e -> true);
         product_search.textProperty().addListener((observable, oldValue, newValue) -> {
-
+            
             filter.setPredicate(predicateProductData -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -680,7 +684,7 @@ public class Dashboard_adminController implements Initializable {
                 String searchKey = newValue.toLowerCase();
                 if (predicateProductData.getCatergory().toLowerCase().contains(searchKey)) {
                     return true;
-
+                    
                 } else if (predicateProductData.getProductModel().toLowerCase().contains(searchKey)) {
                     return true;
                 } else if (predicateProductData.getProductName().toLowerCase().contains(searchKey)) {
@@ -710,9 +714,9 @@ public class Dashboard_adminController implements Initializable {
             sortedList.comparatorProperty().bind(product_tableVew.comparatorProperty());
             product_tableVew.setItems(sortedList);
         });
-
+        
     }
-
+    
     public void employeeDelete() {
         String employeeDelete = "delete from employees where emp_id='"
                 + text_employee_Id.getText() + "'";
@@ -730,9 +734,9 @@ public class Dashboard_adminController implements Initializable {
                     || text_employee_phone.getText().isEmpty()
                     || text_employee_email.getText().isEmpty()) {
                 InforError("Please fill all the blank fields!", null, "Error message");
-
+                
             } else {
-
+                
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
                 alert.setHeaderText(null);
@@ -741,18 +745,18 @@ public class Dashboard_adminController implements Initializable {
                 if (optional.get().equals(ButtonType.OK)) {
                     statement = conn.createStatement();
                     statement.executeUpdate(employeeDelete);
-
+                    
                     InforBox("Deleted Successfully", null, "Information");
                     employeeDatashow();
                     employeeReset();
-
+                    
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public void employeeUpdate() {
         String upadateEmployee = "update employees set emp_pwd='" + text_employee_password.getText()
                 + "',emp_name='" + text_employeeName.getText()
@@ -779,7 +783,7 @@ public class Dashboard_adminController implements Initializable {
                     || text_employee_phone.getText().isEmpty()
                     || text_employee_email.getText().isEmpty()) {
                 InforError("Please fill all the blank fields!", null, "Error message");
-
+                
             } else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
@@ -789,19 +793,19 @@ public class Dashboard_adminController implements Initializable {
                 if (optional.get().equals(ButtonType.OK)) {
                     statement = conn.createStatement();
                     statement.executeUpdate(upadateEmployee);
-
+                    
                     InforBox("Updated Successfully", null, "Information");
                     employeeDatashow();
                     employeeReset();
                 }
-
+                
             }
-
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public void employeeSave() {
 //        Date date = new Date();
 //        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
@@ -823,16 +827,16 @@ public class Dashboard_adminController implements Initializable {
                     || text_employee_phone.getText().isEmpty()
                     || text_employee_email.getText().isEmpty()) {
                 InforError("Please fill all the blank fields!", null, "Error message");
-
+                
             } else {
-
+                
                 String check = "select *from employees where emp_id='" + text_employee_Id.getText() + "'";
                 statement = conn.createStatement();
                 resultSet = statement.executeQuery(check);
-
+                
                 if (resultSet.next()) {
                     InforError("The employee_Id " + text_employee_Id.getText() + " already exist!", null, "Error message");
-
+                    
                 } else {
                     preparedStatement = conn.prepareStatement(insertEmployee);
                     preparedStatement.setString(1, text_employee_Id.getText());
@@ -846,7 +850,7 @@ public class Dashboard_adminController implements Initializable {
                     preparedStatement.setString(9, text_employee_salary.getText());
                     preparedStatement.setString(10, text_employee_phone.getText());
                     preparedStatement.setString(11, text_employee_email.getText());
-
+                    
                     preparedStatement.executeUpdate();
                     InforBox("Saved successfully", null, "Information");
                     employeeListData();
@@ -858,7 +862,7 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public ObservableList<employeeData> employeeListData() {
         ObservableList<employeeData> employeeData = FXCollections.observableArrayList();
         String sql = "select*from employees";
@@ -880,20 +884,20 @@ public class Dashboard_adminController implements Initializable {
                         resultSet.getString("emp_contact"),
                         resultSet.getString("emp_email")
                 );
-
+                
                 employeeData.add(employeeD);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return employeeData;
-
+        
     }
-
+    
     public void employeeSearch() {
         FilteredList<employeeData> filter = new FilteredList<>(employeeList, e -> true);
         text_employeeSearch.textProperty().addListener((observable, oldValue, newValue) -> {
-
+            
             filter.setPredicate(predicateEmployeeData -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -901,7 +905,7 @@ public class Dashboard_adminController implements Initializable {
                 String searchKey = newValue.toLowerCase();
                 if (predicateEmployeeData.getEmployeeId().toLowerCase().contains(searchKey)) {
                     return true;
-
+                    
                 } else if (predicateEmployeeData.getPassword().toLowerCase().contains(searchKey)) {
                     return true;
                 } else if (predicateEmployeeData.getFullName().toLowerCase().contains(searchKey)) {
@@ -917,7 +921,7 @@ public class Dashboard_adminController implements Initializable {
                 } else if (predicateEmployeeData.getStartDate().toString().contains(searchKey)) {
                     return true;
                 } else if (predicateEmployeeData.getSalary().toString().contains(searchKey)) {
-
+                    
                 } else if (predicateEmployeeData.getPhoneNumber().toLowerCase().contains(searchKey)) {
                     return true;
                 } else if (predicateEmployeeData.getEmail().toLowerCase().contains(searchKey)) {
@@ -929,11 +933,11 @@ public class Dashboard_adminController implements Initializable {
             sortedList.comparatorProperty().bind(employee_tableview.comparatorProperty());
             employee_tableview.setItems(sortedList);
         });
-
+        
     }
-
+    
     private String[] statusListEmployee = {"Male", "Female", "Other"};
-
+    
     public void employeeListStatusList() {
         List<String> listE = new ArrayList<>();
         for (String data : statusListEmployee) {
@@ -942,7 +946,7 @@ public class Dashboard_adminController implements Initializable {
         ObservableList statusData = FXCollections.observableArrayList(listE);
         text_employee_combochoose_gender.setItems(statusData);
     }
-
+    
     public void employeeReset() {
         text_employee_Id.setText("");
         text_employee_password.setText("");
@@ -956,9 +960,9 @@ public class Dashboard_adminController implements Initializable {
         text_employee_phone.setText("");
         text_employee_email.setText("");
     }
-
+    
     private ObservableList<employeeData> employeeList;
-
+    
     public void employeeDatashow() {
         employeeList = employeeListData();
         employee_colunmId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
@@ -974,7 +978,7 @@ public class Dashboard_adminController implements Initializable {
         employee_colunm_email.setCellValueFactory(new PropertyValueFactory<>("email"));
         employee_tableview.setItems(employeeList);
     }
-
+    
     public void employeeSelect() {
         employeeData employeeD = employee_tableview.getSelectionModel().getSelectedItem();
         int num = employee_tableview.getSelectionModel().getSelectedIndex();
@@ -993,7 +997,7 @@ public class Dashboard_adminController implements Initializable {
         text_employee_phone.setText(employeeD.getPhoneNumber());
         text_employee_email.setText(employeeD.getEmail());
     }
-
+    
     public void deleteCustomer() {
         String deleteCust = "delete from customers where customer_id='" + text_customerId.getText() + "'";
         conn = database.ConnectDB();
@@ -1019,18 +1023,18 @@ public class Dashboard_adminController implements Initializable {
                 if (optional.get().equals(ButtonType.OK)) {
                     statement = conn.createStatement();
                     statement.executeUpdate(deleteCust);
-
+                    
                     InforBox("Deleted Successfully", null, "Information");
                     showListCustomer();
                     customerResset();
-
+                    
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public void customerResset() {
         text_customerId.setText("");
         text_customerName.setText("");
@@ -1043,11 +1047,11 @@ public class Dashboard_adminController implements Initializable {
         text_customerTPrice.setText("");
         text_customerRank.setText("");
     }
-
+    
     public void customerSearch() {
         FilteredList<customerData> filter = new FilteredList<>(addListCustomer, e -> true);
         text_customerSearch.textProperty().addListener((observable, oldValue, newValue) -> {
-
+            
             filter.setPredicate(predicateEmployeeData -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -1055,7 +1059,7 @@ public class Dashboard_adminController implements Initializable {
                 String searchKey = newValue.toLowerCase();
                 if (predicateEmployeeData.getCustomerId().toLowerCase().contains(searchKey)) {
                     return true;
-
+                    
                 } else if (predicateEmployeeData.getCustomerName().toLowerCase().contains(searchKey)) {
                     return true;
                 } else if (predicateEmployeeData.getAddress().toLowerCase().contains(searchKey)) {
@@ -1081,9 +1085,9 @@ public class Dashboard_adminController implements Initializable {
             sortedLists.comparatorProperty().bind(tableView_customer.comparatorProperty());
             tableView_customer.setItems(sortedLists);
         });
-
+        
     }
-
+    
     public void customerUpdate() {
         String sqlcustomerUpdate = "update customers set customer_name='" + text_customerName.getText()
                 + "',customer_address='" + text_customerAddress.getText()
@@ -1127,7 +1131,7 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public void customerSelect() {
         customerData custSelect = tableView_customer.getSelectionModel().getSelectedItem();
         int num = tableView_customer.getSelectionModel().getSelectedIndex();
@@ -1145,7 +1149,7 @@ public class Dashboard_adminController implements Initializable {
         text_customerTPrice.setText(String.valueOf(custSelect.getPrice()));
         text_customerRank.setText(String.valueOf(custSelect.getRank()));
     }
-
+    
     public void ressetReceipt() {
         text_receiptId.setText("");
         text_receiptCustomerId.setText("");
@@ -1154,7 +1158,7 @@ public class Dashboard_adminController implements Initializable {
         text_receiptDiscount.setText("");
         text_receiptPayment.setText("");
     }
-
+    
     public void receiptDelete() {
         String deleteReceipt = "delete from bills where bill_id='" + text_receiptId.getText() + "'";
         conn = database.ConnectDB();
@@ -1184,11 +1188,11 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public void receiptSearch() {
         FilteredList<ReceiptData> filter = new FilteredList<>(addListReceipt, e -> true);
         text_receiptSearch.textProperty().addListener((observable, oldValue, newValue) -> {
-
+            
             filter.setPredicate(predicateReceiptData -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -1213,11 +1217,11 @@ public class Dashboard_adminController implements Initializable {
             sorted.comparatorProperty().bind(tableView_Receipt.comparatorProperty());
             tableView_Receipt.setItems(sorted);
         });
-
+        
     }
-
+    
     public void receiptUpdate() {
-
+        
         String sqlReceipt = "update bills set bill_date='" + text_receiptDate.getEditor().getText()
                 + "',bill_total_payment='" + text_receiptTPrice.getText()
                 + "',bill_discount='" + text_receiptDiscount.getText()
@@ -1226,7 +1230,7 @@ public class Dashboard_adminController implements Initializable {
                 + "'and bill_customer_id='" + text_receiptCustomerId.getText() + "'";
         conn = database.ConnectDB();
         try {
-
+            
             if (text_receiptId.getText().isEmpty()
                     || text_receiptCustomerId.getText().isEmpty()
                     || text_receiptDate.getEditor().getText().isEmpty()
@@ -1252,7 +1256,7 @@ public class Dashboard_adminController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
     public void receiptSelect() {
         ReceiptData receiptD = tableView_Receipt.getSelectionModel().getSelectedItem();
         int num = tableView_Receipt.getSelectionModel().getSelectedIndex();
@@ -1266,7 +1270,7 @@ public class Dashboard_adminController implements Initializable {
         text_receiptDiscount.setText(String.valueOf(receiptD.getDiscount()));
         text_receiptPayment.setText(String.valueOf(receiptD.getPaymentTpye()));
     }
-
+    
     public ObservableList<ReceiptData> receiptListData() {
         ObservableList<ReceiptData> receiptList = FXCollections.observableArrayList();
         String sql = "select *from bills";
@@ -1290,7 +1294,7 @@ public class Dashboard_adminController implements Initializable {
         return receiptList;
     }
     private ObservableList<ReceiptData> addListReceipt;
-
+    
     public void showReceiptList() {
         addListReceipt = receiptListData();
         tableView_ColumnReceiptID.setCellValueFactory(new PropertyValueFactory<>("billId"));
@@ -1301,7 +1305,99 @@ public class Dashboard_adminController implements Initializable {
         tableView_ColumnPaymentTpye.setCellValueFactory(new PropertyValueFactory<>("paymentTpye"));
         tableView_Receipt.setItems(addListReceipt);
     }
+    
+    public ObservableList<IcomeDetail> icomeList() {
+        
+        ObservableList<IcomeDetail> icomeListData = FXCollections.observableArrayList();
+        String sql = "select (bill_date) as bill_date,sum (bill_total_payment) as bill_total_payment from bills group by bill_date";
+        
+        conn = database.ConnectDB();
+        try {
+            IcomeDetail icomeDetail;
+            preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                icomeDetail = new IcomeDetail(resultSet.getDate("bill_date"), resultSet.getDouble("bill_total_payment")
+                );
+                
+                icomeListData.add(icomeDetail);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return icomeListData;
+    }
 
+//    public ObservableList<IcomeDetail> icomeListM() {
+//        Date date = new Date();
+//        java.sql.Date sqlY = new java.sql.Date(date.getTime());
+//        LocalDate ld = sqlY.toLocalDate();
+//        String sql = "select sum (bill_total_payment) as bill_total_payment from bills where month (bill_date)='" + ld.getMonth() + "'";
+//
+//        conn = database.ConnectDB();
+//        try {
+//            int icomeDetailM;
+//            preparedStatement = conn.prepareStatement(sql);
+//            resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                icomeDetailM = resultSet.getInt("bill_total_payment");
+//
+//            }
+//            icomeDetailM.add(icomeDetailM);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return icomeListDataM;
+//    }
+    private ObservableList<IcomeDetail> Idetails;
+//    private ObservableList<IcomeDetail> IdetailM;
+    
+    public void IcomeShowData() {
+        
+        Idetails = icomeList();
+        dColumn_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        dColumn_DateIcome.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+//        IdetailM = icomeListM();
+        dColumn_month.setCellValueFactory(new PropertyValueFactory<>("date"));
+        dColumn_MIcom.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        dColumn_year.setCellValueFactory(new PropertyValueFactory<>("date"));
+        dColumn_YearIcome.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        
+        table_detail_Icome.setItems(Idetails);
+        
+    }
+
+//    public ObservableList<IcomeDetail> icomeListM() {
+//        Date date = new Date();
+//        java.sql.Date sqlM = new java.sql.Date(date.getTime());
+//        LocalDate localDate = sqlM.toLocalDate();
+//        ObservableList<IcomeDM> icomeListData = FXCollections.observableArrayList();
+//        String sqlm = "select sum(bill_total_payment) as bill_total_payment,bill_date from bills where bill_date='" + localDate.getMonth() + "'";
+//        conn = database.ConnectDB();
+//        try {
+//            IcomeDM icomeDetail;
+//            preparedStatement = conn.prepareStatement(sqlm);
+//            resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                icomeDetail = new IcomeDM(resultSet.getDouble("bill_total_payment"), resultSet.getInt("bill_date"));
+//                icomeListData.add(icomeDetail);
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return icomeListData;
+//    }
+//    private ObservableList<IcomeDM> Idetailm;
+//    public void IcomeShowDataM() {
+//        Idetailm = icomeListM();
+//
+//        dColumn_month.setCellValueFactory(new PropertyValueFactory<>("month"));
+//        dColumn_MIcom.setCellValueFactory(new PropertyValueFactory<>("totalPriceM"));
+//        table_detail_Icome.setItems(Idetailm);
+//    }
     public ObservableList<customerData> customerListData() {
         ObservableList<customerData> custList = FXCollections.observableArrayList();
         String sql = "select *from customers";
@@ -1310,7 +1406,7 @@ public class Dashboard_adminController implements Initializable {
             customerData customer;
             preparedStatement = conn.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
-
+            
             while (resultSet.next()) {
                 customer = new customerData(resultSet.getString("customer_id"),
                         resultSet.getString("customer_name"),
@@ -1321,7 +1417,6 @@ public class Dashboard_adminController implements Initializable {
                         resultSet.getString("customer_prodName"),
                         resultSet.getInt("customer_quanlity"),
                         resultSet.getDouble("customer_totalPrice"),
-                        resultSet.getDate("customer_date"),
                         resultSet.getInt("customer_rank")
                 );
                 custList.add(customer);
@@ -1332,7 +1427,7 @@ public class Dashboard_adminController implements Initializable {
         return custList;
     }
     private ObservableList<customerData> addListCustomer;
-
+    
     public void showListCustomer() {
         addListCustomer = customerListData();
         tableView_ColunmCustomerID.setCellValueFactory(new PropertyValueFactory<>("customerId"));
@@ -1347,39 +1442,7 @@ public class Dashboard_adminController implements Initializable {
         tableView_ColunmCustomerRank.setCellValueFactory(new PropertyValueFactory<>("rank"));
         tableView_customer.setItems(addListCustomer);
     }
-
-    public ObservableList<IcomeDetail> icomeList() {
-        Date date = new Date();
-        java.sql.Date sqlY = new java.sql.Date(date.getTime());
-        LocalDate ld = sqlY.toLocalDate();
-        ObservableList<IcomeDetail> icomeListData = FXCollections.observableArrayList();
-        String sql = "select sum (customer_totalPrice) as customer_totalPrice from customers where customer_date='" + ld.getDayOfMonth() + "'";
-        conn = database.ConnectDB();
-        try {
-            IcomeDetail icomeDetail;
-            preparedStatement = conn.prepareStatement(sql);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                icomeDetail = new IcomeDetail(resultSet.getDouble("customer_totalPrice"),
-                resultSet.getDate("customer_date"));
-                icomeListData.add(icomeDetail);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return icomeListData;
-    }
-    private ObservableList<IcomeDetail> Idetails;
-
-    public void IcomeShowData() {
-        Idetails=icomeList();
-        table_icome_date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        colun_icomedate.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
-table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
-        
-    }
-
+    
     public ObservableList<productData> productListData() {
         ObservableList<productData> productList = FXCollections.observableArrayList();
         String sql = "select*from products";
@@ -1388,7 +1451,7 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             productData product;
             preparedStatement = conn.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
-
+            
             while (resultSet.next()) {
                 product = new productData(resultSet.getString("product_cate"),
                         resultSet.getString("product_name"),
@@ -1402,23 +1465,23 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
                         resultSet.getString("product_content"),
                         resultSet.getString("product_color"),
                         resultSet.getString("product_image"));
-
+                
                 productList.add(product);
-
+                
             }
-
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
         return productList;
-
+        
     }
-
+    
     private ObservableList<productData> addproductList;
-
+    
     public void productShowData() {
         addproductList = productListData();
-
+        
         tableViewPro_colunm_cate.setCellValueFactory(new PropertyValueFactory<>("catergory"));
         tableViewPro_colunm_proName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         tableViewPro_colunm_model.setCellValueFactory(new PropertyValueFactory<>("productModel"));
@@ -1433,12 +1496,12 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
         tableViewPro_colunm_image.setCellValueFactory(new PropertyValueFactory<>("image"));
         product_tableVew.setItems(addproductList);
     }
-
+    
     public void productSelect() {
         productData product = product_tableVew.getSelectionModel().getSelectedItem();
         int num = product_tableVew.getSelectionModel().getSelectedIndex();
         if ((num - 1) < -1) {
-
+            
         }
         text_catergory.setText(product.getCatergory());
         text_productModel.setText(product.getProductModel());
@@ -1455,42 +1518,6 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
         String url = "file:" + product.getImage();
         image = new Image(url, 310, 200, false, true);
         productImage.setImage(image);
-    }
-
-    private double x = 0;
-    private double y = 0;
-
-    public void signout() throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText("Are you really want to sign out?");
-        alert.setHeaderText(null);
-        alert.setTitle("Confirmation");
-
-        Optional<ButtonType> optional = alert.showAndWait();
-        if (optional.get().equals(ButtonType.OK)) {
-            btn_signout.getScene().getWindow().hide();
-            Parent root = FXMLLoader.load(getClass().getResource(electronicConnectViews.Login));
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-
-            root.setOnMousePressed((event) -> {
-                x = event.getSceneX();
-                y = event.getSceneY();
-            });
-            root.setOnMouseDragged((event) -> {
-                stage.setX(event.getScreenX() - x);
-                stage.setY(event.getScreenY() - y);
-
-                stage.setOpacity(.8);
-            });
-            root.setOnMouseReleased((event) -> {
-                stage.setOpacity(1);
-            });
-            stage.initStyle(StageStyle.TRANSPARENT);
-            stage.setScene(scene);
-            stage.show();
-
-        }
     }
 
 //    public void date() {
@@ -1517,7 +1544,7 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
         java.sql.Date sqlY = new java.sql.Date(date.getTime());
         LocalDate ld = sqlY.toLocalDate();
         String sql = "select sum(bill_total_payment) as total_payment from bills where year(bill_date)='" + ld.getYear() + "'";
-
+        
         conn = database.ConnectDB();
         try {
             double sumTY = 0;
@@ -1525,22 +1552,22 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
                 sumTY = resultSet.getDouble("total_payment");
-
+                
             }
             display_yearIcome.setText("$" + String.valueOf(sumTY));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public void disPlayMonthIcome() {
-
+        
         Date date = new Date();
         java.sql.Date sqlM = new java.sql.Date(date.getTime());
         LocalDate localDate = sqlM.toLocalDate();
-
+        
         String sql = "select SUM(bill_total_payment) as total_payment from bills where month(bill_date)='" + localDate.getMonthValue() + "'";
-
+        
         conn = database.ConnectDB();
         double sumT = 0;
         try {
@@ -1554,10 +1581,10 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             e.printStackTrace();
         }
     }
-
+    
     public void disPlayChartData() {
         data_chart.getData().clear();
-
+        
         String sql = "select bill_date, sum(bill_total_payment)from bills group by bill_date order by (bill_date)asc ";
         conn = database.ConnectDB();
         try {
@@ -1571,9 +1598,9 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
     }
-
+    
     public void disPlayTodayIcome() {
         Date date = new Date();
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
@@ -1591,7 +1618,7 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             e.printStackTrace();
         }
     }
-
+    
     public void disPlayEmployeeActive() {
         String sql = "select count(id) as emp_id from employees";
         conn = database.ConnectDB();
@@ -1607,11 +1634,11 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             e.printStackTrace();
         }
     }
-
+    
     public void displayUsername() {
         display_username.setText(getData.AdminUsername);
     }
-
+    
     public void switchForm(ActionEvent event) {
         if (event.getSource() == btn_dashboard) {
             dashboar_form.setVisible(true);
@@ -1619,7 +1646,7 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(false);
-            detail_icome_form.setVisible(false);
+            form_detailIcome.setVisible(false);
             disPlayEmployeeActive();
             disPlayTodayIcome();
             disPlayChartData();
@@ -1632,18 +1659,18 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(false);
-            detail_icome_form.setVisible(false);
+            form_detailIcome.setVisible(false);
             productclear();
             productShowData();
             productSearch();
-
+            
         } else if (event.getSource() == btn_employee) {
             dashboar_form.setVisible(false);
             product_form.setVisible(false);
             employee_form.setVisible(true);
             customer_form.setVisible(false);
             receipt_form.setVisible(false);
-            detail_icome_form.setVisible(false);
+            form_detailIcome.setVisible(false);
             employeeDatashow();
             employeeListStatusList();
             employeeSearch();
@@ -1654,7 +1681,6 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             employee_form.setVisible(false);
             customer_form.setVisible(true);
             receipt_form.setVisible(false);
-            detail_icome_form.setVisible(false);
             showListCustomer();
             customerResset();
         } else if (event.getSource() == btn_reciept) {
@@ -1663,67 +1689,99 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(true);
-            detail_icome_form.setVisible(false);
-            receiptSearch();
+            form_detailIcome.setVisible(false);
+//            receiptSearch();
             ressetReceipt();
             showReceiptList();
-        } else if (event.getSource() == linktoDIcome) {
+        } else if (event.getSource() == hyper_toDetail) {
+            form_detailIcome.setVisible(true);
             dashboar_form.setVisible(false);
             product_form.setVisible(false);
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(false);
-            detail_icome_form.setVisible(true);
-            nav_view.setVisible(false);
-        } else if (event.getSource() == link_backtoDashboard) {
+        } else if (event.getSource() == hyperBacktoD) {
+            form_detailIcome.setVisible(false);
             dashboar_form.setVisible(true);
             product_form.setVisible(false);
             employee_form.setVisible(false);
             customer_form.setVisible(false);
             receipt_form.setVisible(false);
-            detail_icome_form.setVisible(false);
-            nav_view.setVisible(true);
-
         }
-
+        
     }
-
+    private double x = 0;
+    private double y = 0;
+    
+    public void signout() throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText("Are you really want to sign out?");
+        alert.setHeaderText(null);
+        alert.setTitle("Confirmation");
+        
+        Optional<ButtonType> optional = alert.showAndWait();
+        if (optional.get().equals(ButtonType.OK)) {
+            btn_signout.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource(electronicConnectViews.Login));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            
+            root.setOnMousePressed((event) -> {
+                x = event.getSceneX();
+                y = event.getSceneY();
+            });
+            root.setOnMouseDragged((event) -> {
+                stage.setX(event.getScreenX() - x);
+                stage.setY(event.getScreenY() - y);
+                
+                stage.setOpacity(.8);
+            });
+            root.setOnMouseReleased((event) -> {
+                stage.setOpacity(1);
+            });
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            
+        }
+    }
+    
     public void close() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setContentText("Are you really want to exit?");
         alert.setHeaderText(null);
         alert.setTitle("Confirmation");
-
+        
         Optional<ButtonType> optional = alert.showAndWait();
         if (optional.get().equals(ButtonType.OK)) {
             System.exit(0);
         }
-
+        
     }
-
+    
     public void minimize() {
         Stage stage = (Stage) main_form.getScene().getWindow();
         stage.setIconified(true);
     }
-
+    
     public void InforBox(String message, String headerText, String title) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(message);
         alert.setHeaderText(headerText);
         alert.setTitle(title);
         alert.showAndWait();
-
+        
     }
-
+    
     public void InforError(String message, String headerText, String title) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText(message);
         alert.setHeaderText(headerText);
         alert.setTitle(title);
         alert.showAndWait();
-
+        
     }
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         productShowData();
@@ -1741,7 +1799,8 @@ table_icome_month.setCellValueFactory(new PropertyValueFactory<>(""));
         disPlayChartData();
         disPlayMonthIcome();
         disPlayYearIcome();
+        IcomeShowData();
 //        date();
     }
-
+    
 }
